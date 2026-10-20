@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cãofrade® Portugal | A Confraria dos Melhores Amigos — Loja Pet</title>
+  <meta name="description" content="Cãofrade.pt — Artigos originais de higiene, conforto, passeio e diversão para cães e gatos em Portugal. Envio grátis a partir de 39,90€ e pagamento seguro por MB WAY e Multibanco." />
+  <link rel="icon" type="image/jpeg" href="assets/logo-caofrade.jpg" />
+  <meta property="og:title" content="Cãofrade® Portugal — A Confraria dos Melhores Amigos" />
+  <meta property="og:description" content="Os artigos mais inovadores para cães e gatos em Portugal. Portes grátis a partir de 39,90€ e pagamento por MB WAY e Multibanco." />
+  <meta property="og:image" content="assets/logo-caofrade.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Barra de Anúncio Topo -->
+  <div class="announcement-bar">
+    🇵🇹 <strong>PORTES GRÁTIS</strong> para todo Portugal em compras acima de 39,90 € • Usa o código <span class="highlight">CAOFRADE10</span> para 10% Extra • Pagamento <strong>MB WAY & Multibanco</strong>
+  </div>
+
+  <!-- Cabeçalho Principal com o Logótipo Oficial Cãofrade -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-logo" onclick="window.CaofradeApp.resetFilters()">
+        <img src="assets/logo-caofrade.jpg" alt="Logótipo Oficial Cãofrade" class="brand-avatar" />
+        <div>
+          Cãofrade<span style="color:var(--primary);">.pt</span>
+          <span class="brand-tag">A Confraria dos Melhores Amigos</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#catalogo" onclick="window.CaofradeApp.setPetFilter('todos')">Mais Vendidos</a>
+        <a href="#catalogo" onclick="window.CaofradeApp.setPetFilter('caes')">🐕 Para Cães</a>
+        <a href="#catalogo" onclick="window.CaofradeApp.setPetFilter('gatos')">🐱 Para Gatos</a>
+        <a href="#pack-oferta">🎁 Pack Poupança</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Procurar artigo..." />
+        </div>
+
+        <button class="btn-comms-mode" onclick="window.CaofradeApp.openCommsModal()" title="Ver Kit de Comunicações, E-mails e Redes Sociais com a Marca Cãofrade">
+          📣 Comunicações
+        </button>
+
+        <button class="btn-admin-mode" onclick="window.CaofradeApp.openAdminModal()" title="Abrir Painel de Fornecedores e Margens Dropshipping">
+          📊 Dropshipping
+        </button>
+
+        <button class="btn-cart" onclick="window.CaofradeApp.openCartDrawer()">
+          <span>🛒 Cesto</span>
+          <span class="cart-count" id="headerCartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section com Mascote Oficial Cãofrade + Vitrine de Produtos Originais -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-pill">
+          <span>⭐ 4.9/5 Avaliação Média</span> • <span>+4.800 Patudos na Confraria em Portugal</span>
+        </div>
+        <h1>
+          A bênção do conforto, saúde e alegria para o teu verdadeiro <span>Cãofrade</span>.
+        </h1>
+        <p class="lead">
+          Bem-vindo à <strong>Ordem Cãofrade</strong>. Selecionamos os artigos originais mais inovadores de higiene a vapor, hidratação sem fios, passeio seguro e treino inteligente para cães e gatos exigentes.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#catalogo" class="btn-primary">
+            Ver Catálogo de Produtos →
+          </a>
+          <button class="btn-secondary" onclick="window.CaofradeApp.openTrackingModal()">
+            📦 Rastrear Encomenda
+          </button>
+        </div>
+
+        <div class="hero-trust-row">
+          <div class="trust-stat">
+            <strong>Sem Alfândega</strong>
+            <span>Sistema IOSS Europeu incluído</span>
+          </div>
+          <div class="trust-stat">
+            <strong>MB WAY & MB</strong>
+            <span>Checkout 100% seguro em Portugal</span>
+          </div>
+          <div class="trust-stat">
+            <strong>14 Dias</strong>
+            <span>Garantia de satisfação ou reembolso</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vitrine Oficial Cãofrade com Imagens Reais dos Produtos -->
+      <div class="hero-showcase">
+        <div class="hero-brand-banner">
+          <img src="assets/logo-caofrade.jpg" alt="Mestre Cãofrade" class="mascot-hero" />
+          <div>
+            <h3>Escolha Oficial do Mestre Cãofrade®</h3>
+            <p>"Na nossa Confraria só entram artigos testados que resolvem problemas reais dos donos e fazem os patudos felizes." — <strong>www.caofrade.pt</strong></p>
+          </div>
+        </div>
+
+        <div class="hero-products-mini-grid">
+          <div class="hero-mini-card" onclick="window.CaofradeApp.openProductModal('escova-vapor-3em1')">
+            <img src="https://pawslovestore.com/cdn/shop/files/Sf57617148a5e48aa98835b0583d332d6y.webp" alt="Escova a Vapor 3-em-1" />
+            <div>
+              <small style="color:#DC2626; font-weight:800; font-size:0.7rem;">🔥 Nº1 VENDAS</small>
+              <strong>Escova a Vapor 3-em-1 Anti-Pelo</strong>
+              <span class="mini-price">24,90 €</span>
+            </div>
+          </div>
+
+          <div class="hero-mini-card" onclick="window.CaofradeApp.openProductModal('fonte-agua-sem-fios')">
+            <img src="https://nextvibepets.com/cdn/shop/files/ab8e77a2-6a9a-4a49-b498-ebd7f5c52fd5.jpg" alt="Fonte Sem Fios Sensor" />
+            <div>
+              <small style="color:#2563EB; font-weight:800; font-size:0.7rem;">⚡ SEM FIOS</small>
+              <strong>Fonte Inox Sensor Movimento 3L</strong>
+              <span class="mini-price">44,90 €</span>
+            </div>
+          </div>
+
+          <div class="hero-mini-card" onclick="window.CaofradeApp.openProductModal('botoes-comunicacao-cao-falante')">
+            <img src="https://m-pets.com/cdn/shop/files/Untitled_design_7984e40f-c38a-4609-83e9-b5163dcde6e6.png" alt="Botões Cão Falante" />
+            <div>
+              <small style="color:#D97706; font-weight:800; font-size:0.7rem;">🎬 VIRAL TIKTOK</small>
+              <strong>Kit Botões Graváveis + Tapete</strong>
+              <span class="mini-price">34,90 €</span>
+            </div>
+          </div>
+
+          <div class="hero-mini-card" onclick="window.CaofradeApp.openProductModal('capa-banco-automovel-4em1')">
+            <img src="https://apawlopets.com/cdn/shop/files/apawlo-pets-dog-car-seat-cover-hammock-waterproof-product-shot-au-1.png" alt="Capa Banco Automóvel 4-em-1" />
+            <div>
+              <small style="color:#059669; font-weight:800; font-size:0.7rem;">🚗 VIAGEM SEGURA</small>
+              <strong>Capa Automóvel Impermeável 4-em-1</strong>
+              <span class="mini-price">42,90 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faixa de Vantagens -->
+  <section class="benefits-strip">
+    <div class="container benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">🚚</div>
+        <div>
+          <h4>Envio Expresso Rastreável</h4>
+          <p>Grátis a partir de 39,90€ para todo o país</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">📱</div>
+        <div>
+          <h4>Pagamento Local Seguro</h4>
+          <p>MB WAY, Multibanco, Visa, Mastercard e Apple Pay</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🛡️</div>
+        <div>
+          <h4>Aprovado pela Ordem Cãofrade</h4>
+          <p>Artigos originais com materiais seguros e duráveis</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">💬</div>
+        <div>
+          <h4>Apoio ao Cliente em Português</h4>
+          <p>Resposta rápida em menos de 24h úteis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo de Produtos Vencedores com Fotos Originais dos Produtos -->
+  <section class="catalog-section" id="catalogo">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Catálogo Oficial da Confraria 🐾</h2>
+          <p>Imagens reais dos artigos selecionados com maior procura em Portugal (<span id="catalogCount">12 artigos</span>)</p>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="category-pills">
+          <button class="filter-pill active" data-cat="todos" onclick="window.CaofradeApp.setCategory('todos', this)">Todos (12)</button>
+          <button class="filter-pill" data-cat="higiene" onclick="window.CaofradeApp.setCategory('higiene', this)">✨ Higiene & Saúde</button>
+          <button class="filter-pill" data-cat="passeio" onclick="window.CaofradeApp.setCategory('passeio', this)">🦮 Passeio & Viagem</button>
+          <button class="filter-pill" data-cat="brinquedos" onclick="window.CaofradeApp.setCategory('brinquedos', this)">🧠 Treino & Tecnologia</button>
+          <button class="filter-pill" data-cat="conforto" onclick="window.CaofradeApp.setCategory('conforto', this)">💤 Conforto & Sono</button>
+        </div>
+
+        <div class="sort-controls">
+          <label for="sortSelect" style="font-size:0.82rem; font-weight:700; color:var(--text-muted);">Ordenar:</label>
+          <select id="sortSelect">
+            <option value="featured">🔥 Mais Vendidos</option>
+            <option value="reviews">⭐ Mais Avaliados</option>
+            <option value="price-asc">Preço: Mais Baixo</option>
+            <option value="price-desc">Preço: Mais Alto</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Pack Poupança / Bundle Section com Imagens Reais dos 2 Produtos + Selo Cãofrade -->
+  <section class="container" id="pack-oferta">
+    <div class="bundle-banner">
+      <div>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+          <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:48px; height:48px; border-radius:50%; border:2px solid var(--friar-gold);" />
+          <span class="hero-pill" style="margin-bottom:0; background:rgba(236,198,75,0.2); color:var(--friar-gold);">⚡ PACK MAIS VENDIDO DA CONFRARIA</span>
+        </div>
+        <h3>Pack Casa Sem Pelos: Escova a Vapor 3-em-1 + Rolo FurZero™ Pro</h3>
+        <p>
+          Combina a escova de vapor frio que retira 90% do pelo morto diretamente no teu cão ou gato com o rolo eletrostático reutilizável para sofás, roupa e estofos do carro.
+        </p>
+        <div class="bundle-perks">
+          <span class="bundle-perk">✓ 15% Desconto Direto no Pack</span>
+          <span class="bundle-perk">✓ Recomendado para Cães e Gatos</span>
+          <span class="bundle-perk">✓ Poupa +60€/ano em rolos de cola</span>
+        </div>
+        <button class="btn-primary" onclick="window.CaofradeApp.addStarterBundleToCart()">
+          🛒 Adicionar Pack Completo (35,50 €)
+        </button>
+      </div>
+
+      <div class="bundle-box">
+        <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:14px;">
+          <img src="https://pawslovestore.com/cdn/shop/files/Sf57617148a5e48aa98835b0583d332d6y.webp" alt="Escova a Vapor" style="width:86px; height:86px; border-radius:12px; object-fit:contain; background:#fff; padding:4px;" />
+          <span style="font-size:1.5rem; font-weight:800; color:var(--friar-gold);">+</span>
+          <img src="https://crispcraftpaw.com/cdn/shop/files/1615203197971.jpg" alt="Rolo Tira Pelos" style="width:86px; height:86px; border-radius:12px; object-fit:contain; background:#fff; padding:4px;" />
+        </div>
+        <span class="SaveBadge">POUPAS 31,30 € HOJE</span>
+        <div style="font-size:0.88rem; color:#F3ECE0;">Valor individual: <span style="text-decoration:line-through;">67,80 €</span></div>
+        <div class="bundle-price">35,50 €</div>
+        <div style="font-size:0.8rem; color:#F3ECE0; margin-bottom:12px;">Inclui 1x Escova a Vapor + 1x Rolo Reutilizável</div>
+        <div style="font-size:0.78rem; background:rgba(255,255,255,0.1); padding:8px; border-radius:8px;">
+          🔥 Restam apenas <strong>14 packs</strong> com preço promocional
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prova Social / Avaliações -->
+  <section class="reviews-section" id="avaliacoes">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:10px;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:54px; height:54px; border-radius:50%; border:2px solid var(--friar-gold);" />
+          <div>
+            <h2>O que dizem os membros da Confraria ❤️</h2>
+            <p>Avaliações verificadas de clientes reais de norte a sul do país e ilhas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Encomendei a Escova a Vapor e a Fonte Sem Fios para os meus dois gatos em Lisboa. Paguei por MB WAY, recebi o e-mail lindo do Cãofrade com código de rastreio e chegou em 8 dias pelos CTT Expresso. A fonte é super silenciosa!"</p>
+          <div class="review-author">
+            <span>Margarida T. — Lisboa</span>
+            <span class="verified-pill">✓ Compra Verificada</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"A capa de banco de automóvel 4-em-1 salvou o meu carro depois dos passeios na praia de Matosinhos com o meu Golden. É mesmo impermeável e a janela de rede permite que o ar condicionado chegue a ele."</p>
+          <div class="review-author">
+            <span>André Fonseca — Porto</span>
+            <span class="verified-pill">✓ Compra Verificada</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Os botões de comunicação 'Cãofrade Falante' são espetaculares! Gravámos a nossa voz a dizer 'Rua', 'Água' e 'Mimo' e em 1 semana o nosso patudo já carrega no botão quando quer ir ao jardim."</p>
+          <div class="review-author">
+            <span>Cláudia & Tiago — Braga</span>
+            <span class="verified-pill">✓ Compra Verificada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Perguntas Frequentes (FAQ) -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div style="text-align:center; max-width:640px; margin:0 auto;">
+        <h2 style="font-size:2rem; font-weight:800; margin-bottom:8px; color:var(--friar-brown);">Perguntas Frequentes</h2>
+        <p style="color:var(--text-body);">Tudo o que precisas de saber sobre envios, pagamentos e garantias na Cãofrade.pt</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-question">
+            <span>Qual é o prazo de entrega para Portugal Continental e Ilhas?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Todas as encomendas são processadas em 24h a 48h e enviadas por linha aérea expresso rastreável com entrega final em Portugal (via CTT Expresso / EcoScooting) num prazo médio de <strong>7 a 11 dias úteis</strong> em Portugal Continental e 9 a 14 dias úteis na Madeira e Açores.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Tenho de pagar alguma taxa de alfândega ao receber a encomenda?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <strong>Não, nunca!</strong> Todos os preços em <code>www.caofrade.pt</code> já incluem IVA à taxa legal em vigor e utilizam o sistema europeu <strong>IOSS (Import One-Stop Shop)</strong>. A encomenda segue diretamente para a tua morada sem qualquer paragem ou custo alfandegário.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quais são os métodos de pagamento disponíveis?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Podes pagar de forma 100% segura com <strong>MB WAY</strong>, <strong>Referência Multibanco</strong>, <strong>Cartão Visa / Mastercard</strong>, <strong>Apple Pay</strong> ou <strong>Google Pay</strong>.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>E se o meu cão ou gato não se adaptar ao produto?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Oferecemos a garantia legal de Livre Resolução de <strong>14 dias após a receção</strong> (DL n.º 24/2014). Além disso, caso algum artigo chegue danificado do transporte, enviamos um novo gratuitamente ou reembolsamos a 100% mediante envio de fotografia.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé com a Marca Oficial Cãofrade -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="color:#fff; margin-bottom:14px;">
+            <img src="assets/logo-caofrade.jpg" alt="Cãofrade Logo" class="brand-avatar" />
+            <div>
+              Cãofrade<span style="color:var(--friar-gold);">.pt</span>
+              <span class="brand-tag" style="color:#D8CBB8;">A Confraria dos Melhores Amigos</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:#D8CBB8; margin-bottom:16px;">
+            Produtos inteligentes e originais que melhoram a saúde, higiene e felicidade do teu cão ou gato em Portugal.
+          </p>
+          <div style="font-size:0.84rem; color:#fff;">
+            📧 apoio@caofrade.pt<br/>
+            🌐 www.caofrade.pt
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categorias</h4>
+          <ul>
+            <li><a href="#catalogo" onclick="window.CaofradeApp.setCategory('higiene')">Higiene & Spa a Vapor</a></li>
+            <li><a href="#catalogo" onclick="window.CaofradeApp.setCategory('passeio')">Passeio & Viagem Automóvel</a></li>
+            <li><a href="#catalogo" onclick="window.CaofradeApp.setCategory('brinquedos')">Treino & Câmaras Smart</a></li>
+            <li><a href="#catalogo" onclick="window.CaofradeApp.setCategory('conforto')">Camas Anti-Ansiedade</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Apoio ao Cliente</h4>
+          <ul>
+            <li><button onclick="window.CaofradeApp.openTrackingModal()">📦 Rastrear a Minha Encomenda</button></li>
+            <li><button onclick="window.CaofradeApp.openCommsModal()">📣 Kit de Comunicações da Marca</button></li>
+            <li><button onclick="document.getElementById('legalModal').classList.add('open')">Política de Envios & Devoluções (14 Dias)</button></li>
+            <li><button onclick="document.getElementById('legalModal').classList.add('open')">Termos e Condições & Privacidade (RGPD)</button></li>
+            <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações Eletrónico ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pagamento 100% Seguro</h4>
+          <p style="font-size:0.84rem; color:#D8CBB8;">
+            Pagamentos encriptados SSL 256-bit via Stripe Portugal:
+          </p>
+          <div class="payment-badges">
+            <span class="pay-badge">MB WAY</span>
+            <span class="pay-badge">MULTIBANCO</span>
+            <span class="pay-badge">VISA</span>
+            <span class="pay-badge">MASTERCARD</span>
+            <span class="pay-badge">APPLE PAY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Cãofrade.pt — Todos os direitos reservados.</span>
+        <span>Identidade Oficial Cãofrade® • Portugal</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Detalhe de Produto -->
+  <div class="overlay-backdrop" id="productModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="window.CaofradeApp.closeModal('productModal')">✕</button>
+      <div id="productModalContent"></div>
+    </div>
+  </div>
+
+  <!-- Carrinho Lateral (Slide-Over Drawer) -->
+  <div class="cart-drawer-backdrop" id="cartDrawerBackdrop">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:36px; height:36px; border-radius:50%; border:2px solid var(--friar-gold);" />
+          <h3 style="font-size:1.1rem; font-weight:800;">O Teu Cesto Cãofrade</h3>
+        </div>
+        <button class="modal-close" style="position:static;" onclick="window.CaofradeApp.closeCartDrawer()">✕</button>
+      </div>
+
+      <div class="shipping-progress-box">
+        <div id="shippingProgressText">Calculando portes...</div>
+        <div class="progress-track">
+          <div class="progress-fill" id="shippingProgressFill" style="width:0%;"></div>
+        </div>
+      </div>
+
+      <div class="cart-items" id="cartItemsContainer"></div>
+
+      <div class="cart-upsell-box" id="cartUpsellBox" style="display:none;"></div>
+
+      <div class="cart-footer">
+        <div class="coupon-row">
+          <input type="text" id="couponInput" placeholder="Código promocional (ex: CAOFRADE10)" />
+          <button onclick="window.CaofradeApp.applyCoupon()">Aplicar</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:6px;">
+          <span>Subtotal:</span>
+          <strong id="cartSubtotal">0,00 €</strong>
+        </div>
+        <div id="cartDiscountRow" style="display:none; justify-content:space-between; font-size:0.88rem; color:var(--success); margin-bottom:6px;">
+          <span>Desconto Cupão:</span>
+          <strong id="cartDiscountVal">-0,00 €</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:0.88rem; margin-bottom:10px;">
+          <span>Envio Expresso Rastreável:</span>
+          <strong id="cartShippingVal" style="color:var(--success);">GRÁTIS</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:1.18rem; font-weight:800; padding-top:10px; border-top:1px solid var(--border); margin-bottom:14px;">
+          <span>Total (IVA incluído):</span>
+          <span id="cartTotalVal" style="color:var(--primary);">0,00 €</span>
+        </div>
+
+        <button class="btn-primary" style="width:100%;" onclick="window.CaofradeApp.openCheckoutModal()">
+          Finalizar Encomenda Segura →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Checkout Português (MB WAY / Multibanco / Cartão) com Selo Cãofrade -->
+  <div class="overlay-backdrop" id="checkoutModal">
+    <div class="modal-card" style="max-width:680px;">
+      <button class="modal-close" onclick="window.CaofradeApp.closeModal('checkoutModal')">✕</button>
+
+      <div id="checkoutFormWrap">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+          <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:52px; height:52px; border-radius:50%; border:2px solid var(--friar-gold);" />
+          <div>
+            <span class="hero-pill" style="margin-bottom:4px;">🔒 Checkout Oficial Cãofrade.pt • SSL 256-Bit</span>
+            <h2 style="font-size:1.45rem; font-weight:800;">Finalizar Encomenda</h2>
+          </div>
+        </div>
+
+        <form onsubmit="window.CaofradeApp.submitCheckout(event)">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>Nome Completo *</label>
+              <input type="text" id="chkName" required placeholder="Ex: João Silva" />
+            </div>
+            <div class="form-group">
+              <label>E-mail (para envio da fatura e rastreio) *</label>
+              <input type="email" id="chkEmail" required placeholder="joao@email.pt" />
+            </div>
+            <div class="form-group">
+              <label>Telemóvel (Avisos CTT Expresso) *</label>
+              <input type="tel" id="chkPhone" required placeholder="912 345 678" />
+            </div>
+            <div class="form-group full">
+              <label>Morada Completa (Rua, Nº, Andar) *</label>
+              <input type="text" id="chkAddress" required placeholder="Rua Principal nº 10, 2º Dto" />
+            </div>
+            <div class="form-group">
+              <label>Código Postal *</label>
+              <input type="text" id="chkPostal" required pattern="\d{4}-\d{3}" placeholder="1000-001" title="Formato português: 0000-000" />
+            </div>
+            <div class="form-group">
+              <label>Localidade / Concelho *</label>
+              <input type="text" id="chkCity" required placeholder="Lisboa" />
+            </div>
+            <div class="form-group full">
+              <label>NIF para Fatura (Opcional)</label>
+              <input type="text" id="chkNif" placeholder="9 dígitos (opcional)" />
+            </div>
+          </div>
+
+          <label style="font-size:0.86rem; font-weight:800;">Escolhe o Método de Pagamento:</label>
+          <div class="payment-methods-grid">
+            <div class="payment-option active" id="payOpt-mbway" onclick="window.CaofradeApp.selectPaymentMethod('mbway')">
+              📱 MB WAY<br/><small style="color:var(--text-muted); font-weight:500;">Imediato no telemóvel</small>
+            </div>
+            <div class="payment-option" id="payOpt-multibanco" onclick="window.CaofradeApp.selectPaymentMethod('multibanco')">
+              🏧 Multibanco<br/><small style="color:var(--text-muted); font-weight:500;">Entidade e Referência</small>
+            </div>
+            <div class="payment-option" id="payOpt-card" onclick="window.CaofradeApp.selectPaymentMethod('card')">
+              💳 Cartão / Apple Pay<br/><small style="color:var(--text-muted); font-weight:500;">Visa / Mastercard</small>
+            </div>
+          </div>
+
+          <div id="mbwayPhoneGroup" style="background:var(--bg-soft); padding:12px 14px; border-radius:10px; margin-bottom:16px; font-size:0.85rem;">
+            📱 A notificação <strong>MB WAY</strong> será enviada diretamente para o número de telemóvel indicado acima ao clicares em Pagar.
+          </div>
+
+          <div style="background:var(--bg-cream); padding:14px 16px; border-radius:12px; border:1px solid var(--border); margin-bottom:18px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-size:0.82rem; color:var(--text-muted);">Envio: <strong id="checkoutShippingLabel">Grátis</strong></div>
+              <div style="font-size:1.1rem; font-weight:800;">Total a Pagar: <span id="checkoutTotalLabel" style="color:var(--primary);">0,00 €</span></div>
+            </div>
+            <button type="submit" class="btn-primary">
+              ✓ Confirmar e Pagar Agora
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="checkoutConfirmationBox" style="display:none;"></div>
+    </div>
+  </div>
+
+  <!-- Modal Rastrear Encomenda -->
+  <div class="overlay-backdrop" id="trackingModal">
+    <div class="modal-card" style="max-width:560px;">
+      <button class="modal-close" onclick="window.CaofradeApp.closeModal('trackingModal')">✕</button>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+        <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:48px; height:48px; border-radius:50%; border:2px solid var(--friar-gold);" />
+        <div>
+          <h3 style="font-size:1.35rem; font-weight:800;">📦 Rastrear Encomenda Cãofrade</h3>
+          <p style="font-size:0.84rem; color:var(--text-body);">Introduz o número da tua encomenda (ex: <code>CF-84920</code>)</p>
+        </div>
+      </div>
+      <form onsubmit="window.CaofradeApp.lookupOrder(event)" style="display:flex; gap:10px;">
+        <input type="text" id="trackInput" required placeholder="Ex: CF-84920" style="flex:1; padding:11px 14px; border-radius:10px; border:1px solid var(--border); font-weight:700;" />
+        <button type="submit" class="btn-primary" style="padding:11px 20px;">Procurar</button>
+      </form>
+      <div id="trackResultBox"></div>
+    </div>
+  </div>
+
+  <!-- Modal Termos Legais & Envios -->
+  <div class="overlay-backdrop" id="legalModal">
+    <div class="modal-card" style="max-width:720px;">
+      <button class="modal-close" onclick="window.CaofradeApp.closeModal('legalModal')">✕</button>
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:46px; height:46px; border-radius:50%; border:2px solid var(--friar-gold);" />
+        <h3 style="font-size:1.35rem; font-weight:800;">Política de Envios, Devoluções e RGPD — Cãofrade.pt</h3>
+      </div>
+      <div style="font-size:0.88rem; color:var(--text-body); display:flex; flex-direction:column; gap:12px;">
+        <p><strong>1. Prazos de Expedição e Entrega:</strong> Todas as encomendas em <code>www.caofrade.pt</code> são processadas em 24–48h úteis e expedidas diretamente dos nossos centros logísticos parceiros via linha aérea prioritária com número IOSS europeu pré-pago (sem custos de alfândega). O tempo médio de entrega em Portugal é de 7 a 12 dias úteis.</p>
+        <p><strong>2. Direito de Livre Resolução (14 Dias):</strong> Nos termos do Decreto-Lei n.º 24/2014, o cliente dispõe de 14 dias seguidos após a receção da encomenda para solicitar a troca ou devolução sem necessidade de indicar motivo. Para artigos defeituosos ou danificados no transporte, a Cãofrade garante substituição gratuita imediata ou reembolso integral.</p>
+        <p><strong>3. Proteção de Dados (RGPD):</strong> Os dados recolhidos no checkout destinam-se exclusivamente ao processamento logístico, emissão de fatura e comunicação do código de seguimento da encomenda.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: KIT DE COMUNICAÇÕES OFICIAIS DA MARCA CÃOFRADE (E-MAILS, WHATSAPP, EMBALAGEM & ANÚNCIOS) -->
+  <div class="overlay-backdrop" id="commsModal">
+    <div class="modal-card admin-panel-modal">
+      <button class="modal-close" onclick="window.CaofradeApp.closeModal('commsModal')">✕</button>
+
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:12px;">
+        <img src="assets/logo-caofrade.jpg" alt="Cãofrade Marca" style="width:68px; height:68px; border-radius:50%; border:3px solid var(--friar-gold); box-shadow:var(--shadow-sm);" />
+        <div>
+          <span class="hero-pill" style="margin-bottom:4px;">📣 IDENTIDADE & COMUNICAÇÃO OFICIAL</span>
+          <h2 style="font-size:1.55rem; font-weight:800; color:var(--friar-brown);">Central de Comunicações da Marca Cãofrade®</h2>
+          <p style="font-size:0.86rem; color:var(--text-body);">Templates prontos a usar com a imagem oficial do <strong>Cão Frade</strong> para E-mails Transacionais, WhatsApp, Cartão de Encomenda (Zendrop) e Anúncios.</p>
+        </div>
+      </div>
+
+      <div class="comms-grid">
+        <!-- 1. E-mail Confirmação de Encomenda -->
+        <div class="comm-card">
+          <div class="comm-card-header">
+            <div class="comm-brand">
+              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
+              <span>1. E-mail: Confirmação de Encomenda</span>
+            </div>
+            <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('emailConfirm')">Copiar E-mail</button>
+          </div>
+          <div class="comm-card-body" id="commTpl-emailConfirm">
+            <div style="text-align:center; padding-bottom:12px; margin-bottom:12px; border-bottom:1px solid var(--border);">
+              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:60px; height:60px; border-radius:50%; margin:0 auto 6px; border:2px solid var(--friar-gold);" />
+              <strong style="color:var(--friar-brown); font-size:1rem;">Bem-vindo à Ordem Cãofrade®! 🐾</strong>
+            </div>
+            <p style="margin-bottom:8px;">Olá <strong>[Nome do Cliente]</strong>,</p>
+            <p style="margin-bottom:8px;">A tua encomenda <strong>#[Nº Encomenda]</strong> foi recebida com grande alegria na nossa Confraria! O Mestre Cãofrade já deu a bênção para que o teu pedido seja preparado e expedido nas próximas 24h.</p>
+            <p style="margin-bottom:8px;">📦 <strong>Envio Expresso IOSS (Sem Alfândega):</strong> Assim que o pacote sair do centro logístico, receberás o teu código de rastreio CTT Expresso por e-mail e SMS.</p>
+            <p style="font-size:0.8rem; color:var(--text-muted);">Com um ladrar fraterno,<br/><strong>Equipa Cãofrade.pt — A Confraria dos Melhores Amigos</strong></p>
+          </div>
+        </div>
+
+        <!-- 2. WhatsApp / SMS de Envio e Rastreio -->
+        <div class="comm-card">
+          <div class="comm-card-header">
+            <div class="comm-brand">
+              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
+              <span>2. WhatsApp / SMS: Encomenda a Caminho</span>
+            </div>
+            <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('whatsappTrack')">Copiar Mensagem</button>
+          </div>
+          <div class="comm-card-body" id="commTpl-whatsappTrack">
+            <p style="margin-bottom:8px;">🐾 <strong>Novidades da Confraria Cãofrade.pt!</strong></p>
+            <p style="margin-bottom:8px;">Olá <strong>[Nome]</strong>! O mimo do teu melhor amigo (Encomenda <strong>#[Nº Encomenda]</strong>) já foi despachado e está a caminho de Portugal! 🇵🇹🚚</p>
+            <p style="margin-bottom:8px;">🔍 <strong>Código de Seguimento:</strong> <code>[Código Rastreio]</code><br/>🔗 Podes acompanhar em tempo real em: <strong>https://www.caofrade.pt</strong> (secção Rastrear Encomenda).</p>
+            <p style="font-size:0.8rem; color:var(--text-muted);">Previsão de entrega na tua morada: 7 a 10 dias úteis. Qualquer dúvida, responde a esta mensagem!</p>
+          </div>
+        </div>
+
+        <!-- 3. Cartão de Agradecimento (Packaging Insert para Zendrop) -->
+        <div class="comm-card">
+          <div class="comm-card-header">
+            <div class="comm-brand">
+              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
+              <span>3. Cartão de Agradecimento (Caixa Zendrop)</span>
+            </div>
+            <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('thankYouCard')">Copiar Texto</button>
+          </div>
+          <div class="comm-card-body" id="commTpl-thankYouCard" style="background:linear-gradient(135deg, #4A3223, #2B1C13); color:#fff;">
+            <div style="display:flex; align-items:center; gap:14px; margin-bottom:10px;">
+              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:64px; height:64px; border-radius:50%; border:2px solid var(--friar-gold);" />
+              <div>
+                <h4 style="color:var(--friar-gold); font-size:1.05rem;">O Teu Patudo Agora é um Cãofrade Oficial!</h4>
+                <small style="color:#F3ECE0;">www.caofrade.pt • Portugal</small>
+              </div>
+            </div>
+            <p style="font-size:0.84rem; color:#F3ECE0; margin-bottom:10px;">
+              Obrigado por confiares na nossa Confraria. Esperamos que este artigo traga ainda mais saúde, conforto e rabos a abanar lá em casa!
+            </p>
+            <div style="background:rgba(236,198,75,0.18); border:1px dashed var(--friar-gold); padding:10px; border-radius:8px; text-align:center;">
+              <strong style="color:var(--friar-gold);">🎁 OFERTA DE IRMÃO CÃOFRADE: 15% DESCONTO</strong><br/>
+              <span style="font-size:0.8rem;">Usa o código <strong>BEMVINDO15</strong> na tua próxima visita a www.caofrade.pt</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Anúncio Redes Sociais (Instagram / TikTok / Meta Ads) -->
+        <div class="comm-card">
+          <div class="comm-card-header">
+            <div class="comm-brand">
+              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
+              <span>4. Copy Oficial Anúncio Meta / TikTok Ads</span>
+            </div>
+            <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('socialAd')">Copiar Copy</button>
+          </div>
+          <div class="comm-card-body" id="commTpl-socialAd">
+            <p style="margin-bottom:8px;">🐶 <strong>O Mestre Cãofrade decreta: Acabaram-se os pelos no sofá e na roupa preta!</strong></p>
+            <p style="margin-bottom:8px;">A nova <strong>Escova a Vapor 3-em-1 da Cãofrade.pt</strong> usa micro-nebulização fria para hidratar o pelo do teu cão ou gato e retirar até 90% do pelo morto numa única passagem — sem puxar e sem estática! ✨</p>
+            <p style="margin-bottom:8px;">✅ Recomendado para Cães e Gatos<br/>✅ Portes Grátis + 10% Extra com o código <strong>CAOFRADE10</strong><br/>✅ Pagamento seguro por MB WAY e Multibanco</p>
+            <p style="font-weight:800; color:var(--primary);">👉 Encomenda já em www.caofrade.pt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAINEL DROPSHIPPING (MODO PROPRIETÁRIO / FORNECEDORES & MARGENS) -->
+  <div class="overlay-backdrop" id="adminModal">
+    <div class="modal-card admin-panel-modal">
+      <button class="modal-close" onclick="window.CaofradeApp.closeModal('adminModal')">✕</button>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:56px; height:56px; border-radius:50%; border:2px solid var(--friar-gold);" />
+          <div>
+            <span class="hero-pill" style="margin-bottom:4px;">🚀 MODO PROPRIETÁRIO • GESTÃO DE DROPSHIPPING</span>
+            <h2 style="font-size:1.5rem; font-weight:800;">Central de Fornecedores, Margens & Encomendas — Cãofrade.pt</h2>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="window.CaofradeApp.exportOrdersCSV()" style="padding:11px 18px; font-size:0.86rem;">
+          ⬇️ Exportar Encomendas CSV (DSers / Zendrop)
+        </button>
+      </div>
+
+      <div class="admin-stats-grid">
+        <div class="admin-stat-card">
+          <small>Produtos Originais Ativos</small>
+          <strong>12 Artigos</strong>
+        </div>
+        <div class="admin-stat-card">
+          <small>Margem Bruta Média</small>
+          <strong id="adminStatAvgMargin" style="color:var(--success);">77%</strong>
+        </div>
+        <div class="admin-stat-card">
+          <small>Lucro Bruto Médio / Unid.</small>
+          <strong id="adminStatAvgProfit" style="color:var(--primary);">+24,80 €</strong>
+        </div>
+        <div class="admin-stat-card">
+          <small>Encomendas Registadas</small>
+          <strong id="adminStatTotalOrders">1</strong>
+        </div>
+      </div>
+
+      <!-- Simulador de Lucro Mensal -->
+      <div style="background:var(--bg-soft); padding:18px 20px; border-radius:14px; border:1px solid var(--border); margin-bottom:24px;">
+        <h4 style="font-size:0.95rem; font-weight:800; margin-bottom:12px;">📈 Simulador de Rentabilidade Mensal (Meta Ads / TikTok Ads em Portugal)</h4>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; align-items:center;">
+          <div>
+            <label style="font-size:0.78rem; font-weight:700;">Vendas Diárias: <span id="simLabelDaily">8 encomendas/dia (240/mês)</span></label>
+            <input type="range" id="simDailyOrders" min="1" max="40" value="8" style="width:100%; margin-top:6px;" oninput="window.CaofradeApp.updateProfitSimulator()" />
+          </div>
+          <div>
+            <label style="font-size:0.78rem; font-weight:700;">Ticket Médio (AOV €):</label>
+            <input type="number" id="simAvgTicket" value="42" min="20" max="120" style="width:100%; padding:7px 10px; border-radius:8px; border:1px solid var(--border); margin-top:4px; font-weight:700;" oninput="window.CaofradeApp.updateProfitSimulator()" />
+          </div>
+          <div>
+            <label style="font-size:0.78rem; font-weight:700;">Custo por Compra Anúncios (CPA €):</label>
+            <input type="number" id="simCpaAds" value="9" min="3" max="30" style="width:100%; padding:7px 10px; border-radius:8px; border:1px solid var(--border); margin-top:4px; font-weight:700;" oninput="window.CaofradeApp.updateProfitSimulator()" />
+          </div>
+          <div style="background:#fff; padding:12px; border-radius:10px; border:1px solid var(--border);">
+            <div style="font-size:0.76rem; color:var(--text-muted);">Faturação Mensal Estimada: <strong id="simOutRevenue" style="color:var(--text-dark);">10.080,00 €</strong></div>
+            <div style="font-size:0.88rem; font-weight:800; margin-top:4px;">Lucro Líquido Mensal: <span id="simOutNetProfit" style="color:var(--success); font-size:1.15rem;">5.318,00 €</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabela de Encomendas para Processar -->
+      <h4 style="font-size:1rem; font-weight:800; margin-bottom:6px;">📦 Últimas Encomendas de Clientes (Prontas a enviar no DSers / Zendrop)</h4>
+      <div class="admin-table-wrap" style="margin-bottom:24px;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Encomenda</th>
+              <th>Cliente & Morada PT</th>
+              <th>Artigos Comprados</th>
+              <th>Total Pago</th>
+              <th>Lucro Bruto</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="adminOrdersTableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Tabela de Produtos e Links Diretos de Fornecedores -->
+      <h4 style="font-size:1rem; font-weight:800; margin-bottom:6px;">🔗 Catálogo de Produtos Originais, Custos de Sourcing e Links Diretos</h4>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:8px;">
+        Clica em <strong>AliExpress / DSers</strong> ou <strong>Zendrop</strong> para abrir diretamente os fornecedores com envio rápido (7–12 dias IOSS) para Portugal.
+      </p>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Foto & Artigo</th>
+              <th>Custo Fornecedor</th>
+              <th>PVP Loja</th>
+              <th>Margem Bruta</th>
+              <th>Ângulo Criativo (TikTok / Reels)</th>
+              <th>Acesso Direto Fornecedores</th>
+            </tr>
+          </thead>
+          <tbody id="adminSuppliersTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
