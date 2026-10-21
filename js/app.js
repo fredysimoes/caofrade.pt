@@ -96,7 +96,10 @@
     if (!grid) return;
 
     let filtered = window.CAOFRADE_PRODUCTS.filter((p) => {
-      const matchCat = state.category === "todos" || p.category === state.category;
+      const matchCat =
+        state.category === "todos" ||
+        p.category === state.category ||
+        (state.category === "natal" && (p.isChristmas || (p.sku && p.sku.startsWith("CF-NAT"))));
       const matchPet = state.petFilter === "todos" || (p.petType && p.petType.includes(state.petFilter));
       const q = state.search.trim().toLowerCase();
       const matchSearch =
