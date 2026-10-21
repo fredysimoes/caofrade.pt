@@ -33,11 +33,9 @@ window.CAOFRADE_PRODUCTS = [
       options: ["XS", "S", "M", "L", "XL"]
     },
     images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/S76b2d02bc15c4c529fa9a1e9d540972ed.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sd44b04691438437ab92472ad12648815t.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sf9dba92423fd49008eba70e9b458ed70H.png",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S6e2efb61919e4d0ea30856aa4321976an.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sdfc0bf3d4cba47a890e29a83209f04ecp.jpg"
+      "assets/products/camisola-natal-rena-1.png",
+      "assets/products/camisola-natal-rena-2.png",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sf9dba92423fd49008eba70e9b458ed70H.png"
     ],
     supplierInfo: {
       platform: "AliExpress Choice",
