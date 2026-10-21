@@ -587,7 +587,7 @@
 
   async function submitCheckout(e) {
     e.preventDefault();
-    const { total } = getCartTotals();
+    const { total, shipping } = getCartTotals();
 
     const name = document.getElementById("chkName").value.trim();
     const email = document.getElementById("chkEmail").value.trim();
@@ -597,8 +597,16 @@
     const city = document.getElementById("chkCity").value.trim();
     const nif = document.getElementById("chkNif").value.trim();
 
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : "✓ Confirmar e Pagar Agora";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "⏳ A ligar ao Stripe Seguro...";
+    }
+
     const orderId = "CF-" + Math.floor(10000 + Math.random() * 90000);
     const nowStr = new Date().toLocaleString("pt-PT", { dateStyle: "short", timeStyle: "short" });
+    const cartSnapshot = JSON.parse(JSON.stringify(state.cart));
 
     const newOrder = {
       id: orderId,
@@ -612,18 +620,58 @@
       nif,
       paymentMethod:
         state.selectedPayment === "mbway"
-          ? "MB WAY"
+          ? "MB WAY (Stripe)"
           : state.selectedPayment === "multibanco"
-          ? "Multibanco"
+          ? "Multibanco (Stripe)"
           : "Cartão / Apple Pay (Stripe)",
       status: "Pago — Pronto p/ Envio",
       trackingCode: "Em preparação (24h)",
       total,
-      items: JSON.parse(JSON.stringify(state.cart))
+      items: cartSnapshot
     };
 
     state.orders.unshift(newOrder);
     localStorage.setItem("caofrade_orders", JSON.stringify(state.orders));
+
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: cartSnapshot,
+          shippingCost: shipping,
+          customerEmail: email,
+          paymentMethod: state.selectedPayment,
+          orderId
+        })
+      });
+
+      const data = await response.json();
+
+      if (data && data.url) {
+        state.cart = [];
+        state.coupon = null;
+        saveCart();
+        window.location.href = data.url;
+        return;
+      }
+
+      if (data && data.error) {
+        showToast("Aviso Stripe: " + data.error);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+        return;
+      }
+    } catch (err) {
+      console.error("Erro ao comunicar com /api/checkout:", err);
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+    }
 
     state.cart = [];
     state.coupon = null;
@@ -634,48 +682,13 @@
     formWrap.style.display = "none";
     confirmBox.style.display = "block";
 
-    const randomRef =
-      Math.floor(100 + Math.random() * 899) +
-      " " +
-      Math.floor(100 + Math.random() * 899) +
-      " " +
-      Math.floor(100 + Math.random() * 899);
-
-    let paymentDetailsHtml = "";
-    if (state.selectedPayment === "mbway") {
-      paymentDetailsHtml = `
-        <div style="background:var(--bg-soft); padding:16px; border-radius:12px; margin:16px 0; text-align:left;">
-          <strong>📱 Pedido enviado para a tua App MB WAY (${phone})</strong>
-          <p style="font-size:0.85rem; color:var(--text-body); margin-top:4px;">Aceita a notificação na App MB WAY nos próximos 4 minutos para confirmar o envio expresso da tua encomenda.</p>
-        </div>
-      `;
-    } else if (state.selectedPayment === "multibanco") {
-      paymentDetailsHtml = `
-        <div style="background:var(--bg-soft); padding:16px; border-radius:12px; margin:16px 0; text-align:left;">
-          <strong>🏧 Dados para Pagamento Multibanco / Homebanking:</strong>
-          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:10px; font-size:0.9rem;">
-            <div><span style="color:var(--text-muted);">Entidade:</span><br/><strong>11249</strong></div>
-            <div><span style="color:var(--text-muted);">Referência:</span><br/><strong>${randomRef}</strong></div>
-            <div><span style="color:var(--text-muted);">Montante:</span><br/><strong>${formatEUR(total)}</strong></div>
-          </div>
-        </div>
-      `;
-    } else {
-      paymentDetailsHtml = `
-        <div style="background:var(--success-bg); color:var(--success); padding:14px; border-radius:12px; margin:16px 0;">
-          <strong>✓ Pagamento por Cartão processado com sucesso!</strong>
-        </div>
-      `;
-    }
-
     confirmBox.innerHTML = `
       <div style="text-align:center; padding:18px 8px;">
         <img src="assets/logo-caofrade.jpg" alt="Mestre Cãofrade" style="width:86px; height:86px; border-radius:50%; margin:0 auto 12px; border:3px solid var(--friar-gold); box-shadow:var(--shadow-sm);" />
         <h3 style="font-size:1.5rem; font-weight:800; color:var(--friar-brown); margin-bottom:6px;">Bem-vindo à Ordem Cãofrade, ${name.split(" ")[0]}!</h3>
         <p style="color:var(--text-body); font-size:0.94rem;">Encomenda <strong>#${orderId}</strong> registada para envio para <strong>${postalCode} ${city}</strong>.</p>
-        ${paymentDetailsHtml}
-        <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:20px;">
-          Enviámos a confirmação oficial da Confraria e o resumo para <strong>${email}</strong>. Podes acompanhar o estado em "Rastrear Encomenda" usando o código <strong>${orderId}</strong>.
+        <p style="font-size:0.84rem; color:var(--text-muted); margin:16px 0 20px;">
+          Podes acompanhar o estado em "Rastrear Encomenda" usando o código <strong>${orderId}</strong>.
         </p>
         <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
           <button class="btn-primary" onclick="window.CaofradeApp.closeModal('checkoutModal')">Continuar na Loja</button>
@@ -1257,6 +1270,33 @@
     const params = new URLSearchParams(window.location.search);
     if (params.has("admin") || window.location.hash === "#admin") {
       requestAdminAccess();
+    }
+    if (params.get("sucesso") === "1") {
+      const returnedOrderId = params.get("order_id") || "";
+      state.cart = [];
+      state.coupon = null;
+      saveCart();
+      const confirmBox = document.getElementById("checkoutConfirmationBox");
+      const formWrap = document.getElementById("checkoutFormWrap");
+      if (confirmBox && formWrap) {
+        formWrap.style.display = "none";
+        confirmBox.style.display = "block";
+        confirmBox.innerHTML = `
+          <div style="text-align:center; padding:18px 8px;">
+            <img src="assets/logo-caofrade.jpg" alt="Mestre Cãofrade" style="width:86px; height:86px; border-radius:50%; margin:0 auto 12px; border:3px solid var(--friar-gold); box-shadow:var(--shadow-sm);" />
+            <h3 style="font-size:1.5rem; font-weight:800; color:var(--friar-brown); margin-bottom:6px;">✓ Pagamento Confirmado! Bem-vindo à Ordem Cãofrade!</h3>
+            <p style="color:var(--text-body); font-size:0.94rem;">A tua encomenda <strong>${returnedOrderId ? "#" + returnedOrderId : ""}</strong> foi recebida com sucesso e será preparada nas próximas 24h.</p>
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <button class="btn-primary" onclick="window.CaofradeApp.closeModal('checkoutModal')">Continuar na Loja</button>
+            </div>
+          </div>
+        `;
+        document.getElementById("checkoutModal")?.classList.add("open");
+      }
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (params.get("cancelado") === "1") {
+      showToast("Pagamento cancelado. Os teus artigos continuam guardados.");
+      window.history.replaceState({}, document.title, window.location.pathname);
     }
   });
 

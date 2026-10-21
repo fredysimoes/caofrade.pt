@@ -19,14 +19,21 @@ module.exports = async function handler(req, res) {
 
   try {
     const stripe = new Stripe(stripeSecret, { apiVersion: "2026-03-25.dahlia" });
-    const { items = [], customerEmail, shippingCost = 0 } = req.body;
+    const {
+      items = [],
+      customerEmail,
+      shippingCost = 0,
+      paymentMethod = "mbway",
+      orderId = "",
+      embedded = false
+    } = req.body;
 
     const line_items = items.map((item) => ({
       price_data: {
         currency: "eur",
         product_data: {
           name: `${item.title} (${item.variant || "Padrão"})`,
-          images: item.image ? [item.image] : []
+          images: item.image && item.image.startsWith("http") ? [item.image] : []
         },
         unit_amount: Math.round(Number(item.price) * 100)
       },
@@ -48,22 +55,65 @@ module.exports = async function handler(req, res) {
 
     const origin = req.headers.origin || "https://www.caofrade.pt";
 
-    const session = await stripe.checkout.sessions.create({
-      ui_mode: "form",
-      mode: "payment",
-      billing_address_collection: "auto",
-      phone_number_collection: {
-        enabled: false
-      },
-      automatic_tax: {
-        enabled: false
-      },
-      submit_type: "auto",
-      integration_identifier: "custom_embedded_web_0001",
-      line_items
-    });
+    if (embedded) {
+      const session = await stripe.checkout.sessions.create({
+        ui_mode: "form",
+        mode: "payment",
+        billing_address_collection: "auto",
+        phone_number_collection: {
+          enabled: false
+        },
+        automatic_tax: {
+          enabled: false
+        },
+        submit_type: "auto",
+        integration_identifier: "custom_embedded_web_0001",
+        line_items,
+        return_url: `${origin}/?sucesso=1&order_id=${encodeURIComponent(orderId)}&session_id={CHECKOUT_SESSION_ID}`
+      });
 
-    return res.status(200).json({ client_secret: session.client_secret });
+      return res.status(200).json({ client_secret: session.client_secret, id: session.id });
+    }
+
+    // Map selected payment method to Stripe payment_method_types
+    let preferredTypes = ["card", "mb_way", "multibanco"];
+    if (paymentMethod === "mbway") {
+      preferredTypes = ["mb_way", "card"];
+    } else if (paymentMethod === "multibanco") {
+      preferredTypes = ["multibanco", "card"];
+    } else if (paymentMethod === "card") {
+      preferredTypes = ["card"];
+    }
+
+    const baseSessionParams = {
+      mode: "payment",
+      locale: "pt",
+      customer_email: customerEmail || undefined,
+      billing_address_collection: "auto",
+      line_items,
+      metadata: {
+        order_id: orderId,
+        preferred_payment: paymentMethod
+      },
+      success_url: `${origin}/?sucesso=1&order_id=${encodeURIComponent(orderId)}&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/?cancelado=1`
+    };
+
+    try {
+      const session = await stripe.checkout.sessions.create({
+        ...baseSessionParams,
+        payment_method_types: preferredTypes
+      });
+      return res.status(200).json({ url: session.url, id: session.id });
+    } catch (pmErr) {
+      // Fallback to dynamic payment methods configured in Stripe Dashboard if mb_way or multibanco is not yet activated in Stripe settings
+      const fallbackSession = await stripe.checkout.sessions.create(baseSessionParams);
+      return res.status(200).json({
+        url: fallbackSession.url,
+        id: fallbackSession.id,
+        warning: pmErr.message
+      });
+    }
   } catch (err) {
     return res.status(500).json({ error: err.message });
   }
