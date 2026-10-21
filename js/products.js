@@ -80,11 +80,8 @@ window.CAOFRADE_PRODUCTS = [
       options: ["Xadrez Vermelho Natal + Guizo", "Xadrez Verde Natal + Guizo"]
     },
     images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sfa25832ec769430899db5a9e404c54cbM.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sefbd6ce352884ef9a98809d1bc07b386z.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sf52f3227dc4843b7bc378ede7515879fR.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S7c46970c46ce49e3b60b7b8a61ecf135x.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S0fa6ebcd8fb140a283860308f0d596e2I.jpg"
+      "assets/products/coleira-laco-natal-1.png",
+      "assets/products/coleira-laco-natal-2.png"
     ],
     supplierInfo: {
       platform: "AliExpress Choice",
