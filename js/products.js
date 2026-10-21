@@ -542,5 +542,54 @@ window.CAOFRADE_PRODUCTS = [
     reviews: [
       { author: "Diogo S. (Évora)", rating: 5, date: "Há 3 dias", text: "O meu gato fica obcecado com isto! Adoro o facto de ser revestida a borracha, por isso não faz barulho nenhum no chão da sala." }
     ]
+  },
+  {
+    id: "tapete-absorvente-comedouro-drymat",
+    sku: "CF-HIG-013",
+    title: "Tapete Absorvente Impermeável para Comedouro & Bebedouro DryMat™",
+    subtitle: "Secagem ultra-rápida e base de borracha antiderrapante — chão sempre seco e limpo",
+    category: "higiene",
+    categoryLabel: "Higiene & Spa",
+    petType: ["caes", "gatos"],
+    badge: "🆕 Novo na Loja",
+    badgeType: "hot",
+    price: 18.90,
+    compareAtPrice: 29.90,
+    supplierCost: 4.12,
+    shippingTime: "7–10 dias úteis",
+    stock: 64,
+    rating: 4.9,
+    reviewsCount: 189,
+    shortDesc: "Acaba de vez com as poças de água e restos de ração espalhados pelo chão da cozinha! O Tapete DryMat™ absorve instantaneamente os salpicos do bebedouro e protege o pavimento graças à sua base 100% impermeável e antiderrapante.",
+    highlights: [
+      "Superfície de microfibra diatomita de absorção instantânea e secagem rápida (não acumula odores nem humidade)",
+      "Base 100% impermeável em borracha natural antiderrapante: as taças não escorregam e a água nunca passa para o chão",
+      "Super fácil de limpar: basta passar um pano húmido ou enxaguar debaixo da torneira (não agarra pelos como os tapetes de silicone)",
+      "Tamanho generoso para colocar 2 taças (comedouro + bebedouro ou fonte de água)"
+    ],
+    variants: {
+      label: "Tamanho / Modelo",
+      options: ["30x40 cm (Médio)", "40x60 cm (Grande)", "50x80 cm (XL)"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb09c0989a67d4b94b615931eb25090e2F.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S949c9f0ca5d04ddf94e0033cc752599cm.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sd8c6663687ab4acfb8664ca3d83e2c3c4.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S3c79f0790f594b16806b845c0035de89m.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S412b7811c6054891ac88d758ab4888947.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S55b0d843d4f3452b857a514d2adb19f2y.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice / DSers",
+      searchQuery: "Pet Feeding Mat Absorbent Non-slip Rubber Backed Quick Dry Dog Cat Bowl Mat",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007549347025.html",
+      zendropQuery: "Absorbent Pet Feeding Mat",
+      adHook: "O teu cão deixa a cozinha toda alagada sempre que bebe água? Vê como este tapete absorve a água em 2 segundos! 🐾💧",
+      weightGrams: 260
+    },
+    reviews: [
+      { author: "Carla M. (Lisboa)", rating: 5, date: "Há 2 dias", text: "O meu cão babava o chão todo depois de beber água e estragava o pavimento flutuante. Este tapete absorve logo as gotas todas e não escorrega nada!" },
+      { author: "Nuno P. (Braga)", rating: 5, date: "Há 4 dias", text: "Muito melhor que os de silicone porque não fica cheio de pelos colados e limpa-se num instante." }
+    ]
   }
 ];

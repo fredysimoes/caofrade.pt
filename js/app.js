@@ -6,13 +6,21 @@
   const STANDARD_SHIPPING_COST = 3.90;
   const ADMIN_SECRET_PASS = "caofrade2026";
 
-  // Load saved custom catalog if modified in Backoffice, otherwise use default products.js
+  // Load saved custom catalog if modified in Backoffice, and merge any new products from products.js
+  const defaultCatalog = Array.isArray(window.CAOFRADE_PRODUCTS) ? [...window.CAOFRADE_PRODUCTS] : [];
   const savedCatalog = localStorage.getItem("caofrade_catalog_v2");
   if (savedCatalog) {
     try {
       const parsed = JSON.parse(savedCatalog);
       if (Array.isArray(parsed) && parsed.length > 0) {
+        const existingIds = new Set(parsed.map((p) => p.id));
+        defaultCatalog.forEach((defProd) => {
+          if (!existingIds.has(defProd.id)) {
+            parsed.push(defProd);
+          }
+        });
         window.CAOFRADE_PRODUCTS = parsed;
+        localStorage.setItem("caofrade_catalog_v2", JSON.stringify(parsed));
       }
     } catch (err) {
       console.error("Erro ao carregar catálogo personalizado:", err);
