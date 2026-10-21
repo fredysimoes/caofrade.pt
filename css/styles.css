@@ -85,33 +85,32 @@ img {
   text-decoration: underline;
 }
 
-/* Header & Navigation */
+/* Header & Navigation (2-Tier Organized Layout) */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 90;
-  background: rgba(250, 247, 240, 0.95);
+  background: rgba(250, 247, 240, 0.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  transition: box-shadow 0.2s ease;
+  box-shadow: 0 2px 12px rgba(35, 24, 18, 0.04);
 }
 
-.header-inner {
+.header-top-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 82px;
-  gap: 18px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  gap: 24px;
 }
 
 .brand-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 1.6rem;
+  gap: 14px;
+  flex-shrink: 0;
   color: var(--friar-brown);
-  letter-spacing: -0.03em;
 }
 
 .brand-avatar {
@@ -120,58 +119,60 @@ img {
   border-radius: 50%;
   object-fit: cover;
   border: 2.5px solid var(--friar-gold);
-  box-shadow: 0 4px 12px rgba(74, 50, 35, 0.2);
+  box-shadow: 0 4px 12px rgba(74, 50, 35, 0.18);
   background: var(--friar-gold);
   flex-shrink: 0;
 }
 
-.brand-tag {
-  display: block;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-top: -4px;
-}
-
-.main-nav {
+.brand-text {
   display: flex;
-  align-items: center;
-  gap: 22px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
 }
 
-.main-nav a {
-  font-size: 0.93rem;
-  font-weight: 700;
-  color: var(--text-body);
-  transition: color 0.18s;
+.brand-name {
+  display: block;
+  font-weight: 800;
+  font-size: 1.55rem;
+  line-height: 1.05;
+  color: var(--friar-brown);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
-.main-nav a:hover,
-.main-nav a.active {
+.brand-dot {
+  font-style: normal;
   color: var(--primary);
 }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.brand-tag {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .search-box {
   position: relative;
   display: flex;
   align-items: center;
+  flex: 1;
+  max-width: 400px;
 }
 
 .search-box input {
   background: var(--bg-white);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: 999px;
-  padding: 9px 16px 9px 36px;
-  font-size: 0.86rem;
-  width: 195px;
+  padding: 10px 16px 10px 38px;
+  font-size: 0.88rem;
+  width: 100%;
   color: var(--text-dark);
   transition: all 0.2s;
 }
@@ -179,29 +180,57 @@ img {
 .search-box input:focus {
   outline: none;
   border-color: var(--primary);
-  width: 235px;
   box-shadow: 0 0 0 3px rgba(217, 91, 38, 0.12);
 }
 
 .search-box svg {
   position: absolute;
-  left: 12px;
+  left: 13px;
   color: var(--text-muted);
   width: 16px;
   height: 16px;
+  pointer-events: none;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.btn-header-link {
+  background: var(--bg-white);
+  color: var(--friar-brown);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.btn-header-link:hover {
+  border-color: var(--friar-brown);
+  background: var(--bg-soft);
 }
 
 .btn-comms-mode {
   background: var(--friar-gold-light);
   color: var(--friar-brown);
   font-weight: 800;
-  font-size: 0.8rem;
-  padding: 9px 13px;
+  font-size: 0.82rem;
+  padding: 9px 14px;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   border: 1.5px solid var(--friar-gold);
+  white-space: nowrap;
   transition: all 0.2s;
 }
 
@@ -214,13 +243,14 @@ img {
   background: var(--secondary-light);
   color: var(--secondary);
   font-weight: 700;
-  font-size: 0.8rem;
-  padding: 9px 13px;
+  font-size: 0.82rem;
+  padding: 9px 14px;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   border: 1px solid rgba(29, 78, 74, 0.2);
+  white-space: nowrap;
   transition: all 0.2s;
 }
 
@@ -236,10 +266,11 @@ img {
   padding: 10px 18px;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
   transition: transform 0.15s, background 0.2s;
 }
 
@@ -260,6 +291,48 @@ img {
   align-items: center;
   justify-content: center;
   padding: 0 6px;
+}
+
+/* Second Row: Category Navigation Bar */
+.header-nav-bar {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  padding: 9px 0;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+}
+
+.main-nav a {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-body);
+  white-space: nowrap;
+  padding: 4px 0;
+  transition: color 0.18s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--primary);
+}
+
+.main-nav a.nav-highlight {
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 91, 38, 0.28);
+}
+
+.main-nav a.nav-highlight:hover {
+  background: var(--primary);
+  color: #fff;
 }
 
 /* Hero Section */
@@ -1472,6 +1545,22 @@ img {
 
 /* Responsive */
 @media (max-width: 960px) {
+  .header-top-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .search-box {
+    order: 3;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .main-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    gap: 18px;
+  }
   .hero-grid,
   .bundle-banner,
   .product-modal-grid,
@@ -1486,20 +1575,25 @@ img {
   .footer-grid {
     grid-template-columns: 1fr;
   }
-  .main-nav {
-    display: none;
-  }
 }
 
 @media (max-width: 600px) {
+  .btn-header-link,
+  .btn-comms-mode {
+    display: none;
+  }
+  .brand-avatar {
+    width: 46px;
+    height: 46px;
+  }
+  .brand-name {
+    font-size: 1.3rem;
+  }
   .benefits-grid,
   .form-grid,
   .payment-methods-grid,
   .admin-stats-grid,
   .hero-products-mini-grid {
     grid-template-columns: 1fr;
-  }
-  .search-box {
-    display: none;
   }
 }

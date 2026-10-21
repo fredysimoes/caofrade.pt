@@ -21,34 +21,30 @@
     🇵🇹 <strong>PORTES GRÁTIS</strong> para todo Portugal em compras acima de 39,90 € • Usa o código <span class="highlight">CAOFRADE10</span> para 10% Extra • Pagamento <strong>MB WAY & Multibanco</strong>
   </div>
 
-  <!-- Cabeçalho Principal com o Logótipo Oficial Cãofrade -->
+  <!-- Cabeçalho Principal Organizado em 2 Níveis -->
   <header class="site-header">
-    <div class="container header-inner">
+    <!-- Linha 1: Marca + Pesquisa + Botões de Ação -->
+    <div class="container header-top-row">
       <a href="#" class="brand-logo" onclick="window.CaofradeApp.resetFilters()">
         <img src="assets/logo-caofrade.jpg" alt="Logótipo Oficial Cãofrade" class="brand-avatar" />
-        <div>
-          Cãofrade<span style="color:var(--primary);">.pt</span>
+        <div class="brand-text">
+          <span class="brand-name">Cãofrade<em class="brand-dot">.pt</em></span>
           <span class="brand-tag">A Confraria dos Melhores Amigos</span>
         </div>
       </a>
 
-      <nav class="main-nav">
-        <a href="#catalogo" onclick="window.CaofradeApp.setPetFilter('todos')">Mais Vendidos</a>
-        <a href="#catalogo" onclick="window.CaofradeApp.setPetFilter('caes')">🐕 Para Cães</a>
-        <a href="#catalogo" onclick="window.CaofradeApp.setPetFilter('gatos')">🐱 Para Gatos</a>
-        <a href="#pack-oferta">🎁 Pack Poupança</a>
-        <a href="#avaliacoes">Avaliações</a>
-        <a href="#faq">Dúvidas</a>
-      </nav>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Procurar artigo para cão ou gato..." />
+      </div>
 
       <div class="header-actions">
-        <div class="search-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input type="text" id="searchInput" placeholder="Procurar artigo..." />
-        </div>
+        <button class="btn-header-link" onclick="window.CaofradeApp.openTrackingModal()" title="Rastrear Encomenda">
+          📦 Rastrear
+        </button>
 
         <button class="btn-comms-mode" onclick="window.CaofradeApp.openCommsModal()" title="Ver Kit de Comunicações, E-mails e Redes Sociais com a Marca Cãofrade">
           📣 Comunicações
@@ -62,6 +58,22 @@
           <span>🛒 Cesto</span>
           <span class="cart-count" id="headerCartCount">0</span>
         </button>
+      </div>
+    </div>
+
+    <!-- Linha 2: Menu de Navegação e Categorias -->
+    <div class="header-nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="#catalogo" onclick="window.CaofradeApp.setPetFilter('todos')">🔥 Mais Vendidos</a>
+          <a href="#catalogo" onclick="window.CaofradeApp.setPetFilter('caes')">🐕 Para Cães</a>
+          <a href="#catalogo" onclick="window.CaofradeApp.setPetFilter('gatos')">🐱 Para Gatos</a>
+          <a href="#catalogo" onclick="window.CaofradeApp.setCategory('higiene')">✨ Higiene & Spa</a>
+          <a href="#catalogo" onclick="window.CaofradeApp.setCategory('passeio')">🦮 Passeio & Viagem</a>
+          <a href="#pack-oferta" class="nav-highlight">🎁 Pack Poupança (-15%)</a>
+          <a href="#avaliacoes">⭐ Avaliações</a>
+          <a href="#faq">❓ Dúvidas Frequentes</a>
+        </nav>
       </div>
     </div>
   </header>
@@ -366,8 +378,8 @@
         <div class="footer-col">
           <div class="brand-logo" style="color:#fff; margin-bottom:14px;">
             <img src="assets/logo-caofrade.jpg" alt="Cãofrade Logo" class="brand-avatar" />
-            <div>
-              Cãofrade<span style="color:var(--friar-gold);">.pt</span>
+            <div class="brand-text">
+              <span class="brand-name" style="color:#fff;">Cãofrade<em class="brand-dot" style="color:var(--friar-gold);">.pt</em></span>
               <span class="brand-tag" style="color:#D8CBB8;">A Confraria dos Melhores Amigos</span>
             </div>
           </div>
