@@ -508,7 +508,7 @@
     const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
 
     const appearance = {
-      "theme": "stripe",
+      "theme": "flat",
       "labels": "auto",
       "inputs": "spaced",
       "variables": {
@@ -518,7 +518,7 @@
         "colorPrimary": "#0570de",
         "colorSuccess": "#00c853",
         "colorText": "#30313d",
-        "fontFamily": "default",
+        "fontFamily": "Lato",
         "fontSizeBase": "16px",
         "spacingUnit": "4px"
       }
