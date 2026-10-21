@@ -6,13 +6,14 @@
   const STANDARD_SHIPPING_COST = 3.90;
   const ADMIN_SECRET_PASS = "caofrade2026";
 
-  // Purge legacy demo catalog cache and load verified AliExpress catalog (v6)
+  // Purge legacy demo catalog cache and load verified AliExpress catalog (v7)
   localStorage.removeItem("caofrade_catalog_v2");
   localStorage.removeItem("caofrade_catalog_v3");
   localStorage.removeItem("caofrade_catalog_v4");
   localStorage.removeItem("caofrade_catalog_v5");
+  localStorage.removeItem("caofrade_catalog_v6");
   const defaultCatalog = Array.isArray(window.CAOFRADE_PRODUCTS) ? [...window.CAOFRADE_PRODUCTS] : [];
-  const savedCatalog = localStorage.getItem("caofrade_catalog_v6");
+  const savedCatalog = localStorage.getItem("caofrade_catalog_v7");
   if (savedCatalog) {
     try {
       const parsed = JSON.parse(savedCatalog);
@@ -59,7 +60,7 @@
   }
 
   function saveCatalog() {
-    localStorage.setItem("caofrade_catalog_v6", JSON.stringify(window.CAOFRADE_PRODUCTS));
+    localStorage.setItem("caofrade_catalog_v7", JSON.stringify(window.CAOFRADE_PRODUCTS));
     renderCatalog();
   }
 

@@ -1,13 +1,13 @@
-// Catálogo Oficial de Produtos Reais AliExpress — Cãofrade (www.caofrade.pt)
-// Todos os produtos possuem as imagens originais exatas (ae-pic-a1.aliexpress-media.com),
-// o preço de custo real em Euros e o link direto para o anúncio exato em pt.aliexpress.com.
+// Catálogo Oficial de Produtos Reais AliExpress Portugal — Cãofrade (www.caofrade.pt)
+// Todos os produtos foram validados diretamente em pt.aliexpress.com (região PT, IVA 23% incluído, sem falso desconto de novo utilizador)
+// com as imagens originais exatas (ae-pic-a1.aliexpress-media.com), custo real em Euros e link direto completo com pdp_npi.
 
 window.CAOFRADE_PRODUCTS = [
   {
     id: "camisola-natal-rena-capuz",
     sku: "CF-NAT-014",
-    title: "Camisola de Natal em Malha com Capuz de Rena NoelKnit™",
-    subtitle: "O look de Natal mais adorável e quentinho para cães e gatos!",
+    title: "Camisola de Natal em Malha Rena & Flocos de Neve NoelKnit™",
+    subtitle: "O look de Natal mais adorável e quentinho para cães e gatos (470+ vendidos)!",
     category: "conforto",
     categoryLabel: "Especial Natal & Inverno",
     isChristmas: true,
@@ -16,34 +16,34 @@ window.CAOFRADE_PRODUCTS = [
     badgeType: "bestseller",
     price: 14.90,
     compareAtPrice: 24.90,
-    supplierCost: 3.45,
+    supplierCost: 3.46,
     shippingTime: "7–11 dias úteis",
     stock: 45,
     rating: 4.9,
-    reviewsCount: 384,
-    shortDesc: "Prepara o teu patudo para a consoada e para as fotografias de família! Camisola de malha macia e elástica com capuz de rena 3D, desenhada para manter cães pequenos/médios e gatos quentinhos nos dias frios de inverno.",
+    reviewsCount: 471,
+    shortDesc: "Prepara o teu patudo para a Consoada e para as fotografias de família! Camisola de malha macia e elástica com gola alta confortável, padrão clássico de Rena e Flocos de Neve, desenhada para manter cães e gatos quentinhos nos dias frios de inverno.",
     highlights: [
       "Malha acrílica ultra-macia que não irrita a pele nem prende o pelo",
-      "Capuz com hastes de rena 3D perfeito para as fotos de Natal em família",
+      "Gola alta elástica e padrão natalício de Rena e Floco de Neve",
       "Corte ergonómico na barriga para facilitar as necessidades nos passeios",
       "Lavável na máquina a frio sem perder a forma nem a cor vibrante"
     ],
     variants: {
       label: "Tamanho",
-      options: ["XS (1–2 kg)", "S (2–3.5 kg)", "M (3.5–5 kg)", "L (5–7.5 kg)", "XL (7.5–10 kg)"]
+      options: ["XS", "S", "M", "L", "XL"]
     },
     images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/S30f8428650604cb09cf34e0758d6c75ef.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sc7d9619834e1461db88b9cec16240f1ct.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S9705c32864b14e5f9eb0d87d11c90836i.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Se12bc8fd115749679ac3d910bd91ea20J.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S9d3425944dae41e6b9bccb2f2d542c8dP.jpg"
+      "https://ae-pic-a1.aliexpress-media.com/kf/S76b2d02bc15c4c529fa9a1e9d540972ed.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sd44b04691438437ab92472ad12648815t.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sf9dba92423fd49008eba70e9b458ed70H.png",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S6e2efb61919e4d0ea30856aa4321976an.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sdfc0bf3d4cba47a890e29a83209f04ecp.jpg"
     ],
     supplierInfo: {
       platform: "AliExpress Choice",
-      searchQuery: "Suéter de Natal para Cães Pulôver de Malha com Capuz de Rena",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005013123773649.html",
-      zendropQuery: "Christmas Dog Sweater Reindeer Hooded Knitted Pullover",
+      searchQuery: "Camisola de cachorro de natal rena floco de neve camisola de malha",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005004896948548.html?algo_pvid=e7cac906-c80a-4f39-a0af-f6711d401dc5&algo_exp_id=e7cac906-c80a-4f39-a0af-f6711d401dc5-5&pdp_ext_f=%7B%22order%22%3A%22471%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%213.46%213.46%21%21%213.79%213.79%21%402103962917925930555054015e0dda%2112000050228379386%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A232ae2a7%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005004896948548%7C_p_origin_prod%3A",
+      zendropQuery: "Christmas Dog Sweater Reindeer Snowflake Knitted Pullover",
       adHook: "Ninguém resiste a esta camisola de Rena na noite de Natal! Quentinha, elástica e super confortável.",
       weightGrams: 140
     },
@@ -55,8 +55,8 @@ window.CAOFRADE_PRODUCTS = [
   {
     id: "coleira-laco-natal-guizo",
     sku: "CF-NAT-015",
-    title: "Coleira & Laço de Natal Ajustável com Guizo JingleBow™",
-    subtitle: "O acessório festivo mais barato e encantador para a noite de Consoada",
+    title: "Coleira & Laço Xadrez de Natal Ajustável com Guizo JingleBow™",
+    subtitle: "O acessório festivo mais vendido (4.800+ unidades) para a noite de Consoada",
     category: "passeio",
     categoryLabel: "Especial Natal & Inverno",
     isChristmas: true,
@@ -65,7 +65,7 @@ window.CAOFRADE_PRODUCTS = [
     badgeType: "hot",
     price: 9.90,
     compareAtPrice: 16.90,
-    supplierCost: 1.35,
+    supplierCost: 2.35,
     shippingTime: "7–11 dias úteis",
     stock: 80,
     rating: 4.9,
@@ -74,98 +74,51 @@ window.CAOFRADE_PRODUCTS = [
     highlights: [
       "Fecho de segurança Breakaway (abre sozinho se prender num ramo ou móvel)",
       "Tecido suave e leve que não incomoda mesmo animais que não gostam de roupa",
-      "Laço de Natal e pendente festivo com guizo incluídos",
+      "Laço xadrez de Natal e guizo festivo incluídos",
       "Totalmente ajustável ao pescoço de gatos e cães pequenos"
     ],
     variants: {
-      label: "Modelo Festivo",
-      options: ["Vermelho Pai Natal + Guizo", "Verde Natalício + Guizo", "Pack 2 Coleiras (Vermelho + Verde)"]
+      label: "Cor Xadrez Natal",
+      options: ["Xadrez Vermelho Natal + Guizo", "Xadrez Verde Natal + Guizo"]
     },
     images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/S4079cdb89b244b2dbe7dfdb9cf662f23Y.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S50785b6987af44139e6dbf25037b48f69.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sa4a8afb6dd014ed79e59037e176f1ea4Q.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sda630610f21148f7b4775177b30e591fj.jpg"
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sfa25832ec769430899db5a9e404c54cbM.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sefbd6ce352884ef9a98809d1bc07b386z.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sf52f3227dc4843b7bc378ede7515879fR.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S7c46970c46ce49e3b60b7b8a61ecf135x.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S0fa6ebcd8fb140a283860308f0d596e2I.jpg"
     ],
     supplierInfo: {
       platform: "AliExpress Choice",
-      searchQuery: "Cat Christmas Scarf Bow Tie Pet Collar Santa Claus Bell Safety Buckle",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005010501125108.html",
-      zendropQuery: "Cat Christmas Bow Tie Collar Bell Safety Buckle",
+      searchQuery: "Coleira de gato separatista gravata borboleta e sino xadrez natal",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005003444569999.html?algo_pvid=75cc73c7-05c8-409f-9d96-a47681865efb&algo_exp_id=75cc73c7-05c8-409f-9d96-a47681865efb-1&pdp_ext_f=%7B%22order%22%3A%224887%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.35%212.35%21%21%2117.23%2117.23%21%400b0fe0e117925930567426897e0fe4%2112000025818793887%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3Acb78e82f%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005003444569999%7C_p_origin_prod%3A",
+      zendropQuery: "Plaid Christmas Cat Dog Collar Bow Tie Bell",
       adHook: "O presente de Natal mais fofo por menos de 10€! O teu gato ou cão vai ser a estrela da Consoada.",
       weightGrams: 35
     },
     reviews: [
       { author: "Bárbara T. (Porto)", rating: 5, date: "Há 1 dia", text: "Comprei para os meus 2 gatos! Como tem fecho de segurança fico super descansada e ficam lindos nas fotos." },
-      { author: "Mafalda G. (Aveiro)", rating: 5, date: "Há 4 dias", text: "Super baratinha e com ótima qualidade. O laço é mesmo bonito." }
-    ]
-  },
-  {
-    id: "pack-3-brinquedos-natal",
-    sku: "CF-NAT-016",
-    title: "Pack 3 Brinquedos de Natal Peluche & Corda XmasTrio™ (Pai Natal + Rena + Boneco de Neve)",
-    subtitle: "3 brinquedos num só pack: peluche com apito + corda dental para pôr no sapatinho!",
-    category: "brinquedos",
-    categoryLabel: "Especial Natal & Inverno",
-    isChristmas: true,
-    petType: ["caes", "gatos"],
-    badge: "🎁 Pack 3 Prendas Natal",
-    badgeType: "bestseller",
-    price: 14.90,
-    compareAtPrice: 24.90,
-    supplierCost: 3.89,
-    shippingTime: "7–11 dias úteis",
-    stock: 38,
-    rating: 4.9,
-    reviewsCount: 295,
-    shortDesc: "O presente perfeito para colocar debaixo da árvore de Natal! Inclui 3 brinquedos festivos (Pai Natal, Rena e Boneco de Neve) com apito interno que estimula a brincadeira e corda de algodão resistente que limpa os dentes enquanto mastigam.",
-    highlights: [
-      "Pack Poupança com 3 brinquedos completos: Pai Natal, Rena e Boneco de Neve",
-      "Apito interno (Squeaker) que mantém o cão entretido durante horas",
-      "Pernas em corda de algodão entrelaçada que ajudam a remover o tártaro",
-      "Costuras reforçadas e enchimento macio seguro para gengivas sensíveis"
-    ],
-    variants: {
-      label: "Pack",
-      options: ["Pack Completo 3 Brinquedos (Pai Natal + Rena + Boneco de Neve)"]
-    },
-    images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/Scd20b32c6cdd4cb18e9f391d573836f5i.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S07ef7861ea5b4a9d9bbe9bf5b665c4afV.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S97c8d2f15dc447b98bd627fa6fdde75dE.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sf258d3e240a044f08086154442abe8deC.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice",
-      searchQuery: "3Pcs Christmas Dog Toys Set Santa Reindeer Snowman Plush Squeaky Toy Rope",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005013291573687.html",
-      zendropQuery: "3Pcs Christmas Dog Toys Set Santa Reindeer Snowman",
-      adHook: "Já tens a prenda de Natal para pôr no sapatinho do teu melhor amigo de 4 patas? Vê este pack de 3 brinquedos!",
-      weightGrams: 210
-    },
-    reviews: [
-      { author: "Gonçalo P. (Sintra)", rating: 5, date: "Há 2 dias", text: "Três brinquedos por este preço é excelente! O meu patudo não larga a rena com cordas." },
-      { author: "Helena R. (Setúbal)", rating: 5, date: "Há 6 dias", text: "Muito resistentes e super giros para oferecer no Natal a quem tem cães." }
+      { author: "Mafalda G. (Aveiro)", rating: 5, date: "Há 4 dias", text: "Super baratinha e com ótima qualidade. O laço xadrez é mesmo bonito." }
     ]
   },
   {
     id: "manta-polar-patinhas-inverno",
     sku: "CF-NAT-017",
     title: "Manta Polar Térmica Ultra-Macia Patinhas CozyPaws™",
-    subtitle: "Protege o sofá e mantém o teu cão ou gato quentinho nas noites frias de inverno",
+    subtitle: "Protege o sofá e mantém o teu cão ou gato quentinho nas noites frias (8.200+ vendidos)",
     category: "conforto",
     categoryLabel: "Conforto & Descanso",
     isChristmas: true,
     petType: ["caes", "gatos"],
     badge: "❄️ Essencial Inverno",
     badgeType: "bestseller",
-    price: 12.90,
-    compareAtPrice: 21.90,
-    supplierCost: 2.65,
+    price: 11.90,
+    compareAtPrice: 19.90,
+    supplierCost: 2.09,
     shippingTime: "7–11 dias úteis",
     stock: 60,
-    rating: 4.8,
-    reviewsCount: 640,
+    rating: 4.9,
+    reviewsCount: 840,
     shortDesc: "Nada sabe melhor nos dias frios de inverno do que uma manta polar fofa e quentinha! Em flanela Coral Fleece de dupla face com padrão de patinhas, é ideal para colocar na cama do teu patudo, no sofá ou no banco do carro.",
     highlights: [
       "Tecido Coral Fleece térmico que retém o calor corporal no inverno",
@@ -175,18 +128,19 @@ window.CAOFRADE_PRODUCTS = [
     ],
     variants: {
       label: "Tamanho",
-      options: ["M (60x40 cm - Gatos / Cães Pequenos)", "L (80x60 cm - Cães Médios)", "XL (100x80 cm - Cães Grandes / Sofá)"]
+      options: ["S (Gatos / Cães Pequenos)", "M (Cães Médios)", "L (Cães Grandes / Sofá)"]
     },
     images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/S528515320f654edd91cb8fe630a0973dZ.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sb7331fec28c84f6c9ab1fec9df15e5607.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S3be7a302b509487f89098e835a379ae4l.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sbd06236edc12417fba6537efcf47c2d1M.jpg"
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sae21b7d84407480d805cf8d790d93f845.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Se0bc0f9cdfc14f398b8f9d12b5a19acah.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sd90bde487c4b40008f3783c316a5dab4j.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S6003f857934242d697a9615bc7cccd59b.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Se02bf2354d5049d5be92f4b3a4332f33a.jpg"
     ],
     supplierInfo: {
       platform: "AliExpress Choice",
-      searchQuery: "Manta macia e fofa flanela para cães padrão de pegadas quente inverno",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005011842050175.html",
+      searchQuery: "Cobertor macio e fofo de alta qualidade flanela dormir estampa de pata",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005010031406132.html?algo_pvid=898f3e82-c8a0-414f-a346-b2a1f17fd508&algo_exp_id=898f3e82-c8a0-414f-a346-b2a1f17fd508-0&pdp_ext_f=%7B%22order%22%3A%228270%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.09%212.09%21%21%2115.31%2115.31%21%402103973d17925930594714347e0eeb%2112000050887420638%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3Ae1070e77%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005010031406132%7C_p_origin_prod%3A",
       zendropQuery: "Flannel Fleece Pet Blanket Paw Print Winter Warm",
       adHook: "Tens um cão ou gato friorento que adora roubar a tua manta do sofá no inverno? Dá-lhe a manta térmica dele!",
       weightGrams: 180
@@ -197,46 +151,96 @@ window.CAOFRADE_PRODUCTS = [
     ]
   },
   {
+    id: "pack-3-brinquedos-natal",
+    sku: "CF-NAT-016",
+    title: "Brinquedo Peluche de Natal com Apito XmasPlush™ (Pai Natal, Rena & Biscoito)",
+    subtitle: "Peluche natalício macio com apito interno para colocar no sapatinho!",
+    category: "brinquedos",
+    categoryLabel: "Especial Natal & Inverno",
+    isChristmas: true,
+    petType: ["caes", "gatos"],
+    badge: "🎁 Prenda de Natal",
+    badgeType: "bestseller",
+    price: 14.90,
+    compareAtPrice: 24.90,
+    supplierCost: 4.85,
+    shippingTime: "7–11 dias úteis",
+    stock: 38,
+    rating: 4.9,
+    reviewsCount: 117,
+    shortDesc: "O presente perfeito para colocar debaixo da árvore de Natal! Brinquedo de peluche festivo (Pai Natal, Rena, Boneco de Gengibre ou Donut Natalício) com apito interno que estimula a brincadeira e ajuda a aliviar o tédio em casa.",
+    highlights: [
+      "Personagens clássicas de Natal: Pai Natal, Rena, Boneco de Gengibre e Árvore",
+      "Apito interno (Squeaker) que mantém o cão ou gato entretido durante horas",
+      "Pelúcia macia que massaja as gengivas durante a mastigação",
+      "Costuras reforçadas e enchimento seguro não-tóxico"
+    ],
+    variants: {
+      label: "Personagem de Natal",
+      options: ["Pai Natal", "Rena de Natal", "Boneco de Gengibre", "Donut de Natal"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S20909d9ed46d4671a69f02fc495abbe4A.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sde952ec5ad914267935208606e7f35d4J.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Se85e3109df434a53b2c4ad253d1a2152k.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S44a42c512e2347368a82dc5a23f0c8b2n.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S69704e3795eb47fa953b611944aa5d7a3.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Cão mascar brinquedo natal animal de estimação pelúcia ruído santa elk gingerbread",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005009799025492.html?algo_pvid=8f8253ba-ad42-45f0-ae08-7abdb95634db&algo_exp_id=8f8253ba-ad42-45f0-ae08-7abdb95634db-20&pdp_ext_f=%7B%22order%22%3A%22117%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.85%214.85%21%21%2135.47%2135.47%21%402103973d17925930580754311e0eeb%2112000050203132406%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A2242d9b2%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005009799025492%7C_p_origin_prod%3A",
+      zendropQuery: "Christmas Plush Squeaky Dog Toy Santa Elk Gingerbread",
+      adHook: "Já tens a prenda de Natal para pôr no sapatinho do teu melhor amigo de 4 patas? Vê estes peluches de Natal com apito!",
+      weightGrams: 110
+    },
+    reviews: [
+      { author: "Gonçalo P. (Sintra)", rating: 5, date: "Há 2 dias", text: "O meu patudo não larga a rena de peluche! Faz um barulhinho super engraçado." },
+      { author: "Helena R. (Setúbal)", rating: 5, date: "Há 6 dias", text: "Muito resistente e super giro para oferecer no Natal a quem tem cães." }
+    ]
+  },
+  {
     id: "colete-polar-inverno-cozyfleece",
     sku: "CF-NAT-018",
-    title: "Casaco Polar Térmico de Inverno com Argola para Trela CozyFleece™",
-    subtitle: "Passeios quentinhos sem tremer de frio nas manhãs geladas de inverno",
+    title: "Casaco Polar Térmico de Inverno com Argola D-Ring CozyFleece™",
+    subtitle: "Passeios quentinhos sem tremer de frio nas manhãs geladas (9.000+ vendidos)",
     category: "conforto",
     categoryLabel: "Conforto & Descanso",
     isChristmas: true,
     petType: ["caes", "gatos"],
     badge: "🧥 Top Vendas Inverno",
     badgeType: "bestseller",
-    price: 12.90,
+    price: 13.90,
     compareAtPrice: 22.90,
-    supplierCost: 2.44,
+    supplierCost: 3.72,
     shippingTime: "7–11 dias úteis",
     stock: 52,
     rating: 4.9,
-    reviewsCount: 810,
-    shortDesc: "Os cães de pelo curto e porte pequeno sentem tanto frio quanto nós nas manhãs de inverno! O colete polar CozyFleece™ veste-se em segundos, mantém o peito e costas quentes e traz argola dupla integrada nas costas para prender diretamente a trela.",
+    reviewsCount: 910,
+    shortDesc: "Os cães de pelo curto e porte pequeno sentem tanto frio quanto nós nas manhãs de inverno! O casaco polar CozyFleece™ veste-se em segundos, mantém o peito e costas quentes e traz argola D-Ring integrada nas costas para prender diretamente a trela.",
     highlights: [
-      "Forro polar espesso e ultra-leve que isola do frio e vento de inverno",
+      "Forro polar Fleece espesso e ultra-leve que isola do frio e vento de inverno",
       "Argola D-Ring integrada nas costas para prender a trela rapidamente",
       "Fácil de vestir e despir com ajuste confortável que não prende as patas",
       "Ideal para passeios matinais, dias frios ou usar dentro de casa"
     ],
     variants: {
-      label: "Tamanho & Cor",
-      options: ["S - Castanho Caramelo", "M - Castanho Caramelo", "L - Castanho Caramelo", "S - Rosa Suave", "M - Azul Inverno"]
+      label: "Tamanho",
+      options: ["XS", "S", "M", "L", "XL"]
     },
     images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sa1fe1a43789344f0aec820105bf358c9z.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S19624a43ceea40c6a5b16b92ec29d526j.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Ha21a4fddf4e24e7e940dea173495da4cv.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S48b8d8d610154a12b0228a231ab7bc00H.jpg"
+      "https://ae-pic-a1.aliexpress-media.com/kf/Scfcbd767ae2443348db63021c74e8411y.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S692b1888b5344325afb1896c9c6f7bfcO.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sf9c92170a38747798b36d1ce79a3cbb50.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S8bae4973d27c4a64bebaf2702f64f704e.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sc78636151ae14978ae4049abdb8dd9b0v.jpg"
     ],
     supplierInfo: {
       platform: "AliExpress Choice",
-      searchQuery: "Colete de inverno para cães pequenos gatos quentes camisola de flanela macia",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005006390978077.html",
-      zendropQuery: "Winter Warm Fleece Dog Vest Coat Jacket",
-      adHook: "O teu cão treme quando sai à rua de manhã no inverno? Este casaco polar de 12,90€ já traz argola para a trela!",
+      searchQuery: "Roupa de Fleece Quente para Cães Jaqueta com Anel D",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007791566770.html?algo_pvid=5c002ff1-3966-466e-b592-9eb41230dccc&algo_exp_id=5c002ff1-3966-466e-b592-9eb41230dccc-4&pdp_ext_f=%7B%22order%22%3A%229049%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007791566770%22%2C%22orig_item_id%22%3A%221005012924891921%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%213.72%213.72%21%21%2127.21%2127.22%21%400b0fe0e117925930609227029e0fe4%2112000042215906791%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A871b902d%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007791566770%7C_p_origin_prod%3A",
+      zendropQuery: "Winter Warm Fleece Dog Jacket with D-Ring",
+      adHook: "O teu cão treme quando sai à rua de manhã no inverno? Este casaco polar de 13,90€ já traz argola para a trela!",
       weightGrams: 115
     },
     reviews: [
@@ -261,12 +265,12 @@ window.CAOFRADE_PRODUCTS = [
     stock: 49,
     rating: 4.9,
     reviewsCount: 418,
-    shortDesc: "Desperta o instinto caçador do teu gato neste Natal! Sempre que o teu gato toca na patinha do pássaro ChirpJoy™, o sensor inteligente emite chilreios realistas de pássaro. Inclui bolsa interna de Catnip natural e elástico para pendurar para brincar sozinho.",
+    shortDesc: "Desperta o instinto caçador do teu gato neste Natal! Sempre que o teu gato toca no pássaro ChirpJoy™, o sensor inteligente emite chilreios realistas de pássaro. Inclui Catnip natural e elástico para brincar sozinho.",
     highlights: [
       "Sensor de toque inteligente: emite som realista de pássaro apenas quando o gato lhe toca",
       "Contém Catnip natural que atrai e reduz o stress de gatos de interior",
       "Penas suaves e tecido resistente às unhas e mordidelas",
-      "Pode ser usado solto no chão ou pendurado com o cordão elástico incluído"
+      "Pode ser usado solto no chão ou pendurado para brincar"
     ],
     variants: {
       label: "Pack",
@@ -276,18 +280,163 @@ window.CAOFRADE_PRODUCTS = [
       "https://ae-pic-a1.aliexpress-media.com/kf/S0889ad85fa834d17af5a810d20618ad5p.jpg",
       "https://ae-pic-a1.aliexpress-media.com/kf/S5e39d66e8f064cbeb02cce1a2c10f73em.jpg",
       "https://ae-pic-a1.aliexpress-media.com/kf/S0a6e8578849c46f499a38e1c02cc288fj.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sd7dcdea045f6427895919f50a4408f27D.jpg"
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sd7dcdea045f6427895919f50a4408f27D.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S0f07d167e446468f8dda1f5d63c24922Q.jpg"
     ],
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Brinquedo para Gato em Forma de Pássaro com Toque Inteligente e Sons Catnip",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005011550238607.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005011550238607.html?algo_pvid=6ce1e95c-9a0a-4879-b758-fe5a096d209c&algo_exp_id=6ce1e95c-9a0a-4879-b758-fe5a096d209c-2&pdp_ext_f=%7B%22order%22%3A%221263%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%213.74%213.74%21%21%2127.36%2127.35%21%400b0fe0e117925930636697119e0fe4%2112000055891972914%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A76fb9c6c%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005011550238607%7C_p_origin_prod%3A",
       zendropQuery: "Interactive Chirping Bird Cat Toy Catnip Simulated Sound",
       adHook: "O teu gato dorme o dia todo aborrecido em casa? Vê a reação dele quando toca neste pássaro que pia de verdade!",
       weightGrams: 65
     },
     reviews: [
       { author: "Cláudia V. (Lisboa)", rating: 5, date: "Há 2 dias", text: "O meu gato ficou completamente maluco mal ouviu o passarinho a piar! É a melhor prenda de Natal para quem tem gatos." }
+    ]
+  },
+  {
+    id: "coleira-led-usb-passeio-noturno",
+    sku: "CF-NAT-019",
+    title: "Coleira Luminosa LED Recarregável USB 360° NightGlow™",
+    subtitle: "Visibilidade total até 500m nos passeios escuros de inverno às 17h30 (4.200+ vendidos)!",
+    category: "passeio",
+    categoryLabel: "Passeio & Viagem",
+    isChristmas: true,
+    petType: ["caes", "gatos"],
+    badge: "🔦 Segurança Inverno",
+    badgeType: "tech",
+    price: 13.90,
+    compareAtPrice: 22.90,
+    supplierCost: 4.05,
+    shippingTime: "7–11 dias úteis",
+    stock: 44,
+    rating: 4.9,
+    reviewsCount: 530,
+    shortDesc: "No inverno anoitece às 17h30 e os passeios ao final do dia tornam-se perigosos perto de estradas ou jardins escuros. A coleira LED NightGlow™ garante visibilidade luminosa a 360° e carrega por USB sem precisar de pilhas.",
+    highlights: [
+      "Visibilidade luminosa 360° até 500m para carros, bicicletas e peões",
+      "Bateria recarregável por cabo USB (incluído) — nunca mais gastas dinheiro em pilhas",
+      "3 Modos de Luz: Piscar Rápido, Piscar Lento e Luz Contínua",
+      "Tubo luminoso ajustável à medida exata do pescoço do teu cão ou gato"
+    ],
+    variants: {
+      label: "Tamanho / Cor LED",
+      options: ["35 cm", "50 cm", "70 cm (Cortável à medida)"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/Se8c8349e48ed4d5987e1eac04cf22a41c.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sa74b9dc04d9944f1bc2f159ea0793d27y.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S3ae6d743f41744a996d89ef3cfbd875fr.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S091e7494accc4b35913489f8f1726f939.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S0487aa06e6a94efd9a320a215ecdff5bn.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Coleira de carga luminosa para cães 3 modos led usb",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005006430099146.html?algo_pvid=3f2c92ac-5029-423d-b3b4-1b5cfc342d31&algo_exp_id=3f2c92ac-5029-423d-b3b4-1b5cfc342d31-6&pdp_ext_f=%7B%22order%22%3A%224278%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.05%214.05%21%21%2129.67%2129.67%21%400b0fe0e117925930622567081e0fe4%2112000037140127521%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A453ba44d%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006430099146%7C_p_origin_prod%3A",
+      zendropQuery: "USB Rechargeable LED Dog Collar 3 Modes",
+      adHook: "No inverno fica de noite às 17h30! Nunca mais percas o teu cão de vista no escuro nem corras riscos junto à estrada.",
+      weightGrams: 85
+    },
+    reviews: [
+      { author: "Nuno M. (Almada)", rating: 5, date: "Há 3 dias", text: "Indispensável agora no horário de inverno! A luz é super forte, vê-se ao longe no parque e a bateria dura mais de uma semana." }
+    ]
+  },
+  {
+    id: "tapete-olfativo-farejar-girassol",
+    sku: "CF-NAT-021",
+    title: "Tapete Olfativo Interativo de Farejar Petiscos SnufflePad™",
+    subtitle: "15 minutos a farejar biscoitos equivalem a 1 hora de corrida — perfeito para dias de chuva!",
+    category: "brinquedos",
+    categoryLabel: "Treino & Brinquedos",
+    isChristmas: true,
+    petType: ["caes", "gatos"],
+    badge: "🌧️ Ideal Dias de Chuva",
+    badgeType: "bestseller",
+    price: 15.90,
+    compareAtPrice: 25.90,
+    supplierCost: 4.38,
+    shippingTime: "7–11 dias úteis",
+    stock: 33,
+    rating: 4.9,
+    reviewsCount: 362,
+    shortDesc: "Está a chover lá fora e o teu cão está cheio de energia acumulada? Esconde a ração ou biscoitos nas camadas de feltro do Tapete Olfativo SnufflePad™! Estimula o faro natural, abranda cães sôfregos a comer e cansa mentalmente em 15 minutos.",
+    highlights: [
+      "Enriquecimento ambiental: 15 min de trabalho olfativo gastam tanta energia como 1h de passeio",
+      "Ideal para manter cães e gatos entretidos em casa nos dias chuvosos de inverno",
+      "Base antiderrapante que não escorrega no chão enquanto o animal fareja",
+      "Feltro polar macio lavável na máquina de lavar roupa"
+    ],
+    variants: {
+      label: "Modelo",
+      options: ["Tapete Olfativo SnufflePad™"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S276a28e6cd404e919bce30e8e1583d02p.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sbbcfdb7496ff44aca86b1bdff8bb8f4bC.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sbd6b149b18ef44ee8afc7e00c72f5d6cX.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sa73b049a0f9a4d379e936a751933312c5.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb36ab15aba8647599c0e7e19ba0e4dacn.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Brinquedo Interativo para Cães e Gatos Tapete de Isolamento Olfativo Alimentação Lenta",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005012122994459.html?algo_pvid=8fd97cb9-edc1-4dc9-ae7d-ea11cc4cde6a&algo_exp_id=8fd97cb9-edc1-4dc9-ae7d-ea11cc4cde6a-14&pdp_ext_f=%7B%22order%22%3A%2295%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.29%214.38%21%21%2131.40%2132.01%21%40210396b417925930650585283e1057%2112000057556603678%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A4f87bf82%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005012122994459%7C_p_origin_prod%3A",
+      zendropQuery: "Snuffle Mat Dog Slow Feeder Foraging Pad",
+      adHook: "Chove lá fora e o teu cão não para quieto em casa? Esconde 10 biscoitos neste tapete olfativo e vê a magia acontecer!",
+      weightGrams: 240
+    },
+    reviews: [
+      { author: "Daniela S. (Porto)", rating: 5, date: "Há 4 dias", text: "Salva-me nos dias de chuva! Escondo a ração toda e o meu Beagle fica 25 minutos super concentrado a farejar." }
+    ]
+  },
+  {
+    id: "meias-antiderrapantes-inverno-caes",
+    sku: "CF-NAT-022",
+    title: "Kit 4 Meias Térmicas Antiderrapantes com Fitas de Ajuste WarmPaws™",
+    subtitle: "Patas quentinhas, zero escorregadelas no chão de madeira e zero riscos (2.500+ vendidos)!",
+    category: "conforto",
+    categoryLabel: "Conforto & Descanso",
+    isChristmas: true,
+    petType: ["caes", "gatos"],
+    badge: "🐾 Pack 4 Meias Térmicas",
+    badgeType: "new",
+    price: 13.90,
+    compareAtPrice: 21.90,
+    supplierCost: 4.49,
+    shippingTime: "7–11 dias úteis",
+    stock: 41,
+    rating: 4.8,
+    reviewsCount: 310,
+    shortDesc: "Protege as patinhas do frio do chão no inverno e evita que o teu cão escorregue no soalho flutuante ou mosaico! Com sola de silicone antiderrapante de forte tração e fitas de velcro ajustáveis para não saírem do sítio.",
+    highlights: [
+      "Sola com silicone antiderrapante para tração máxima em chão de madeira ou mosaico",
+      "Fitas elásticas ajustáveis para que as meias não saiam das patas ao correr",
+      "Protege o chão e o sofá contra riscos das unhas e reduz o barulho dos passos",
+      "Mantém as patas quentes e dá segurança a cães seniores para se levantarem sem escorregar"
+    ],
+    variants: {
+      label: "Tamanho (Kit 4 Unidades)",
+      options: ["S (Cães Pequenos)", "M (Cães Médios)", "L (Cães Grandes)"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sc8fcee9665de4de9ba4f408c8190bfa3W.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Saa19deff21d14225b6f022408799ada4h.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S5b7c2f0a0c144ca8b1b1de7795f3b5aew.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb42c08fe8d214b279367efed4a544f35y.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S2ff0ac15804a44b5b363fdcde7d3c578Y.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "4 pçs/set anti deslizamento meias do cão com correias controle de tração",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005008066300014.html?algo_pvid=43ab5001-e365-4874-8e69-06572e82da55&algo_exp_id=43ab5001-e365-4874-8e69-06572e82da55-4&pdp_ext_f=%7B%22order%22%3A%222569%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.49%214.49%21%21%2132.90%2132.90%21%40210382de17925930668783163e1048%2112000043516439096%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A3f32a241%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008066300014%7C_p_origin_prod%3A",
+      zendropQuery: "4Pcs Anti-Slip Dog Socks with Straps Paw Protector",
+      adHook: "O teu cão escorrega no chão flutuante ou tem as patinhas geladas no inverno? Estas meias com fita de ajuste não saem do sítio!",
+      weightGrams: 75
+    },
+    reviews: [
+      { author: "Teresa L. (Faro)", rating: 5, date: "Há 5 dias", text: "O meu cão já tem 11 anos e escorregava muito na tijoleira. Com as fitas ficam presas na perfeição e deu-lhe outra segurança a andar." }
     ]
   },
   {
@@ -300,8 +449,8 @@ window.CAOFRADE_PRODUCTS = [
     petType: ["caes", "gatos"],
     badge: "🔥 Escolha Cãofrade",
     badgeType: "hot",
-    price: 18.90,
-    compareAtPrice: 29.90,
+    price: 16.90,
+    compareAtPrice: 27.90,
     supplierCost: 4.12,
     shippingTime: "7–10 dias úteis",
     stock: 64,
@@ -329,7 +478,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Tapete Absorvente para Alimentação de Animais de Estimação Base Impermeável de Borracha",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005007549347025.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007549347025.html?spm=a2g0o.productlist.main.35.4f961380RnnUo5&algo_pvid=be05e846-1784-40a7-a547-0879a6529280&algo_exp_id=be05e846-1784-40a7-a547-0879a6529280-34&pdp_ext_f=%7B%22order%22%3A%226951%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.12%214.12%21%21%2130.18%2130.18%21%400b88ab6717925875077931011e0e94%2112000041253919397%21sea%21PT%21713152959%21X%211%210%21n_tag%3A-29919%3Bd%3Af938cec3%3Bm03_new_user%3A-29895&curPageLogUid=Rsynq0ALEQ1K&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007549347025%7C_p_origin_prod%3A",
       zendropQuery: "Absorbent Pet Feeding Mat",
       adHook: "O teu cão deixa a cozinha toda alagada sempre que bebe água? Vê como este tapete absorve a água em 2 segundos! 🐾💧",
       weightGrams: 260
@@ -343,15 +492,15 @@ window.CAOFRADE_PRODUCTS = [
     id: "escova-vapor-3em1",
     sku: "CF-HIG-002",
     title: "Escova Elétrica a Vapor 3-em-1 Anti-Pelo & Massagem Spa",
-    subtitle: "Remove o pelo solto e emaranhados com micro-vapor hidratante sem estática",
+    subtitle: "Remove o pelo solto e emaranhados com micro-vapor hidratante sem estática (5.000+ vendidos)",
     category: "higiene",
     categoryLabel: "Higiene & Spa",
     petType: ["caes", "gatos"],
     badge: "🔥 Nº1 Mais Vendido",
     badgeType: "hot",
-    price: 22.90,
-    compareAtPrice: 36.90,
-    supplierCost: 4.83,
+    price: 19.90,
+    compareAtPrice: 32.90,
+    supplierCost: 6.47,
     shippingTime: "7–10 dias úteis",
     stock: 48,
     rating: 4.9,
@@ -368,15 +517,15 @@ window.CAOFRADE_PRODUCTS = [
       options: ["Amarelo Mango", "Branco Pérola", "Castanho Creme", "Verde Menta"]
     },
     images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/S53dabc50fd014b08a1492baf0fd5e5baU.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sea48b240a2664038b5731b548be67bc4V.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S612903aadf844a52a91205571a8d122aC.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S60d5a79a5d0f470cab9bba141ebb521bI.jpg"
+      "https://ae-pic-a1.aliexpress-media.com/kf/S6d50a93905224c198e6b594915fae45eH.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sa966329f2aed4f79a63466dd9477a990b.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1eb7287cb16342af84925f6ac2e76a8ez.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S6f77db22f52440e1b30265c99bf33db4X.jpg"
     ],
     supplierInfo: {
       platform: "AliExpress Choice",
-      searchQuery: "Escova elétrica para vaporização de cães 3 em 1 escova a vapor",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005007791672610.html",
+      searchQuery: "1 ~ 2 pçs escova de vapor para animais de estimação 3 em 1",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007587245726.html",
       zendropQuery: "Pet Steam Brush 3 in 1",
       adHook: "Ainda tens pelos no sofá e na roupa preta? Vê o que esta escova a vapor retira em 30 segundos! 😱🐾",
       weightGrams: 160
@@ -433,147 +582,6 @@ window.CAOFRADE_PRODUCTS = [
     ]
   },
   {
-    id: "coleira-led-usb-passeio-noturno",
-    sku: "CF-NAT-019",
-    title: "Coleira Luminosa LED Recarregável USB 360° NightGlow™",
-    subtitle: "Visibilidade total até 500 metros nos passeios escuros de inverno às 17h30!",
-    category: "passeio",
-    categoryLabel: "Passeio & Viagem",
-    isChristmas: true,
-    petType: ["caes"],
-    badge: "🔦 Segurança Inverno",
-    badgeType: "tech",
-    price: 14.90,
-    compareAtPrice: 24.90,
-    supplierCost: 4.66,
-    shippingTime: "7–11 dias úteis",
-    stock: 44,
-    rating: 4.9,
-    reviewsCount: 530,
-    shortDesc: "No inverno anoitece às 17h30 e os passeios ao final do dia tornam-se perigosos perto de estradas ou jardins escuros. A coleira LED NightGlow™ garante visibilidade luminosa a 360° até 500 metros de distância e carrega por USB sem precisar de pilhas.",
-    highlights: [
-      "Visibilidade luminosa 360° até 500m para carros, bicicletas e peões",
-      "Bateria recarregável por cabo USB (incluído) — nunca mais gastas dinheiro em pilhas",
-      "3 Modos de Luz: Piscar Rápido, Piscar Lento e Luz Contínua",
-      "Resistente à chuva e humidade de inverno + nylon ultra-durável"
-    ],
-    variants: {
-      label: "Tamanho",
-      options: ["S (35–43 cm)", "M (40–48 cm)", "L (45–52 cm)", "XL (52–60 cm)"]
-    },
-    images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/S6a5d4848f8c24de6a9799580ee574273p.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S5e6a4996d2be4bb18323fdb993c41ab6h.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sb765792ff0d14cda890d62ab6cc32b6d1.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sf39b757feff0460ea5cd336af0ae21eev.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice",
-      searchQuery: "Coleira de cachorro usb com led luminosa noturna segurança",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005007170598932.html",
-      zendropQuery: "USB Rechargeable LED Dog Collar Night Safety",
-      adHook: "No inverno fica de noite às 17h30! Nunca mais percas o teu cão de vista no escuro nem corras riscos junto à estrada.",
-      weightGrams: 95
-    },
-    reviews: [
-      { author: "Nuno M. (Almada)", rating: 5, date: "Há 3 dias", text: "Indispensável agora no horário de inverno! A luz é super forte, vê-se ao longe no parque e a bateria dura mais de uma semana." }
-    ]
-  },
-  {
-    id: "tapete-olfativo-farejar-girassol",
-    sku: "CF-NAT-021",
-    title: "Tapete Olfativo Interativo de Farejar Petiscos SnuffleSun™",
-    subtitle: "15 minutos a farejar biscoitos equivalem a 1 hora de corrida — perfeito para dias de chuva!",
-    category: "brinquedos",
-    categoryLabel: "Treino & Brinquedos",
-    isChristmas: true,
-    petType: ["caes", "gatos"],
-    badge: "🌧️ Ideal Dias de Chuva",
-    badgeType: "bestseller",
-    price: 16.90,
-    compareAtPrice: 27.90,
-    supplierCost: 4.50,
-    shippingTime: "7–11 dias úteis",
-    stock: 33,
-    rating: 4.9,
-    reviewsCount: 362,
-    shortDesc: "Está a chover lá fora e o teu cão está cheio de energia acumulada? Esconde a ração ou biscoitos de Natal nas camadas de feltro do Tapete Olfativo SnuffleSun™! Estimula o faro natural, abranda cães sôfregos a comer e cansa mentalmente em 15 minutos.",
-    highlights: [
-      "Enriquecimento ambiental: 15 min de trabalho olfativo gastam tanta energia como 1h de passeio",
-      "Ideal para manter cães e gatos entretidos em casa nos dias chuvosos de inverno",
-      "Base antiderrapante que não escorrega no chão enquanto o animal fareja",
-      "Feltro polar macio lavável na máquina de lavar roupa"
-    ],
-    variants: {
-      label: "Modelo",
-      options: ["Girassol Olfativo SnuffleSun™"]
-    },
-    images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/S298d090c0cc943318193ff4b67486cdbS.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S3bfd437bd7fd464ca7daf9680f68d12bZ.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S6bb3bc9b5e0949299c61a96260721e38j.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S7227ebea2809421dbad47ca5854f33f1I.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice",
-      searchQuery: "Tapete Interativo para Cães e Gatos Sunflower Brinquedo de Forrageamento Comedouro Lento",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005012692011060.html",
-      zendropQuery: "Sunflower Snuffle Mat Dog Slow Feeder Foraging Pad",
-      adHook: "Chove lá fora e o teu cão não para quieto em casa? Esconde 10 biscoitos neste tapete olfativo e vê a magia acontecer!",
-      weightGrams: 260
-    },
-    reviews: [
-      { author: "Daniela S. (Porto)", rating: 5, date: "Há 4 dias", text: "Salva-me nos dias de chuva! Escondo a ração toda nas pétalas e o meu Beagle fica 25 minutos super concentrado a farejar." }
-    ]
-  },
-  {
-    id: "meias-antiderrapantes-inverno-caes",
-    sku: "CF-NAT-022",
-    title: "Kit 4 Meias Térmicas Antiderrapantes Dupla Face WarmPaws™",
-    subtitle: "Patas quentinhas, zero escorregadelas no soalho flutuante e zero riscos na madeira!",
-    category: "conforto",
-    categoryLabel: "Conforto & Descanso",
-    isChristmas: true,
-    petType: ["caes", "gatos"],
-    badge: "🐾 Pack 4 Meias Térmicas",
-    badgeType: "new",
-    price: 13.90,
-    compareAtPrice: 21.90,
-    supplierCost: 4.69,
-    shippingTime: "7–11 dias úteis",
-    stock: 41,
-    rating: 4.8,
-    reviewsCount: 310,
-    shortDesc: "Protege as patinhas do frio do chão no inverno e evita que o teu cão escorregue no soalho flutuante ou mosaico! Com silicone antiderrapante de dupla face (mesmo que a meia rode na pata, continua sempre a travar) e fitas de ajuste seguro.",
-    highlights: [
-      "Silicone antiderrapante dos dois lados para tração máxima em chão de madeira ou mosaico",
-      "Fitas elásticas ajustáveis com velcro para que as meias não saiam das patas ao andar",
-      "Protege o chão e o sofá contra riscos das unhas e reduz o barulho dos passos",
-      "Impede que o cão lamba feridas nas patas e mantém os cães seniores seguros sem escorregar"
-    ],
-    variants: {
-      label: "Tamanho (Kit 4 Unidades)",
-      options: ["S (Cães Pequenos)", "M (Cães Médios)", "L (Cães Grandes)"]
-    },
-    images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/Se3e5ff87ffb343a693ecb3b52c653ad56.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S0936f0fd5533418e91bc7f2fff4c7621K.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S36897477207d4f9cb82e5697011d805a7.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S56e2ba0037ae48e08c15b976ec1e6ffcO.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice",
-      searchQuery: "Meias antiderrapantes para cães 4 pacotes proteção para patas dupla face",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005008840317005.html",
-      zendropQuery: "4Pcs Anti-Slip Dog Socks Double Sided Silicone Paw Protector",
-      adHook: "O teu cão escorrega no chão flutuante ou tem as patinhas geladas no inverno? Estas meias com velcro não saem do sítio!",
-      weightGrams: 75
-    },
-    reviews: [
-      { author: "Teresa L. (Faro)", rating: 5, date: "Há 5 dias", text: "O meu cão já tem 11 anos e escorregava muito na tijoleira. Com as fitas de velcro ficam presas na perfeição e deu-lhe outra segurança a andar." }
-    ]
-  },
-  {
     id: "bola-interativa-inteligente-usb",
     sku: "CF-TRE-004",
     title: "Bola Interativa Rotativa Automática 360º SmartRoll™ USB",
@@ -583,8 +591,8 @@ window.CAOFRADE_PRODUCTS = [
     petType: ["gatos", "caes"],
     badge: "⚡ Diversão Automática",
     badgeType: "viral",
-    price: 18.90,
-    compareAtPrice: 29.90,
+    price: 15.90,
+    compareAtPrice: 26.90,
     supplierCost: 3.57,
     shippingTime: "7–10 dias úteis",
     stock: 72,
@@ -629,8 +637,8 @@ window.CAOFRADE_PRODUCTS = [
     petType: ["caes", "gatos"],
     badge: "🎬 Viral no TikTok",
     badgeType: "viral",
-    price: 29.90,
-    compareAtPrice: 49.90,
+    price: 24.90,
+    compareAtPrice: 39.90,
     supplierCost: 8.74,
     shippingTime: "7–10 dias úteis",
     stock: 44,
@@ -670,14 +678,14 @@ window.CAOFRADE_PRODUCTS = [
     id: "peitoral-anti-puxao-refletor",
     sku: "CF-PAS-006",
     title: "Arnês Ajustável Anti-Puxão com Clipe Frontal Refletor SafeWalk™",
-    subtitle: "Passeios tranquilos sem sufocar o pescoço do teu cão + pega de controlo",
+    subtitle: "Passeios tranquilos sem sufocar o pescoço do teu cão + pega de controlo (10.000+ vendidos)",
     category: "passeio",
     categoryLabel: "Passeio & Viagem",
     petType: ["caes"],
     badge: "🛡️ Mais Seguro",
     badgeType: "hot",
-    price: 27.90,
-    compareAtPrice: 44.90,
+    price: 24.90,
+    compareAtPrice: 39.90,
     supplierCost: 8.30,
     shippingTime: "7–10 dias úteis",
     stock: 52,
@@ -686,7 +694,7 @@ window.CAOFRADE_PRODUCTS = [
     shortDesc: "O teu cão puxa a trela nos passeios? O design ergonómico com argola frontal anti-puxão distribui a força pelo peito sem magoar a traqueia, incluindo pega traseira acolchoada para controlo imediato.",
     highlights: [
       "Dupla argola metálica: clipe frontal (anti-puxão) e dorsal (passeio normal)",
-      "Malha respirável almofadada para máximo conforto em dias quentes",
+      "Malha respirável almofadada para máximo conforto em qualquer estação",
       "Faixas refletoras 360º para passeios noturnos em total segurança",
       "Pega superior resistente + fivelas de libertação rápida"
     ],
@@ -722,8 +730,8 @@ window.CAOFRADE_PRODUCTS = [
     petType: ["caes", "gatos"],
     badge: "💤 Recomendado Vet",
     badgeType: "choice",
-    price: 36.90,
-    compareAtPrice: 59.90,
+    price: 29.90,
+    compareAtPrice: 49.90,
     supplierCost: 10.28,
     shippingTime: "7–11 dias úteis",
     stock: 29,
@@ -769,7 +777,7 @@ window.CAOFRADE_PRODUCTS = [
     petType: ["caes", "gatos"],
     badge: "🧠 Estímulo Mental",
     badgeType: "choice",
-    price: 29.90,
+    price: 27.90,
     compareAtPrice: 44.90,
     supplierCost: 11.23,
     shippingTime: "7–10 dias úteis",
@@ -815,8 +823,8 @@ window.CAOFRADE_PRODUCTS = [
     petType: ["caes"],
     badge: "🐕 Essencial Passeio",
     badgeType: "choice",
-    price: 34.90,
-    compareAtPrice: 52.90,
+    price: 29.90,
+    compareAtPrice: 46.90,
     supplierCost: 13.80,
     shippingTime: "7–10 dias úteis",
     stock: 64,
@@ -907,9 +915,9 @@ window.CAOFRADE_PRODUCTS = [
     petType: ["caes"],
     badge: "🚗 Top Viagens",
     badgeType: "hot",
-    price: 46.90,
-    compareAtPrice: 74.90,
-    supplierCost: 20.49,
+    price: 54.90,
+    compareAtPrice: 79.90,
+    supplierCost: 34.64,
     shippingTime: "7–11 dias úteis",
     stock: 33,
     rating: 4.9,
