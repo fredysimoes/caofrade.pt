@@ -6,16 +6,10 @@ This file is the single source of truth for completing and going live with the S
 
 ## Values to Replace
 
-The following values are placeholders and must be updated before going live.
-
-**Files containing placeholders:**
-- [js/app.js](js/app.js)
-
-| Field | Current Value | What to Set |
-|-------|--------------|-------------|
-| `STRIPE_PUBLISHABLE_KEY` | `pk_test_...` | Your actual Stripe Publishable Key from the Stripe Dashboard (`https://dashboard.stripe.com/apikeys`). |
-
-*(Note: In [api/checkout.js](api/checkout.js), `mode` (`"payment"`) and `line_items` (dynamically constructed from the customer's shopping cart and shipping cost in EUR) already use real application values and were preserved.)*
+All client and server keys have been configured:
+- `STRIPE_PUBLISHABLE_KEY` (`pk_live_...`) is configured in [js/app.js](js/app.js).
+- `STRIPE_SECRET_KEY` (`sk_live_...` or Restricted Key `rk_live_...` with Checkout Session Write permissions) is configured in Vercel Environment Variables for [api/checkout.js](api/checkout.js).
+- In [api/checkout.js](api/checkout.js), `mode` (`"payment"`) and `line_items` (dynamically constructed from the customer's shopping cart and shipping cost in EUR) use real application values.
 
 ---
 
