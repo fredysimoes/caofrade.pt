@@ -122,15 +122,21 @@ window.CAOFRADE_PRODUCTS = [
       "Toque aveludado que acalma cães e gatos seniores ou friorentos"
     ],
     variants: {
-      label: "Tamanho",
-      options: ["S (Gatos / Cães Pequenos)", "M (Cães Médios)", "L (Cães Grandes / Sofá)"]
+      label: "Cor & Tamanho",
+      options: [
+        "Cinzento • S (Gatos / Cães Pequenos - 60x40cm)",
+        "Cinzento • M (Cães Médios - 76x52cm)",
+        "Cinzento • L (Cães Grandes / Sofá - 104x76cm)",
+        "Rosa • S (Gatos / Cães Pequenos - 60x40cm)",
+        "Rosa • M (Cães Médios - 76x52cm)",
+        "Rosa • L (Cães Grandes / Sofá - 104x76cm)"
+      ]
     },
     images: [
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sae21b7d84407480d805cf8d790d93f845.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Se0bc0f9cdfc14f398b8f9d12b5a19acah.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Sd90bde487c4b40008f3783c316a5dab4j.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/S6003f857934242d697a9615bc7cccd59b.jpg",
-      "https://ae-pic-a1.aliexpress-media.com/kf/Se02bf2354d5049d5be92f4b3a4332f33a.jpg"
+      "assets/products/manta-polar-cinza-rosa-dupla.jpg",
+      "assets/products/manta-polar-cinza-patinhas.jpg",
+      "assets/products/manta-polar-rosa-patinhas.jpg",
+      "assets/products/manta-polar-tamanhos-cenarios.jpg"
     ],
     supplierInfo: {
       platform: "AliExpress Choice",
