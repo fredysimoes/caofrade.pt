@@ -1,9 +1,23 @@
-// Aplicação E-Commerce, Kit de Comunicações & Painel Dropshipping — Cãofrade (www.caofrade.pt)
+// Aplicação E-Commerce & Backoffice Privado (CMS Produtos + DSers/AliExpress) — Cãofrade (www.caofrade.pt)
 
 (function () {
   const FREE_SHIPPING_THRESHOLD = 39.90;
   const FREE_GIFT_THRESHOLD = 65.00;
   const STANDARD_SHIPPING_COST = 3.90;
+  const ADMIN_SECRET_PASS = "caofrade2026";
+
+  // Load saved custom catalog if modified in Backoffice, otherwise use default products.js
+  const savedCatalog = localStorage.getItem("caofrade_catalog_v2");
+  if (savedCatalog) {
+    try {
+      const parsed = JSON.parse(savedCatalog);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        window.CAOFRADE_PRODUCTS = parsed;
+      }
+    } catch (err) {
+      console.error("Erro ao carregar catálogo personalizado:", err);
+    }
+  }
 
   let state = {
     category: "todos",
@@ -13,6 +27,7 @@
     cart: JSON.parse(localStorage.getItem("caofrade_cart") || "[]"),
     coupon: null,
     selectedPayment: "mbway",
+    isAdminAuthenticated: sessionStorage.getItem("caofrade_admin_auth") === "1",
     orders: JSON.parse(localStorage.getItem("caofrade_orders") || "[]")
   };
 
@@ -29,7 +44,7 @@
         city: "Lisboa",
         nif: "245891023",
         paymentMethod: "MB WAY",
-        status: "Em Expedição (Linha Aérea IOSS)",
+        status: "Pago — Pronto p/ Envio",
         trackingCode: "LP006482918472PT",
         total: 56.80,
         items: [
@@ -42,7 +57,12 @@
   }
 
   function formatEUR(value) {
-    return value.toFixed(2).replace(".", ",") + " €";
+    return Number(value).toFixed(2).replace(".", ",") + " €";
+  }
+
+  function saveCatalog() {
+    localStorage.setItem("caofrade_catalog_v2", JSON.stringify(window.CAOFRADE_PRODUCTS));
+    renderCatalog();
   }
 
   function saveCart() {
@@ -70,13 +90,13 @@
 
     let filtered = window.CAOFRADE_PRODUCTS.filter((p) => {
       const matchCat = state.category === "todos" || p.category === state.category;
-      const matchPet = state.petFilter === "todos" || p.petType.includes(state.petFilter);
+      const matchPet = state.petFilter === "todos" || (p.petType && p.petType.includes(state.petFilter));
       const q = state.search.trim().toLowerCase();
       const matchSearch =
         !q ||
         p.title.toLowerCase().includes(q) ||
         p.subtitle.toLowerCase().includes(q) ||
-        p.categoryLabel.toLowerCase().includes(q);
+        (p.categoryLabel && p.categoryLabel.toLowerCase().includes(q));
       return matchCat && matchPet && matchSearch;
     });
 
@@ -89,7 +109,7 @@
     }
 
     if (countLabel) {
-      countLabel.textContent = `${filtered.length} artigo${filtered.length !== 1 ? "s" : ""} encontrado${filtered.length !== 1 ? "s" : ""}`;
+      countLabel.textContent = `${filtered.length} artigo${filtered.length !== 1 ? "s" : ""} disponível${filtered.length !== 1 ? "eis" : ""}`;
     }
 
     if (filtered.length === 0) {
@@ -106,19 +126,21 @@
 
     grid.innerHTML = filtered
       .map((p) => {
-        const discountPct = Math.round(((p.compareAtPrice - p.price) / p.compareAtPrice) * 100);
-        const defaultVariant = p.variants.options[0];
+        const discountPct = p.compareAtPrice > p.price
+          ? Math.round(((p.compareAtPrice - p.price) / p.compareAtPrice) * 100)
+          : 20;
+        const defaultVariant = p.variants?.options?.[0] || "Padrão";
         return `
         <article class="product-card">
           <div class="product-media" onclick="window.CaofradeApp.openProductModal('${p.id}')">
-            <span class="product-badge ${p.badgeType}">${p.badge}</span>
+            <span class="product-badge ${p.badgeType || 'hot'}">${p.badge || '🔥 Destaque'}</span>
             <span class="discount-tag">-${discountPct}%</span>
             <img src="${p.images[0]}" alt="${p.title}" loading="lazy" />
           </div>
           <div class="product-body">
             <div class="product-meta-top">
-              <span>${p.categoryLabel}</span>
-              <span class="rating-stars">★★★★★ <span>(${p.reviewsCount})</span></span>
+              <span>${p.categoryLabel || 'Confraria Pet'}</span>
+              <span class="rating-stars">★★★★★ <span>(${p.reviewsCount || 48})</span></span>
             </div>
             <h3 class="product-title" onclick="window.CaofradeApp.openProductModal('${p.id}')">${p.title}</h3>
             <p class="product-subtitle">${p.subtitle}</p>
@@ -127,7 +149,7 @@
               <span class="price-compare">${formatEUR(p.compareAtPrice)}</span>
             </div>
             <div class="product-card-actions">
-              <button class="btn-add-card" onclick="window.CaofradeApp.addToCart('${p.id}', '${defaultVariant}', 1, 0)">
+              <button class="btn-add-card" onclick="window.CaofradeApp.addToCart('${p.id}', '${defaultVariant.replace(/'/g, "")}', 1, 0)">
                 <span>+ Adicionar</span>
               </button>
               <button class="btn-quickview" onclick="window.CaofradeApp.openProductModal('${p.id}')" title="Ver fotos e detalhes">
@@ -148,8 +170,16 @@
 
     const modal = document.getElementById("productModal");
     const content = document.getElementById("productModalContent");
-    const discountPct = Math.round(((p.compareAtPrice - p.price) / p.compareAtPrice) * 100);
+    const discountPct = p.compareAtPrice > p.price
+      ? Math.round(((p.compareAtPrice - p.price) / p.compareAtPrice) * 100)
+      : 20;
     const twoPackPrice = +(p.price * 2 * 0.85).toFixed(2);
+    const highlights = p.highlights && p.highlights.length > 0
+      ? p.highlights
+      : ["Material seguro, resistente e aprovado para cães e gatos", "Envio expresso rastreável para todo Portugal", "Garantia de satisfação de 14 dias"];
+    const reviews = p.reviews && p.reviews.length > 0
+      ? p.reviews
+      : [{ author: "Cliente Verificado (Portugal)", rating: 5, date: "Recente", text: "Excelente qualidade, chegou bem embalado e o meu patudo adorou!" }];
 
     content.innerHTML = `
       <div class="product-modal-grid">
@@ -177,10 +207,10 @@
           </div>
         </div>
         <div>
-          <span class="hero-pill" style="margin-bottom:10px;">${p.badge} • Em Stock (${p.stock} un.)</span>
+          <span class="hero-pill" style="margin-bottom:10px;">${p.badge || '🔥 Destaque'} • Em Stock (${p.stock || 25} un.)</span>
           <h2 style="font-size:1.55rem; font-weight:800; line-height:1.22; margin-bottom:8px; color:var(--friar-brown);">${p.title}</h2>
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px; font-size:0.88rem;">
-            <span class="rating-stars">★★★★★ <strong>${p.rating}/5</strong> (${p.reviewsCount} avaliações verificadas)</span>
+            <span class="rating-stars">★★★★★ <strong>${p.rating || 4.9}/5</strong> (${p.reviewsCount || 48} avaliações verificadas)</span>
           </div>
           <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:16px;">
             <span style="font-size:1.85rem; font-weight:800; color:var(--primary);" id="modalDynamicPrice">${formatEUR(p.price)}</span>
@@ -190,9 +220,9 @@
           <p style="color:var(--text-body); font-size:0.93rem; margin-bottom:16px;">${p.shortDesc}</p>
 
           <div style="margin-bottom:16px;">
-            <label style="display:block; font-size:0.82rem; font-weight:700; margin-bottom:6px;">Escolhe ${p.variants.label}:</label>
+            <label style="display:block; font-size:0.82rem; font-weight:700; margin-bottom:6px;">Escolhe ${p.variants?.label || 'Opção'}:</label>
             <select id="modalVariantSelect" style="width:100%; padding:11px 14px; border-radius:10px; border:1px solid var(--border); font-weight:600; font-size:0.92rem;">
-              ${p.variants.options.map((opt) => `<option value="${opt}">${opt}</option>`).join("")}
+              ${(p.variants?.options || ["Padrão"]).map((opt) => `<option value="${opt}">${opt}</option>`).join("")}
             </select>
           </div>
 
@@ -226,19 +256,19 @@
           </button>
 
           <div style="background:var(--bg-soft); padding:14px; border-radius:12px; font-size:0.83rem; margin-bottom:16px;">
-            <div style="margin-bottom:6px;">🇵🇹 <strong>Entrega em Portugal:</strong> ${p.shippingTime} (Código de Rastreio CTT/Expresso incluído)</div>
+            <div style="margin-bottom:6px;">🇵🇹 <strong>Entrega em Portugal:</strong> ${p.shippingTime || '7–10 dias úteis'} (Código de Rastreio CTT/Expresso incluído)</div>
             <div style="margin-bottom:6px;">🛡️ <strong>Sem Taxas Alfandegárias:</strong> IVA e sistema europeu IOSS incluídos no preço</div>
             <div>💳 <strong>Pagamento 100% Seguro:</strong> MB WAY, Multibanco, Visa, Mastercard ou Apple Pay</div>
           </div>
 
           <h4 style="font-size:0.9rem; font-weight:800; margin-bottom:8px;">Porque é que o teu patudo vai adorar:</h4>
           <ul style="padding-left:18px; font-size:0.86rem; color:var(--text-body); margin-bottom:18px;">
-            ${p.highlights.map((h) => `<li style="margin-bottom:5px;">${h}</li>`).join("")}
+            ${highlights.map((h) => `<li style="margin-bottom:5px;">${h}</li>`).join("")}
           </ul>
 
           <div style="border-top:1px solid var(--border); padding-top:14px;">
             <h4 style="font-size:0.88rem; font-weight:800; margin-bottom:10px;">Avaliações de Clientes em Portugal:</h4>
-            ${p.reviews
+            ${reviews
               .map(
                 (r) => `
               <div style="background:var(--bg-cream); padding:10px 12px; border-radius:10px; margin-bottom:8px; font-size:0.82rem;">
@@ -308,7 +338,7 @@
         id: product.id,
         sku: product.sku,
         title: product.title,
-        variant: variant || product.variants.options[0],
+        variant: variant || product.variants?.options?.[0] || "Padrão",
         price: unitPrice,
         supplierCost: product.supplierCost,
         image: product.images[0],
@@ -528,7 +558,7 @@
           : state.selectedPayment === "multibanco"
           ? "Multibanco"
           : "Cartão / Apple Pay (Stripe)",
-      status: "Pagamento Confirmado — Pronto p/ Envio DSers",
+      status: "Pago — Pronto p/ Envio",
       trackingCode: "A aguardar despacho (24h)",
       total,
       items: JSON.parse(JSON.stringify(state.cart))
@@ -591,7 +621,6 @@
         </p>
         <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
           <button class="btn-primary" onclick="window.CaofradeApp.closeModal('checkoutModal')">Continuar na Loja</button>
-          <button class="btn-secondary" onclick="window.CaofradeApp.closeModal('checkoutModal'); window.CaofradeApp.openAdminModal();">Ver Encomenda no Painel Dropshipping</button>
         </div>
       </div>
     `;
@@ -631,22 +660,249 @@
     }
   }
 
-  // Brand Communications Modal
-  function openCommsModal() {
-    document.getElementById("commsModal").classList.add("open");
+  // PRIVATE BACKOFFICE AUTHENTICATION & MANAGEMENT
+  function requestAdminAccess() {
+    if (state.isAdminAuthenticated) {
+      openAdminModal();
+    } else {
+      const input = document.getElementById("adminPassInput");
+      if (input) input.value = "";
+      document.getElementById("adminLoginModal").classList.add("open");
+    }
+  }
+
+  function verifyAdminLogin(e) {
+    e.preventDefault();
+    const pass = document.getElementById("adminPassInput")?.value.trim();
+    if (pass === ADMIN_SECRET_PASS) {
+      state.isAdminAuthenticated = true;
+      sessionStorage.setItem("caofrade_admin_auth", "1");
+      closeModal("adminLoginModal");
+      openAdminModal();
+      showToast("Bem-vindo ao Backoffice Privado Cãofrade!");
+    } else {
+      showToast("Palavra-passe incorreta!");
+    }
+  }
+
+  function logoutAdmin() {
+    state.isAdminAuthenticated = false;
+    sessionStorage.removeItem("caofrade_admin_auth");
+    closeModal("adminModal");
+    showToast("Sessão de administrador terminada.");
+  }
+
+  function switchAdminTab(tabName) {
+    ["add", "dsers", "orders", "catalog", "comms"].forEach((t) => {
+      const pane = document.getElementById(`adminTab-${t}`);
+      const btn = document.getElementById(`adminTabBtn-${t}`);
+      if (pane) pane.style.display = t === tabName ? "block" : "none";
+      if (btn) btn.classList.toggle("active", t === tabName);
+    });
+  }
+
+  function openAdminModal() {
+    if (!state.isAdminAuthenticated) {
+      requestAdminAccess();
+      return;
+    }
+    renderAdminPanel();
+    document.getElementById("adminModal").classList.add("open");
+  }
+
+  // Add or Edit Product in Store
+  function handleSaveProduct(e) {
+    e.preventDefault();
+    const editId = document.getElementById("prodEditId").value.trim();
+    const title = document.getElementById("prodTitle").value.trim();
+    const subtitle = document.getElementById("prodSubtitle").value.trim();
+    const price = parseFloat(document.getElementById("prodPrice").value);
+    const compareAtPrice = parseFloat(document.getElementById("prodComparePrice").value);
+    const supplierCost = parseFloat(document.getElementById("prodCost").value);
+    const category = document.getElementById("prodCategory").value;
+    const petType = document.getElementById("prodPetType").value.split(",");
+    const variantsRaw = document.getElementById("prodVariants").value;
+    const img1 = document.getElementById("prodImage1").value.trim();
+    const img2 = document.getElementById("prodImage2").value.trim();
+    const supplierUrl = document.getElementById("prodSupplierUrl").value.trim();
+    const shortDesc = document.getElementById("prodDesc").value.trim();
+
+    const categoryLabels = {
+      higiene: "Higiene & Saúde",
+      passeio: "Passeio & Viagem",
+      brinquedos: "Treino & Tecnologia",
+      conforto: "Conforto & Sono"
+    };
+
+    const images = [img1];
+    if (img2) images.push(img2);
+
+    const options = variantsRaw
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    if (editId) {
+      const idx = window.CAOFRADE_PRODUCTS.findIndex((p) => p.id === editId);
+      if (idx > -1) {
+        window.CAOFRADE_PRODUCTS[idx] = {
+          ...window.CAOFRADE_PRODUCTS[idx],
+          title,
+          subtitle,
+          price,
+          compareAtPrice,
+          supplierCost,
+          category,
+          categoryLabel: categoryLabels[category] || "Confraria Pet",
+          petType,
+          variants: { label: "Opção", options: options.length ? options : ["Padrão"] },
+          images,
+          shortDesc,
+          supplierInfo: {
+            ...window.CAOFRADE_PRODUCTS[idx].supplierInfo,
+            aliexpressUrl: supplierUrl,
+            searchQuery: title
+          }
+        };
+        showToast(`Produto "${title}" atualizado com sucesso!`);
+      }
+    } else {
+      const newId =
+        title
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "") +
+        "-" +
+        Math.floor(100 + Math.random() * 899);
+
+      const newProduct = {
+        id: newId,
+        sku: "CF-NEW-" + Math.floor(100 + Math.random() * 899),
+        title,
+        subtitle,
+        category,
+        categoryLabel: categoryLabels[category] || "Confraria Pet",
+        petType,
+        badge: "🔥 Novo na Confraria",
+        badgeType: "hot",
+        price,
+        compareAtPrice,
+        supplierCost,
+        shippingTime: "7–10 dias úteis",
+        stock: 35,
+        rating: 4.9,
+        reviewsCount: 28,
+        shortDesc,
+        highlights: [
+          subtitle,
+          "Selecionado e testado pela Confraria Cãofrade®",
+          "Envio expresso rastreável sem taxas alfandegárias (IOSS)",
+          "Garantia de satisfação de 14 dias em Portugal"
+        ],
+        variants: {
+          label: "Opção",
+          options: options.length ? options : ["Modelo Padrão"]
+        },
+        images,
+        supplierInfo: {
+          platform: "AliExpress / DSers",
+          searchQuery: title,
+          aliexpressUrl: supplierUrl,
+          zendropQuery: title,
+          adHook: subtitle,
+          weightGrams: 300
+        },
+        reviews: [
+          {
+            author: "Cliente Verificado (Lisboa)",
+            rating: 5,
+            date: "Recente",
+            text: "Excelente qualidade! Chegou rápido pelos CTT Expresso e funciona exatamente como anunciado."
+          }
+        ]
+      };
+
+      window.CAOFRADE_PRODUCTS.unshift(newProduct);
+      showToast(`Novo produto "${title}" publicado na loja!`);
+    }
+
+    saveCatalog();
+    resetProductForm();
+    renderAdminPanel();
+  }
+
+  function editProduct(productId) {
+    const p = window.CAOFRADE_PRODUCTS.find((item) => item.id === productId);
+    if (!p) return;
+
+    document.getElementById("prodEditId").value = p.id;
+    document.getElementById("prodTitle").value = p.title;
+    document.getElementById("prodSubtitle").value = p.subtitle;
+    document.getElementById("prodPrice").value = p.price;
+    document.getElementById("prodComparePrice").value = p.compareAtPrice;
+    document.getElementById("prodCost").value = p.supplierCost;
+    document.getElementById("prodCategory").value = p.category || "higiene";
+    document.getElementById("prodPetType").value = (p.petType || ["caes", "gatos"]).join(",");
+    document.getElementById("prodVariants").value = (p.variants?.options || ["Padrão"]).join(", ");
+    document.getElementById("prodImage1").value = p.images[0] || "";
+    document.getElementById("prodImage2").value = p.images[1] || "";
+    document.getElementById("prodSupplierUrl").value = p.supplierInfo?.aliexpressUrl || "";
+    document.getElementById("prodDesc").value = p.shortDesc || "";
+
+    const btn = document.getElementById("btnSaveProduct");
+    if (btn) btn.textContent = "💾 Guardar Alterações no Produto";
+
+    switchAdminTab("add");
+    document.getElementById("addProductForm")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function deleteProduct(productId) {
+    const idx = window.CAOFRADE_PRODUCTS.findIndex((p) => p.id === productId);
+    if (idx === -1) return;
+    const removed = window.CAOFRADE_PRODUCTS.splice(idx, 1)[0];
+    saveCatalog();
+    renderAdminPanel();
+    showToast(`Produto "${removed.title}" removido da loja.`);
+  }
+
+  function resetProductForm() {
+    document.getElementById("addProductForm")?.reset();
+    document.getElementById("prodEditId").value = "";
+    const btn = document.getElementById("btnSaveProduct");
+    if (btn) btn.textContent = "✓ Publicar Produto na Loja";
+  }
+
+  function exportCatalogFile() {
+    const jsContent =
+      "// Catálogo Oficial Cãofrade (www.caofrade.pt)\nwindow.CAOFRADE_PRODUCTS = " +
+      JSON.stringify(window.CAOFRADE_PRODUCTS, null, 2) +
+      ";\n";
+    const blob = new Blob([jsContent], { type: "application/javascript;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "products.js";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showToast("Ficheiro products.js descarregado!");
+  }
+
+  function copyCustomerAddress(orderId) {
+    const o = state.orders.find((ord) => ord.id === orderId);
+    if (!o) return;
+    const formatted = `${o.customer}\n${o.address}\n${o.postalCode} ${o.city}\nPortugal\nTel: ${o.phone}`;
+    navigator.clipboard.writeText(formatted);
+    showToast(`Morada de ${o.customer} copiada! Já podes colar no AliExpress/DSers.`);
   }
 
   function copyCommTemplate(tplId) {
     const el = document.getElementById(`commTpl-${tplId}`);
     if (!el) return;
     navigator.clipboard.writeText(el.innerText.trim());
-    showToast("Texto da comunicação Cãofrade copiado para a área de transferência!");
-  }
-
-  // Dropshipping Admin & Supplier Panel
-  function openAdminModal() {
-    renderAdminPanel();
-    document.getElementById("adminModal").classList.add("open");
+    showToast("Texto da comunicação Cãofrade copiado!");
   }
 
   function renderAdminPanel() {
@@ -658,13 +914,44 @@
       products.reduce((acc, p) => acc + (p.price - p.supplierCost), 0) / products.length
     ).toFixed(2);
 
+    // Manage Products Table (Tab 1)
+    const manageBody = document.getElementById("adminManageProductsBody");
+    if (manageBody) {
+      manageBody.innerHTML = products
+        .map(
+          (p) => `
+        <tr>
+          <td>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <img src="${p.images[0]}" alt="" style="width:44px; height:44px; border-radius:8px; object-fit:contain; background:#fff; border:1px solid var(--border);" />
+              <div>
+                <strong>${p.title}</strong><br/>
+                <small style="color:var(--text-muted);">${p.subtitle}</small>
+              </div>
+            </div>
+          </td>
+          <td>${p.categoryLabel || p.category}</td>
+          <td>${formatEUR(p.supplierCost)}</td>
+          <td><strong>${formatEUR(p.price)}</strong></td>
+          <td>
+            <button class="supplier-link-btn" onclick="window.CaofradeApp.editProduct('${p.id}')">✏️ Editar</button>
+            <a href="${p.supplierInfo?.aliexpressUrl || '#'}" target="_blank" rel="noopener" class="supplier-link-btn" style="background:var(--secondary-light); color:var(--secondary);">Fornecedor ↗</a>
+            <button class="supplier-link-btn" style="background:#FEF2F2; color:#DC2626;" onclick="window.CaofradeApp.deleteProduct('${p.id}')">🗑️</button>
+          </td>
+        </tr>
+      `
+        )
+        .join("");
+    }
+
+    // Suppliers Table (Tab 4)
     const tbody = document.getElementById("adminSuppliersTableBody");
     if (tbody) {
       tbody.innerHTML = products
         .map((p) => {
           const profit = +(p.price - p.supplierCost).toFixed(2);
           const marginPct = Math.round((profit / p.price) * 100);
-          const zendropUrl = `https://app.zendrop.com/find-products?search=${encodeURIComponent(p.supplierInfo.zendropQuery)}`;
+          const zendropUrl = `https://app.zendrop.com/find-products?search=${encodeURIComponent(p.supplierInfo?.zendropQuery || p.title)}`;
           return `
           <tr>
             <td>
@@ -672,7 +959,7 @@
                 <img src="${p.images[0]}" alt="${p.title}" style="width:48px; height:48px; border-radius:8px; object-fit:contain; background:#fff; border:1px solid var(--border); padding:2px; flex-shrink:0;" />
                 <div>
                   <strong>${p.title}</strong><br/>
-                  <small style="color:var(--text-muted);">SKU: ${p.sku} • Peso: ${p.supplierInfo.weightGrams}g</small>
+                  <small style="color:var(--text-muted);">SKU: ${p.sku}</small>
                 </div>
               </div>
             </td>
@@ -682,15 +969,11 @@
               <strong style="color:var(--success);">+${formatEUR(profit)} (${marginPct}%)</strong>
             </td>
             <td style="max-width:250px; font-size:0.78rem; color:var(--text-body);">
-              "${p.supplierInfo.adHook}"
+              "${p.supplierInfo?.adHook || p.subtitle}"
             </td>
             <td>
-              <a href="${p.supplierInfo.aliexpressUrl}" target="_blank" rel="noopener" class="supplier-link-btn">AliExpress / DSers ↗</a>
+              <a href="${p.supplierInfo?.aliexpressUrl || '#'}" target="_blank" rel="noopener" class="supplier-link-btn">Comprar no AliExpress ↗</a>
               <a href="${zendropUrl}" target="_blank" rel="noopener" class="supplier-link-btn" style="background:var(--secondary-light); color:var(--secondary);">Zendrop ↗</a>
-              <button class="supplier-link-btn" style="background:var(--bg-soft); color:var(--text-dark);"
-                onclick="navigator.clipboard.writeText('${p.supplierInfo.searchQuery}'); window.CaofradeApp.showToast('Keywords de fornecedor copiadas!')">
-                Copiar Keywords
-              </button>
             </td>
           </tr>
         `;
@@ -698,6 +981,7 @@
         .join("");
     }
 
+    // Orders Table (Tab 3)
     const ordersBody = document.getElementById("adminOrdersTableBody");
     if (ordersBody) {
       ordersBody.innerHTML = state.orders
@@ -707,23 +991,35 @@
           return `
           <tr>
             <td><strong>#${o.id}</strong><br/><small>${o.date}</small></td>
-            <td>${o.customer}<br/><small>${o.postalCode} ${o.city} (${o.phone})</small></td>
+            <td>
+              <strong>${o.customer}</strong><br/>
+              <small>${o.address}, ${o.postalCode} ${o.city}<br/>Tel: ${o.phone}</small>
+            </td>
             <td>${o.items.map((i) => `${i.qty}x ${i.title} (${i.variant})`).join("<br/>")}</td>
             <td><strong>${formatEUR(o.total)}</strong><br/><small>${o.paymentMethod}</small></td>
             <td><strong style="color:var(--success);">+${formatEUR(netProfit)}</strong></td>
-            <td><span class="verified-pill">${o.status}</span></td>
+            <td>
+              <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCustomerAddress('${o.id}')">
+                📋 Copiar Morada p/ AliExpress
+              </button>
+            </td>
           </tr>
         `;
         })
         .join("");
     }
 
+    const totalProdEl = document.getElementById("adminStatTotalProducts");
     const avgMarginEl = document.getElementById("adminStatAvgMargin");
     const avgProfitEl = document.getElementById("adminStatAvgProfit");
     const totalOrdersEl = document.getElementById("adminStatTotalOrders");
+    const tabOrderCount = document.getElementById("adminTabOrderCount");
+
+    if (totalProdEl) totalProdEl.textContent = `${products.length} Artigos`;
     if (avgMarginEl) avgMarginEl.textContent = `${avgMarginPct}%`;
     if (avgProfitEl) avgProfitEl.textContent = `+${formatEUR(avgProfitEur)}`;
     if (totalOrdersEl) totalOrdersEl.textContent = state.orders.length;
+    if (tabOrderCount) tabOrderCount.textContent = state.orders.length;
 
     updateProfitSimulator();
   }
@@ -859,6 +1155,12 @@
         btn.parentElement.classList.toggle("open");
       });
     });
+
+    // Secret URL shortcut: www.caofrade.pt/?admin opens the owner login modal automatically
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("admin") || window.location.hash === "#admin") {
+      requestAdminAccess();
+    }
   });
 
   window.CaofradeApp = {
@@ -876,9 +1178,18 @@
     submitCheckout,
     openTrackingModal,
     lookupOrder,
-    openCommsModal,
-    copyCommTemplate,
+    requestAdminAccess,
+    verifyAdminLogin,
+    logoutAdmin,
+    switchAdminTab,
     openAdminModal,
+    handleSaveProduct,
+    editProduct,
+    deleteProduct,
+    resetProductForm,
+    exportCatalogFile,
+    copyCustomerAddress,
+    copyCommTemplate,
     updateProfitSimulator,
     exportOrdersCSV,
     setCategory,

@@ -21,9 +21,9 @@
     🇵🇹 <strong>PORTES GRÁTIS</strong> para todo Portugal em compras acima de 39,90 € • Usa o código <span class="highlight">CAOFRADE10</span> para 10% Extra • Pagamento <strong>MB WAY & Multibanco</strong>
   </div>
 
-  <!-- Cabeçalho Principal Organizado em 2 Níveis -->
+  <!-- Cabeçalho Principal (100% Focado no Cliente Final — Sem Botões de Admin Públicos) -->
   <header class="site-header">
-    <!-- Linha 1: Marca + Pesquisa + Botões de Ação -->
+    <!-- Linha 1: Marca + Pesquisa + Ações de Cliente -->
     <div class="container header-top-row">
       <a href="#" class="brand-logo" onclick="window.CaofradeApp.resetFilters()">
         <img src="assets/logo-caofrade.jpg" alt="Logótipo Oficial Cãofrade" class="brand-avatar" />
@@ -43,19 +43,11 @@
 
       <div class="header-actions">
         <button class="btn-header-link" onclick="window.CaofradeApp.openTrackingModal()" title="Rastrear Encomenda">
-          📦 Rastrear
-        </button>
-
-        <button class="btn-comms-mode" onclick="window.CaofradeApp.openCommsModal()" title="Ver Kit de Comunicações, E-mails e Redes Sociais com a Marca Cãofrade">
-          📣 Comunicações
-        </button>
-
-        <button class="btn-admin-mode" onclick="window.CaofradeApp.openAdminModal()" title="Abrir Painel de Fornecedores e Margens Dropshipping">
-          📊 Dropshipping
+          📦 Rastrear Encomenda
         </button>
 
         <button class="btn-cart" onclick="window.CaofradeApp.openCartDrawer()">
-          <span>🛒 Cesto</span>
+          <span>🛒 O Meu Cesto</span>
           <span class="cart-count" id="headerCartCount">0</span>
         </button>
       </div>
@@ -208,13 +200,13 @@
       <div class="section-header">
         <div>
           <h2>Catálogo Oficial da Confraria 🐾</h2>
-          <p>Imagens reais dos artigos selecionados com maior procura em Portugal (<span id="catalogCount">12 artigos</span>)</p>
+          <p>Artigos selecionados com maior procura em Portugal (<span id="catalogCount">12 artigos</span>)</p>
         </div>
       </div>
 
       <div class="filter-bar">
         <div class="category-pills">
-          <button class="filter-pill active" data-cat="todos" onclick="window.CaofradeApp.setCategory('todos', this)">Todos (12)</button>
+          <button class="filter-pill active" data-cat="todos" onclick="window.CaofradeApp.setCategory('todos', this)">Todos</button>
           <button class="filter-pill" data-cat="higiene" onclick="window.CaofradeApp.setCategory('higiene', this)">✨ Higiene & Saúde</button>
           <button class="filter-pill" data-cat="passeio" onclick="window.CaofradeApp.setCategory('passeio', this)">🦮 Passeio & Viagem</button>
           <button class="filter-pill" data-cat="brinquedos" onclick="window.CaofradeApp.setCategory('brinquedos', this)">🧠 Treino & Tecnologia</button>
@@ -406,7 +398,6 @@
           <h4>Apoio ao Cliente</h4>
           <ul>
             <li><button onclick="window.CaofradeApp.openTrackingModal()">📦 Rastrear a Minha Encomenda</button></li>
-            <li><button onclick="window.CaofradeApp.openCommsModal()">📣 Kit de Comunicações da Marca</button></li>
             <li><button onclick="document.getElementById('legalModal').classList.add('open')">Política de Envios & Devoluções (14 Dias)</button></li>
             <li><button onclick="document.getElementById('legalModal').classList.add('open')">Termos e Condições & Privacidade (RGPD)</button></li>
             <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações Eletrónico ↗</a></li>
@@ -430,7 +421,10 @@
 
       <div class="footer-bottom">
         <span>© 2026 Cãofrade.pt — Todos os direitos reservados.</span>
-        <span>Identidade Oficial Cãofrade® • Portugal</span>
+        <span style="display:flex; align-items:center; gap:14px;">
+          <span>Identidade Oficial Cãofrade® • Portugal</span>
+          <button onclick="window.CaofradeApp.requestAdminAccess()" style="color:#6E5A4F; font-size:0.75rem; opacity:0.6;" title="Acesso Reservado à Gerência">🔒 Gerência</button>
+        </span>
       </div>
     </div>
   </footer>
@@ -495,7 +489,7 @@
     </div>
   </div>
 
-  <!-- Modal de Checkout Português (MB WAY / Multibanco / Cartão) com Selo Cãofrade -->
+  <!-- Modal de Checkout Português (MB WAY / Multibanco / Cartão) -->
   <div class="overlay-backdrop" id="checkoutModal">
     <div class="modal-card" style="max-width:680px;">
       <button class="modal-close" onclick="window.CaofradeApp.closeModal('checkoutModal')">✕</button>
@@ -609,204 +603,321 @@
     </div>
   </div>
 
-  <!-- MODAL: KIT DE COMUNICAÇÕES OFICIAIS DA MARCA CÃOFRADE (E-MAILS, WHATSAPP, EMBALAGEM & ANÚNCIOS) -->
-  <div class="overlay-backdrop" id="commsModal">
-    <div class="modal-card admin-panel-modal">
-      <button class="modal-close" onclick="window.CaofradeApp.closeModal('commsModal')">✕</button>
-
-      <div style="display:flex; align-items:center; gap:16px; margin-bottom:12px;">
-        <img src="assets/logo-caofrade.jpg" alt="Cãofrade Marca" style="width:68px; height:68px; border-radius:50%; border:3px solid var(--friar-gold); box-shadow:var(--shadow-sm);" />
-        <div>
-          <span class="hero-pill" style="margin-bottom:4px;">📣 IDENTIDADE & COMUNICAÇÃO OFICIAL</span>
-          <h2 style="font-size:1.55rem; font-weight:800; color:var(--friar-brown);">Central de Comunicações da Marca Cãofrade®</h2>
-          <p style="font-size:0.86rem; color:var(--text-body);">Templates prontos a usar com a imagem oficial do <strong>Cão Frade</strong> para E-mails Transacionais, WhatsApp, Cartão de Encomenda (Zendrop) e Anúncios.</p>
-        </div>
-      </div>
-
-      <div class="comms-grid">
-        <!-- 1. E-mail Confirmação de Encomenda -->
-        <div class="comm-card">
-          <div class="comm-card-header">
-            <div class="comm-brand">
-              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
-              <span>1. E-mail: Confirmação de Encomenda</span>
-            </div>
-            <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('emailConfirm')">Copiar E-mail</button>
-          </div>
-          <div class="comm-card-body" id="commTpl-emailConfirm">
-            <div style="text-align:center; padding-bottom:12px; margin-bottom:12px; border-bottom:1px solid var(--border);">
-              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:60px; height:60px; border-radius:50%; margin:0 auto 6px; border:2px solid var(--friar-gold);" />
-              <strong style="color:var(--friar-brown); font-size:1rem;">Bem-vindo à Ordem Cãofrade®! 🐾</strong>
-            </div>
-            <p style="margin-bottom:8px;">Olá <strong>[Nome do Cliente]</strong>,</p>
-            <p style="margin-bottom:8px;">A tua encomenda <strong>#[Nº Encomenda]</strong> foi recebida com grande alegria na nossa Confraria! O Mestre Cãofrade já deu a bênção para que o teu pedido seja preparado e expedido nas próximas 24h.</p>
-            <p style="margin-bottom:8px;">📦 <strong>Envio Expresso IOSS (Sem Alfândega):</strong> Assim que o pacote sair do centro logístico, receberás o teu código de rastreio CTT Expresso por e-mail e SMS.</p>
-            <p style="font-size:0.8rem; color:var(--text-muted);">Com um ladrar fraterno,<br/><strong>Equipa Cãofrade.pt — A Confraria dos Melhores Amigos</strong></p>
-          </div>
-        </div>
-
-        <!-- 2. WhatsApp / SMS de Envio e Rastreio -->
-        <div class="comm-card">
-          <div class="comm-card-header">
-            <div class="comm-brand">
-              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
-              <span>2. WhatsApp / SMS: Encomenda a Caminho</span>
-            </div>
-            <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('whatsappTrack')">Copiar Mensagem</button>
-          </div>
-          <div class="comm-card-body" id="commTpl-whatsappTrack">
-            <p style="margin-bottom:8px;">🐾 <strong>Novidades da Confraria Cãofrade.pt!</strong></p>
-            <p style="margin-bottom:8px;">Olá <strong>[Nome]</strong>! O mimo do teu melhor amigo (Encomenda <strong>#[Nº Encomenda]</strong>) já foi despachado e está a caminho de Portugal! 🇵🇹🚚</p>
-            <p style="margin-bottom:8px;">🔍 <strong>Código de Seguimento:</strong> <code>[Código Rastreio]</code><br/>🔗 Podes acompanhar em tempo real em: <strong>https://www.caofrade.pt</strong> (secção Rastrear Encomenda).</p>
-            <p style="font-size:0.8rem; color:var(--text-muted);">Previsão de entrega na tua morada: 7 a 10 dias úteis. Qualquer dúvida, responde a esta mensagem!</p>
-          </div>
-        </div>
-
-        <!-- 3. Cartão de Agradecimento (Packaging Insert para Zendrop) -->
-        <div class="comm-card">
-          <div class="comm-card-header">
-            <div class="comm-brand">
-              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
-              <span>3. Cartão de Agradecimento (Caixa Zendrop)</span>
-            </div>
-            <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('thankYouCard')">Copiar Texto</button>
-          </div>
-          <div class="comm-card-body" id="commTpl-thankYouCard" style="background:linear-gradient(135deg, #4A3223, #2B1C13); color:#fff;">
-            <div style="display:flex; align-items:center; gap:14px; margin-bottom:10px;">
-              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:64px; height:64px; border-radius:50%; border:2px solid var(--friar-gold);" />
-              <div>
-                <h4 style="color:var(--friar-gold); font-size:1.05rem;">O Teu Patudo Agora é um Cãofrade Oficial!</h4>
-                <small style="color:#F3ECE0;">www.caofrade.pt • Portugal</small>
-              </div>
-            </div>
-            <p style="font-size:0.84rem; color:#F3ECE0; margin-bottom:10px;">
-              Obrigado por confiares na nossa Confraria. Esperamos que este artigo traga ainda mais saúde, conforto e rabos a abanar lá em casa!
-            </p>
-            <div style="background:rgba(236,198,75,0.18); border:1px dashed var(--friar-gold); padding:10px; border-radius:8px; text-align:center;">
-              <strong style="color:var(--friar-gold);">🎁 OFERTA DE IRMÃO CÃOFRADE: 15% DESCONTO</strong><br/>
-              <span style="font-size:0.8rem;">Usa o código <strong>BEMVINDO15</strong> na tua próxima visita a www.caofrade.pt</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Anúncio Redes Sociais (Instagram / TikTok / Meta Ads) -->
-        <div class="comm-card">
-          <div class="comm-card-header">
-            <div class="comm-brand">
-              <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
-              <span>4. Copy Oficial Anúncio Meta / TikTok Ads</span>
-            </div>
-            <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('socialAd')">Copiar Copy</button>
-          </div>
-          <div class="comm-card-body" id="commTpl-socialAd">
-            <p style="margin-bottom:8px;">🐶 <strong>O Mestre Cãofrade decreta: Acabaram-se os pelos no sofá e na roupa preta!</strong></p>
-            <p style="margin-bottom:8px;">A nova <strong>Escova a Vapor 3-em-1 da Cãofrade.pt</strong> usa micro-nebulização fria para hidratar o pelo do teu cão ou gato e retirar até 90% do pelo morto numa única passagem — sem puxar e sem estática! ✨</p>
-            <p style="margin-bottom:8px;">✅ Recomendado para Cães e Gatos<br/>✅ Portes Grátis + 10% Extra com o código <strong>CAOFRADE10</strong><br/>✅ Pagamento seguro por MB WAY e Multibanco</p>
-            <p style="font-weight:800; color:var(--primary);">👉 Encomenda já em www.caofrade.pt</p>
-          </div>
-        </div>
-      </div>
+  <!-- MODAL DE LOGIN DE PROPRIETÁRIO (PROTEÇÃO POR PASSWORD) -->
+  <div class="overlay-backdrop" id="adminLoginModal">
+    <div class="modal-card" style="max-width:440px; text-align:center;">
+      <button class="modal-close" onclick="window.CaofradeApp.closeModal('adminLoginModal')">✕</button>
+      <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:72px; height:72px; border-radius:50%; margin:0 auto 12px; border:3px solid var(--friar-gold);" />
+      <h3 style="font-size:1.35rem; font-weight:800; color:var(--friar-brown); margin-bottom:6px;">🔒 Área Reservada à Gerência</h3>
+      <p style="font-size:0.86rem; color:var(--text-body); margin-bottom:18px;">
+        Introduz a chave de proprietário para acederes ao Gestor de Produtos, Encomendas e Fornecedores DSers / AliExpress.
+      </p>
+      <form onsubmit="window.CaofradeApp.verifyAdminLogin(event)">
+        <input type="password" id="adminPassInput" required placeholder="Palavra-passe de proprietário"
+          style="width:100%; padding:12px 14px; border-radius:10px; border:1.5px solid var(--border); font-size:0.95rem; margin-bottom:12px; text-align:center;" />
+        <button type="submit" class="btn-primary" style="width:100%;">Entrar no Backoffice →</button>
+      </form>
     </div>
   </div>
 
-  <!-- PAINEL DROPSHIPPING (MODO PROPRIETÁRIO / FORNECEDORES & MARGENS) -->
+  <!-- BACKOFFICE PRIVADO CÃOFRADE (SÓ ACESSÍVEL APÓS PASSWORD) -->
   <div class="overlay-backdrop" id="adminModal">
     <div class="modal-card admin-panel-modal">
       <button class="modal-close" onclick="window.CaofradeApp.closeModal('adminModal')">✕</button>
 
-      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid var(--border);">
         <div style="display:flex; align-items:center; gap:14px;">
-          <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:56px; height:56px; border-radius:50%; border:2px solid var(--friar-gold);" />
+          <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:54px; height:54px; border-radius:50%; border:2px solid var(--friar-gold);" />
           <div>
-            <span class="hero-pill" style="margin-bottom:4px;">🚀 MODO PROPRIETÁRIO • GESTÃO DE DROPSHIPPING</span>
-            <h2 style="font-size:1.5rem; font-weight:800;">Central de Fornecedores, Margens & Encomendas — Cãofrade.pt</h2>
+            <span class="hero-pill" style="margin-bottom:4px;">🔒 BACKOFFICE PRIVADO • PROPRIETÁRIO</span>
+            <h2 style="font-size:1.45rem; font-weight:800;">Gestão de Loja, Produtos & DSers — Cãofrade.pt</h2>
           </div>
         </div>
-        <button class="btn-primary" onclick="window.CaofradeApp.exportOrdersCSV()" style="padding:11px 18px; font-size:0.86rem;">
-          ⬇️ Exportar Encomendas CSV (DSers / Zendrop)
-        </button>
-      </div>
-
-      <div class="admin-stats-grid">
-        <div class="admin-stat-card">
-          <small>Produtos Originais Ativos</small>
-          <strong>12 Artigos</strong>
-        </div>
-        <div class="admin-stat-card">
-          <small>Margem Bruta Média</small>
-          <strong id="adminStatAvgMargin" style="color:var(--success);">77%</strong>
-        </div>
-        <div class="admin-stat-card">
-          <small>Lucro Bruto Médio / Unid.</small>
-          <strong id="adminStatAvgProfit" style="color:var(--primary);">+24,80 €</strong>
-        </div>
-        <div class="admin-stat-card">
-          <small>Encomendas Registadas</small>
-          <strong id="adminStatTotalOrders">1</strong>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn-secondary" style="padding:9px 14px; font-size:0.82rem;" onclick="window.CaofradeApp.logoutAdmin()">
+            🚪 Sair do Modo Admin
+          </button>
         </div>
       </div>
 
-      <!-- Simulador de Lucro Mensal -->
-      <div style="background:var(--bg-soft); padding:18px 20px; border-radius:14px; border:1px solid var(--border); margin-bottom:24px;">
-        <h4 style="font-size:0.95rem; font-weight:800; margin-bottom:12px;">📈 Simulador de Rentabilidade Mensal (Meta Ads / TikTok Ads em Portugal)</h4>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; align-items:center;">
-          <div>
-            <label style="font-size:0.78rem; font-weight:700;">Vendas Diárias: <span id="simLabelDaily">8 encomendas/dia (240/mês)</span></label>
-            <input type="range" id="simDailyOrders" min="1" max="40" value="8" style="width:100%; margin-top:6px;" oninput="window.CaofradeApp.updateProfitSimulator()" />
+      <!-- Navegação por Abas no Backoffice -->
+      <div class="category-pills" style="margin-bottom:20px; border-bottom:1px solid var(--border); padding-bottom:12px;">
+        <button class="filter-pill active" id="adminTabBtn-add" onclick="window.CaofradeApp.switchAdminTab('add')">➕ Adicionar / Editar Produtos</button>
+        <button class="filter-pill" id="adminTabBtn-dsers" onclick="window.CaofradeApp.switchAdminTab('dsers')">🎓 Como Usar DSers & AliExpress</button>
+        <button class="filter-pill" id="adminTabBtn-orders" onclick="window.CaofradeApp.switchAdminTab('orders')">📦 Encomendas & Envios (<span id="adminTabOrderCount">1</span>)</button>
+        <button class="filter-pill" id="adminTabBtn-catalog" onclick="window.CaofradeApp.switchAdminTab('catalog')">🔗 Fornecedores & Margens</button>
+        <button class="filter-pill" id="adminTabBtn-comms" onclick="window.CaofradeApp.switchAdminTab('comms')">📣 Kit Comunicações</button>
+      </div>
+
+      <!-- ABA 1: ADICIONAR / IMPORTAR NOVOS PRODUTOS NA LOJA -->
+      <div id="adminTab-add" class="admin-tab-pane">
+        <div style="background:var(--friar-gold-light); border:1.5px solid var(--friar-gold); border-radius:14px; padding:18px 20px; margin-bottom:22px;">
+          <h3 style="font-size:1.15rem; font-weight:800; color:var(--friar-brown); margin-bottom:6px;">➕ Adicionar ou Importar Produto do AliExpress / DSers para a Loja</h3>
+          <p style="font-size:0.86rem; color:var(--text-body); margin-bottom:14px;">
+            Encontraste um produto novo no AliExpress ou DSers? Preenche os dados abaixo (podes colar o link das imagens diretamente do AliExpress) e clica em <strong>Publicar Produto na Loja</strong>.
+          </p>
+
+          <form id="addProductForm" onsubmit="window.CaofradeApp.handleSaveProduct(event)">
+            <input type="hidden" id="prodEditId" value="" />
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Nome do Produto na Loja (em Português) *</label>
+                <input type="text" id="prodTitle" required placeholder="Ex: Comedouro Automático Wi-Fi SmartFeed™" />
+              </div>
+              <div class="form-group">
+                <label>Subtítulo Curto (Benefício Principal) *</label>
+                <input type="text" id="prodSubtitle" required placeholder="Ex: Alimenta o teu cão ou gato à hora certa pelo telemóvel" />
+              </div>
+              <div class="form-group">
+                <label>Preço de Venda na Loja (PVP €) *</label>
+                <input type="number" step="0.01" id="prodPrice" required placeholder="39.90" />
+              </div>
+              <div class="form-group">
+                <label>Preço Antigo Riscado (€) *</label>
+                <input type="number" step="0.01" id="prodComparePrice" required placeholder="59.90" />
+              </div>
+              <div class="form-group">
+                <label>Custo no Fornecedor AliExpress/DSers (€) *</label>
+                <input type="number" step="0.01" id="prodCost" required placeholder="11.50" />
+              </div>
+              <div class="form-group">
+                <label>Categoria na Loja *</label>
+                <select id="prodCategory">
+                  <option value="higiene">✨ Higiene & Saúde</option>
+                  <option value="passeio">🦮 Passeio & Viagem</option>
+                  <option value="brinquedos">🧠 Treino & Tecnologia</option>
+                  <option value="conforto">💤 Conforto & Sono</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Para que Animais? *</label>
+                <select id="prodPetType">
+                  <option value="caes,gatos">🐕🐱 Cães e Gatos</option>
+                  <option value="caes">🐕 Apenas Cães</option>
+                  <option value="gatos">🐱 Apenas Gatos</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Variantes (separadas por vírgula) *</label>
+                <input type="text" id="prodVariants" required placeholder="Ex: Branco, Preto, Verde" value="Modelo Padrão" />
+              </div>
+              <div class="form-group full">
+                <label>URL da Imagem Principal do Produto (Link direto da foto no AliExpress / DSers / Web) *</label>
+                <input type="url" id="prodImage1" required placeholder="https://ae01.alicdn.com/kf/..." />
+              </div>
+              <div class="form-group">
+                <label>URL da 2ª Imagem (Opcional)</label>
+                <input type="url" id="prodImage2" placeholder="https://..." />
+              </div>
+              <div class="form-group">
+                <label>URL do Fornecedor no AliExpress / DSers *</label>
+                <input type="url" id="prodSupplierUrl" required placeholder="https://pt.aliexpress.com/item/..." />
+              </div>
+              <div class="form-group full">
+                <label>Descrição Detalhada do Produto *</label>
+                <input type="text" id="prodDesc" required placeholder="Descreve como funciona o produto e porque é que os donos vão adorar..." />
+              </div>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <button type="submit" class="btn-primary" id="btnSaveProduct">
+                ✓ Publicar Produto na Loja
+              </button>
+              <button type="button" class="btn-secondary" onclick="window.CaofradeApp.resetProductForm()">
+                Limpar Formulário
+              </button>
+              <button type="button" class="btn-secondary" onclick="window.CaofradeApp.exportCatalogFile()" title="Descarrega o ficheiro js/products.js atualizado com os teus novos produtos">
+                💾 Descarregar Catálogo Atualizado (products.js)
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <h4 style="font-size:1rem; font-weight:800; margin-bottom:10px;">📋 Produtos Atualmente na Tua Loja (Clica em Editar ou Eliminar)</h4>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Foto & Produto</th>
+                <th>Categoria</th>
+                <th>Custo</th>
+                <th>PVP Loja</th>
+                <th>Ações Rápidas</th>
+              </tr>
+            </thead>
+            <tbody id="adminManageProductsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ABA 2: GUIA PASSO A PASSO DSERS & ALIEXPRESS SEM MENSALIDADES SHOPIFY -->
+      <div id="adminTab-dsers" class="admin-tab-pane" style="display:none;">
+        <div style="background:var(--bg-soft); padding:22px; border-radius:16px; border:1px solid var(--border);">
+          <h3 style="font-size:1.25rem; font-weight:800; color:var(--friar-brown); margin-bottom:10px;">
+            🎓 Porque é que tiveste dificuldades no DSers e como funciona na tua loja?
+          </h3>
+          <p style="font-size:0.92rem; color:var(--text-body); margin-bottom:16px;">
+            O <strong>DSers</strong> foi criado originalmente para lojas pagas da <em>Shopify</em> (que custam 36€/mês + comissões). Como a tua loja <strong><code>www.caofrade.pt</code></strong> é uma Web App independente alojada gratuitamente na Vercel, <strong>não precisas do botão "Push to Shopify" do DSers!</strong> Funciona de forma muito mais direta e sem mensalidades:
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-bottom:20px;">
+            <div style="background:#fff; padding:18px; border-radius:14px; border:1px solid var(--border);">
+              <strong style="color:var(--primary); font-size:0.95rem;">PASSO 1: Os 12 Produtos Já Estão na Loja!</strong>
+              <p style="font-size:0.85rem; color:var(--text-body); margin-top:6px;">
+                Os 12 produtos vencedores (Escova a Vapor, Fonte Sem Fios, Botões Cão Falante, Cama Anti-Ansiedade, etc.) <strong>já estão carregados e prontos a vender</strong> em <code>www.caofrade.pt</code>. Não precisas de os importar do DSers.
+              </p>
+            </div>
+
+            <div style="background:#fff; padding:18px; border-radius:14px; border:1px solid var(--border);">
+              <strong style="color:var(--primary); font-size:0.95rem;">PASSO 2: Como Adicionar um 13º Produto Novo?</strong>
+              <p style="font-size:0.85rem; color:var(--text-body); margin-top:6px;">
+                1. Abre o site do <strong>AliExpress</strong> (ou a pesquisa do DSers).<br/>
+                2. Escolhe o produto, clica com o botão direito na foto do produto → <em>"Copiar endereço da imagem"</em>.<br/>
+                3. Vai à aba <strong>"➕ Adicionar / Editar Produtos"</strong> aqui no teu Backoffice e cola o link da foto, o link do fornecedor e o preço!
+              </p>
+            </div>
+
+            <div style="background:#fff; padding:18px; border-radius:14px; border:1px solid var(--border);">
+              <strong style="color:var(--primary); font-size:0.95rem;">PASSO 3: Quando um Cliente Compra na Tua Loja</strong>
+              <p style="font-size:0.85rem; color:var(--text-body); margin-top:6px;">
+                1. O cliente paga-te na loja (ex: <strong>24,90 €</strong> por MB WAY / Cartão).<br/>
+                2. Vens aqui à aba <strong>"📦 Encomendas & Envios"</strong> e clicas em <strong>"Copiar Morada do Cliente"</strong>.<br/>
+                3. Clicas no botão <strong>"AliExpress / DSers ↗"</strong> do produto, colas a morada do teu cliente português no AliExpress e pagas apenas os <strong>4,20 €</strong> ao fornecedor!
+              </p>
+            </div>
           </div>
-          <div>
-            <label style="font-size:0.78rem; font-weight:700;">Ticket Médio (AOV €):</label>
-            <input type="number" id="simAvgTicket" value="42" min="20" max="120" style="width:100%; padding:7px 10px; border-radius:8px; border:1px solid var(--border); margin-top:4px; font-weight:700;" oninput="window.CaofradeApp.updateProfitSimulator()" />
-          </div>
-          <div>
-            <label style="font-size:0.78rem; font-weight:700;">Custo por Compra Anúncios (CPA €):</label>
-            <input type="number" id="simCpaAds" value="9" min="3" max="30" style="width:100%; padding:7px 10px; border-radius:8px; border:1px solid var(--border); margin-top:4px; font-weight:700;" oninput="window.CaofradeApp.updateProfitSimulator()" />
-          </div>
-          <div style="background:#fff; padding:12px; border-radius:10px; border:1px solid var(--border);">
-            <div style="font-size:0.76rem; color:var(--text-muted);">Faturação Mensal Estimada: <strong id="simOutRevenue" style="color:var(--text-dark);">10.080,00 €</strong></div>
-            <div style="font-size:0.88rem; font-weight:800; margin-top:4px;">Lucro Líquido Mensal: <span id="simOutNetProfit" style="color:var(--success); font-size:1.15rem;">5.318,00 €</span></div>
+
+          <div style="background:var(--success-bg); color:#14532D; padding:14px 18px; border-radius:12px; font-size:0.86rem;">
+            💡 <strong>Dica Pro:</strong> Se quiseres que um produto novo que adicionaste fique gravado para sempre no GitHub/Vercel para todos os dispositivos, basta clicares em <strong>"💾 Descarregar Catálogo Atualizado (products.js)"</strong> ou pedires-me aqui no chat: <em>"Adiciona este produto do AliExpress: [link]"</em> que eu adiciono e faço o envio automático para a Vercel!
           </div>
         </div>
       </div>
 
-      <!-- Tabela de Encomendas para Processar -->
-      <h4 style="font-size:1rem; font-weight:800; margin-bottom:6px;">📦 Últimas Encomendas de Clientes (Prontas a enviar no DSers / Zendrop)</h4>
-      <div class="admin-table-wrap" style="margin-bottom:24px;">
-        <table class="admin-table">
-          <thead>
-            <tr>
-              <th>Encomenda</th>
-              <th>Cliente & Morada PT</th>
-              <th>Artigos Comprados</th>
-              <th>Total Pago</th>
-              <th>Lucro Bruto</th>
-              <th>Estado</th>
-            </tr>
-          </thead>
-          <tbody id="adminOrdersTableBody"></tbody>
-        </table>
+      <!-- ABA 3: ENCOMENDAS DE CLIENTES & CUMPRIMENTO -->
+      <div id="adminTab-orders" class="admin-tab-pane" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+          <div>
+            <h4 style="font-size:1.05rem; font-weight:800;">📦 Encomendas de Clientes (Prontas a Expedir)</h4>
+            <p style="font-size:0.82rem; color:var(--text-muted);">Copia a morada do cliente com 1 clique para colar no AliExpress/DSers ou exporta o ficheiro CSV.</p>
+          </div>
+          <button class="btn-primary" onclick="window.CaofradeApp.exportOrdersCSV()" style="padding:10px 16px; font-size:0.84rem;">
+            ⬇️ Exportar Encomendas CSV (DSers / Zendrop)
+          </button>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Encomenda</th>
+                <th>Cliente & Morada PT</th>
+                <th>Artigos Comprados</th>
+                <th>Total Pago</th>
+                <th>Lucro Bruto</th>
+                <th>Ação de Envio</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersTableBody"></tbody>
+          </table>
+        </div>
       </div>
 
-      <!-- Tabela de Produtos e Links Diretos de Fornecedores -->
-      <h4 style="font-size:1rem; font-weight:800; margin-bottom:6px;">🔗 Catálogo de Produtos Originais, Custos de Sourcing e Links Diretos</h4>
-      <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:8px;">
-        Clica em <strong>AliExpress / DSers</strong> ou <strong>Zendrop</strong> para abrir diretamente os fornecedores com envio rápido (7–12 dias IOSS) para Portugal.
-      </p>
-      <div class="admin-table-wrap">
-        <table class="admin-table">
-          <thead>
-            <tr>
-              <th>Foto & Artigo</th>
-              <th>Custo Fornecedor</th>
-              <th>PVP Loja</th>
-              <th>Margem Bruta</th>
-              <th>Ângulo Criativo (TikTok / Reels)</th>
-              <th>Acesso Direto Fornecedores</th>
-            </tr>
-          </thead>
-          <tbody id="adminSuppliersTableBody"></tbody>
-        </table>
+      <!-- ABA 4: TABELA DE FORNECEDORES, MARGENS E SIMULADOR -->
+      <div id="adminTab-catalog" class="admin-tab-pane" style="display:none;">
+        <div class="admin-stats-grid" style="margin-top:0;">
+          <div class="admin-stat-card">
+            <small>Produtos Originais Ativos</small>
+            <strong id="adminStatTotalProducts">12 Artigos</strong>
+          </div>
+          <div class="admin-stat-card">
+            <small>Margem Bruta Média</small>
+            <strong id="adminStatAvgMargin" style="color:var(--success);">77%</strong>
+          </div>
+          <div class="admin-stat-card">
+            <small>Lucro Bruto Médio / Unid.</small>
+            <strong id="adminStatAvgProfit" style="color:var(--primary);">+24,80 €</strong>
+          </div>
+          <div class="admin-stat-card">
+            <small>Encomendas Registadas</small>
+            <strong id="adminStatTotalOrders">1</strong>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-soft); padding:18px 20px; border-radius:14px; border:1px solid var(--border); margin-bottom:20px;">
+          <h4 style="font-size:0.95rem; font-weight:800; margin-bottom:12px;">📈 Simulador de Rentabilidade Mensal (Meta Ads / TikTok Ads em Portugal)</h4>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; align-items:center;">
+            <div>
+              <label style="font-size:0.78rem; font-weight:700;">Vendas Diárias: <span id="simLabelDaily">8 encomendas/dia (240/mês)</span></label>
+              <input type="range" id="simDailyOrders" min="1" max="40" value="8" style="width:100%; margin-top:6px;" oninput="window.CaofradeApp.updateProfitSimulator()" />
+            </div>
+            <div>
+              <label style="font-size:0.78rem; font-weight:700;">Ticket Médio (AOV €):</label>
+              <input type="number" id="simAvgTicket" value="42" min="20" max="120" style="width:100%; padding:7px 10px; border-radius:8px; border:1px solid var(--border); margin-top:4px; font-weight:700;" oninput="window.CaofradeApp.updateProfitSimulator()" />
+            </div>
+            <div>
+              <label style="font-size:0.78rem; font-weight:700;">Custo por Compra Anúncios (CPA €):</label>
+              <input type="number" id="simCpaAds" value="9" min="3" max="30" style="width:100%; padding:7px 10px; border-radius:8px; border:1px solid var(--border); margin-top:4px; font-weight:700;" oninput="window.CaofradeApp.updateProfitSimulator()" />
+            </div>
+            <div style="background:#fff; padding:12px; border-radius:10px; border:1px solid var(--border);">
+              <div style="font-size:0.76rem; color:var(--text-muted);">Faturação Mensal Estimada: <strong id="simOutRevenue" style="color:var(--text-dark);">10.080,00 €</strong></div>
+              <div style="font-size:0.88rem; font-weight:800; margin-top:4px;">Lucro Líquido Mensal: <span id="simOutNetProfit" style="color:var(--success); font-size:1.15rem;">5.318,00 €</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Foto & Artigo</th>
+                <th>Custo Fornecedor</th>
+                <th>PVP Loja</th>
+                <th>Margem Bruta</th>
+                <th>Ângulo Criativo (TikTok / Reels)</th>
+                <th>Links Diretos de Compra no Fornecedor</th>
+              </tr>
+            </thead>
+            <tbody id="adminSuppliersTableBody"></tbody>
+          </table>
+        </div>
       </div>
+
+      <!-- ABA 5: KIT DE COMUNICAÇÕES OFICIAIS DA MARCA (AGORA 100% PRIVADO) -->
+      <div id="adminTab-comms" class="admin-tab-pane" style="display:none;">
+        <div class="comms-grid" style="margin-top:0;">
+          <div class="comm-card">
+            <div class="comm-card-header">
+              <div class="comm-brand">
+                <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
+                <span>1. E-mail: Confirmação de Encomenda</span>
+              </div>
+              <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('emailConfirm')">Copiar E-mail</button>
+            </div>
+            <div class="comm-card-body" id="commTpl-emailConfirm">
+              <p style="margin-bottom:8px;">Olá <strong>[Nome do Cliente]</strong>,</p>
+              <p style="margin-bottom:8px;">A tua encomenda <strong>#[Nº Encomenda]</strong> foi recebida com grande alegria na nossa Confraria! O Mestre Cãofrade já deu a bênção para que o teu pedido seja preparado e expedido nas próximas 24h.</p>
+              <p style="margin-bottom:8px;">📦 <strong>Envio Expresso IOSS (Sem Alfândega):</strong> Assim que o pacote sair do centro logístico, receberás o teu código de rastreio CTT Expresso por e-mail e SMS.</p>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Com um ladrar fraterno,<br/><strong>Equipa Cãofrade.pt — A Confraria dos Melhores Amigos</strong></p>
+            </div>
+          </div>
+
+          <div class="comm-card">
+            <div class="comm-card-header">
+              <div class="comm-brand">
+                <img src="assets/logo-caofrade.jpg" alt="Cãofrade" />
+                <span>2. WhatsApp / SMS: Encomenda a Caminho</span>
+              </div>
+              <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCommTemplate('whatsappTrack')">Copiar Mensagem</button>
+            </div>
+            <div class="comm-card-body" id="commTpl-whatsappTrack">
+              <p style="margin-bottom:8px;">🐾 <strong>Novidades da Confraria Cãofrade.pt!</strong></p>
+              <p style="margin-bottom:8px;">Olá <strong>[Nome]</strong>! O mimo do teu melhor amigo (Encomenda <strong>#[Nº Encomenda]</strong>) já foi despachado e está a caminho de Portugal! 🇵🇹🚚</p>
+              <p style="margin-bottom:8px;">🔍 <strong>Código de Seguimento:</strong> <code>[Código Rastreio]</code><br/>🔗 Acompanha em: <strong>https://www.caofrade.pt</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
