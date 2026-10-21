@@ -6,35 +6,22 @@
   const STANDARD_SHIPPING_COST = 3.90;
   const ADMIN_SECRET_PASS = "caofrade2026";
 
-  // Load saved custom catalog if modified in Backoffice, and sync new products + direct AliExpress item URLs
+  // Purge legacy demo catalog cache and load verified AliExpress catalog (v4)
+  localStorage.removeItem("caofrade_catalog_v2");
+  localStorage.removeItem("caofrade_catalog_v3");
   const defaultCatalog = Array.isArray(window.CAOFRADE_PRODUCTS) ? [...window.CAOFRADE_PRODUCTS] : [];
-  const defaultMap = new Map(defaultCatalog.map((p) => [p.id, p]));
-  const savedCatalog = localStorage.getItem("caofrade_catalog_v2");
+  const savedCatalog = localStorage.getItem("caofrade_catalog_v4");
   if (savedCatalog) {
     try {
       const parsed = JSON.parse(savedCatalog);
       if (Array.isArray(parsed) && parsed.length > 0) {
         const existingIds = new Set(parsed.map((p) => p.id));
-        parsed.forEach((p) => {
-          const defProd = defaultMap.get(p.id);
-          if (defProd && defProd.supplierInfo?.aliexpressUrl) {
-            if (!p.supplierInfo) p.supplierInfo = {};
-            if (
-              !p.supplierInfo.aliexpressUrl ||
-              p.supplierInfo.aliexpressUrl.includes("/w/wholesale-") ||
-              p.id === "tapete-absorvente-comedouro-drymat"
-            ) {
-              p.supplierInfo.aliexpressUrl = defProd.supplierInfo.aliexpressUrl;
-            }
-          }
-        });
         defaultCatalog.forEach((defProd) => {
           if (!existingIds.has(defProd.id)) {
             parsed.push(defProd);
           }
         });
         window.CAOFRADE_PRODUCTS = parsed;
-        localStorage.setItem("caofrade_catalog_v2", JSON.stringify(parsed));
       }
     } catch (err) {
       console.error("Erro ao carregar catálogo personalizado:", err);
@@ -70,7 +57,7 @@
   }
 
   function saveCatalog() {
-    localStorage.setItem("caofrade_catalog_v2", JSON.stringify(window.CAOFRADE_PRODUCTS));
+    localStorage.setItem("caofrade_catalog_v4", JSON.stringify(window.CAOFRADE_PRODUCTS));
     renderCatalog();
   }
 
@@ -464,7 +451,7 @@
       if (!hasRoller && state.cart.length > 0) {
         upsellBox.style.display = "flex";
         upsellBox.innerHTML = `
-          <img src="https://crispcraftpaw.com/cdn/shop/files/1615203197971.jpg" alt="Rolo FurZero" style="width:48px; height:48px; border-radius:8px; object-fit:contain; background:#fff; border:1px solid var(--border);" />
+          <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf238da0c1f69408aa0cbf60eb21f46e9L.jpg" alt="Rolo FurZero" style="width:48px; height:48px; border-radius:8px; object-fit:contain; background:#fff; border:1px solid var(--border);" />
           <div style="font-size:0.78rem; flex:1;">
             <strong style="color:var(--primary);">⚡ Oferta no Cesto (-18%):</strong><br/>
             Junta o <strong>Rolo Tira-Pelos FurZero™</strong> por <strong>13,90 €</strong>
@@ -1257,7 +1244,7 @@
   }
 
   function addStarterBundleToCart() {
-    addToCart("escova-vapor-3em1", "Branco Pérola", 1, 0.15);
+    addToCart("escova-vapor-3em1", "Amarelo Mango", 1, 0.15);
     addToCart("rolo-tira-pelos-reutilizavel", "1x Rolo FurZero™ Pro", 1, 0.15);
     showToast("Pack Casa Sem Pelos Cãofrade adicionado com 15% de desconto + Portes Grátis!");
   }

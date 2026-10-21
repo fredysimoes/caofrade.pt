@@ -1,557 +1,17 @@
-// Catálogo de Produtos Vencedores (Winning Products) — Cãofrade (www.caofrade.pt)
-// Com imagens reais originais dos produtos dos fornecedores + metadados AliExpress / DSers / Zendrop
+// Catálogo Oficial de Produtos Reais AliExpress — Cãofrade (www.caofrade.pt)
+// Todos os produtos possuem as imagens originais exatas (ae-pic-a1.aliexpress-media.com),
+// o preço de custo real em Euros e o link direto para o anúncio exato em pt.aliexpress.com.
 
 window.CAOFRADE_PRODUCTS = [
   {
-    id: "escova-vapor-3em1",
-    sku: "CF-HIG-001",
-    title: "Escova a Vapor 3-em-1 Anti-Pelo & Massagem Spa",
-    subtitle: "Remove até 90% do pelo morto sem eletricidade estática",
-    category: "higiene",
-    categoryLabel: "Higiene & Spa",
-    petType: ["caes", "gatos"],
-    badge: "🔥 Nº1 Mais Vendido",
-    badgeType: "hot",
-    price: 24.90,
-    compareAtPrice: 39.90,
-    supplierCost: 4.20,
-    shippingTime: "7–10 dias úteis",
-    stock: 38,
-    rating: 4.9,
-    reviewsCount: 342,
-    shortDesc: "A escova viral que transforma a escovagem num momento de spa. O micro-vapor frio hidrata a pelagem, elimina a estática e retira todo o pelo solto numa única passagem.",
-    highlights: [
-      "Tecnologia de micro-nebulização (vapor frio seguro) que evita pelos a voar pela casa",
-      "Cerdas em silicone macio de grau médico: massaja a pele sem arranhar",
-      "Bateria recarregável USB-C de longa duração (até 7 dias com uma carga)",
-      "Ideal para cães e gatos de pelo curto, médio ou longo"
-    ],
-    variants: {
-      label: "Cor",
-      options: ["Branco Pérola", "Verde Salva", "Amarelo Mango"]
-    },
-    images: [
-      "https://pawslovestore.com/cdn/shop/files/Sf57617148a5e48aa98835b0583d332d6y.webp",
-      "https://pawslovestore.com/cdn/shop/files/S09693c79f98546efb35a0021398b342dz.webp",
-      "https://pawslovestore.com/cdn/shop/files/S1ea44abe8cfa4987ab1c9a6b84b7c1eaf.webp",
-      "https://pawslovestore.com/cdn/shop/files/S21623cdcff8647c1b30ba92944ab8976B.webp"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / DSers",
-      searchQuery: "3 in 1 Cat Steam Brush Silicone Massage Self Cleaning Pet Grooming USB",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005007791672610.html",
-      zendropQuery: "Pet Steam Brush 3 in 1",
-      adHook: "Ainda tens pelos no sofá e na roupa preta? Vê o que esta escova a vapor retira em 30 segundos! 😱🐾",
-      weightGrams: 160
-    },
-    reviews: [
-      { author: "Inês M. (Lisboa)", rating: 5, date: "Há 2 dias", text: "O meu gato persa fugia sempre da escova normal. Com esta de vapor fica a ronronar e sai uma camada inteira de pelo morto! Melhor compra do ano." },
-      { author: "Tiago R. (Porto)", rating: 5, date: "Há 5 dias", text: "Comprei duas para aproveitar o desconto. Uso no meu Golden Retriever e na gata. Chegou em 8 dias pelos CTT Expresso." }
-    ]
-  },
-  {
-    id: "fonte-agua-sem-fios",
-    sku: "CF-SAU-002",
-    title: "Fonte Inteligente Sem Fios AquaPure™ 3L com Sensor",
-    subtitle: "Água fresca filtrada sempre que o teu patudo se aproxima",
-    category: "higiene",
-    categoryLabel: "Saúde & Higiene",
-    petType: ["gatos", "caes"],
-    badge: "⚡ Tecnologia Smart",
-    badgeType: "tech",
-    price: 44.90,
-    compareAtPrice: 69.90,
-    supplierCost: 12.80,
-    shippingTime: "7–11 dias úteis",
-    stock: 21,
-    rating: 4.9,
-    reviewsCount: 218,
-    shortDesc: "Previne problemas renais e urinários estimulando a hidratação natural. 100% sem fios para colocar onde quiseres, com sensor infravermelhos que ativa a água quando o animal se aproxima.",
-    highlights: [
-      "Sensor Inteligente 120º: ativa o fluxo quando o cão ou gato se aproxima a 1,5 metros",
-      "100% Sem Fios no chão (bateria 4000mAh com autonomia até 45 dias) — zero risco de cabos roídos",
-      "Tabuleiro superior em Aço Inoxidável 304 antibacteriano (evita acne felina)",
-      "Sistema de filtragem quádrupla com carvão ativado + bomba ultra-silenciosa (<25dB)"
-    ],
-    variants: {
-      label: "Pack",
-      options: ["Fonte 3L + 2 Filtros", "Fonte 3L + 6 Filtros Anuais (+7€)"]
-    },
-    images: [
-      "https://nextvibepets.com/cdn/shop/files/ab8e77a2-6a9a-4a49-b498-ebd7f5c52fd5.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / Zendrop",
-      searchQuery: "Wireless Cat Water Fountain Stainless Steel Motion Sensor Battery Operated 3L",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005013413077850.html",
-      zendropQuery: "Wireless Sensor Cat Water Fountain",
-      adHook: "Sabias que 70% dos gatos sofrem de desidratação silenciosa porque odeiam água parada? Esta fonte sem fios mudou tudo cá em casa.",
-      weightGrams: 780
-    },
-    reviews: [
-      { author: "Sofia A. (Coimbra)", rating: 5, date: "Há 3 dias", text: "Silenciosa mesmo durante a noite! O facto de não ter fios ligados à tomada dá-me imensa paz de espírito." },
-      { author: "Pedro V. (Braga)", rating: 5, date: "Há 1 semana", text: "Os meus dois gatos passaram a beber o dobro da água logo no primeiro dia. O sensor funciona lindamente." }
-    ]
-  },
-  {
-    id: "botoes-comunicacao-cao-falante",
-    sku: "CF-TRE-003",
-    title: "Kit 6 Botões Graváveis 'Cãofrade Falante' + Tapete",
-    subtitle: "Ensina o teu cão ou gato a pedir Passeio, Comida, Água e Mimo",
-    category: "brinquedos",
-    categoryLabel: "Treino & Mente",
-    petType: ["caes", "gatos"],
-    badge: "🎬 Viral no TikTok",
-    badgeType: "viral",
-    price: 34.90,
-    compareAtPrice: 54.90,
-    supplierCost: 8.50,
-    shippingTime: "7–10 dias úteis",
-    stock: 44,
-    rating: 4.8,
-    reviewsCount: 289,
-    shortDesc: "Grava a tua própria voz em cada botão ('Passear', 'Biscoito', 'Brincar', 'Água') e descobre o que o teu melhor amigo te quer dizer. Inclui tapete organizador antiderrapante e autocolantes.",
-    highlights: [
-      "Gravação de voz nítida até 30 segundos por botão (podes regravar sempre que quiseres)",
-      "Mola interna suave adaptada a patas pequenas e grandes (basta um toque leve)",
-      "Inclui Tapete Organizador Antiderrapante + Botões de cores distintas (espetro visível canino)",
-      "Inclui Guia Prático Digital em Português: 'Como ensinar o teu cão em 14 dias'"
-    ],
-    variants: {
-      label: "Configuração",
-      options: ["Kit Completo (6 Botões + Tapete)", "Pack Iniciação (4 Botões)"]
-    },
-    images: [
-      "https://m-pets.com/cdn/shop/files/Untitled_design_7984e40f-c38a-4609-83e9-b5163dcde6e6.png",
-      "https://m-pets.com/cdn/shop/files/5c20ad3fdfb1b863a040cf6258d220a0_c5_1080x1080_1.jpg",
-      "https://cdn.shopify.com/s/files/1/0658/6007/5684/files/da194b9de0879dd218be871abacbdeca.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / DSers",
-      searchQuery: "Dog Talking Buttons Set 6 Pack Recordable Pet Communication Mat Training Buzzers",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005012909967500.html",
-      zendropQuery: "Recordable Pet Training Buzzers Mat",
-      adHook: "Ensinei o meu cão a falar com estes botões e agora ele não pára de pedir 'Biscoito' às 8 da manhã 😂🐶",
-      weightGrams: 520
-    },
-    reviews: [
-      { author: "Mariana C. (Cascais)", rating: 5, date: "Há 4 dias", text: "Em 5 dias a minha Border Collie já percebeu que o botão azul significa ir à rua! É incrível ver a inteligência deles." },
-      { author: "Rui F. (Faro)", rating: 5, date: "Há 2 semanas", text: "Qualidade do plástico muito resistente e o som da gravação fica bem alto e claro." }
-    ]
-  },
-  {
-    id: "cama-ortopedica-anti-ansiedade",
-    sku: "CF-CON-004",
-    title: "Cama Ortopédica Anti-Ansiedade NuvemCalma™",
-    subtitle: "Rebordo elevado 360º que abraça o teu patudo e reduz o stress",
-    category: "conforto",
-    categoryLabel: "Conforto & Sono",
-    petType: ["caes", "gatos"],
-    badge: "💤 Recomendado Vet",
-    badgeType: "choice",
-    price: 39.90,
-    compareAtPrice: 64.90,
-    supplierCost: 9.90,
-    shippingTime: "8–12 dias úteis",
-    stock: 29,
-    rating: 4.9,
-    reviewsCount: 412,
-    shortDesc: "Desenhada para imitar o calor e segurança do aconchego materno. O pelo vegan ultra-macio e o rebordo almofadado aliviam a pressão nas articulações e acalmam cães e gatos ansiosos.",
-    highlights: [
-      "Reduz a ansiedade de separação e melhora a qualidade do sono profundo",
-      "Apoio ortopédico para pescoço e articulações (ideal também para animais séniores)",
-      "Base impermeável e antiderrapante + lavável na máquina de lavar roupa",
-      "Envio inteligente embalado a vácuo (expande totalmente em 4 horas)"
-    ],
-    variants: {
-      label: "Tamanho & Cor",
-      options: ["M (60cm - até 10kg) Cinza", "L (70cm - até 18kg) Cinza", "XL (80cm - até 28kg) Bege"]
-    },
-    images: [
-      "https://thecozypaws.co.uk/cdn/shop/files/processed-image_40.png",
-      "https://thecozypaws.co.uk/cdn/shop/files/40kpasq6z5rmr0cx7tv9r27b88_preview_0-ezremove.png"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / Zendrop",
-      searchQuery: "Calming Dog Bed Plush Donut Anti Anxiety Washable Round Cushion Vacuum Packed",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005012363030070.html",
-      zendropQuery: "Calming Donut Pet Bed",
-      adHook: "O teu cão dorme encolhido ou sofre de ansiedade? Esta cama NuvemCalma abraça-o em 360º.",
-      weightGrams: 850
-    },
-    reviews: [
-      { author: "Carla S. (Aveiro)", rating: 5, date: "Há 1 dia", text: "O meu Bulldog Francês nunca gostou de nenhuma cama até experimentar esta. Assim que a abri e sacudi, deitou-se logo!" },
-      { author: "João P. (Setúbal)", rating: 5, date: "Há 6 dias", text: "Super fofa e fácil de lavar na máquina. Recomendo sacudir bem quando chega porque vem a vácuo, fica super cheia." }
-    ]
-  },
-  {
-    id: "garrafa-portatil-3em1-passeio",
-    sku: "CF-PAS-005",
-    title: "Garrafa de Passeio 3-em-1 HydraDog™ (Água + Snack + Sacos)",
-    subtitle: "Tudo o que precisas para o passeio numa só mão, sem desperdício",
-    category: "passeio",
-    categoryLabel: "Passeio & Viagem",
-    petType: ["caes"],
-    badge: "🐕 Essencial Passeio",
-    badgeType: "choice",
-    price: 21.90,
-    compareAtPrice: 34.90,
-    supplierCost: 4.60,
-    shippingTime: "7–10 dias úteis",
-    stock: 64,
-    rating: 4.8,
-    reviewsCount: 195,
-    shortDesc: "Acabaram-se as garrafas improvisadas nos passeios! Dispensa água fresca num botão (e recolhe a que sobra sem desperdiçar), traz compartimento para biscoitos e dispensador integrado de sacos higiénicos.",
-    highlights: [
-      "Sistema de retorno de água: a água que o cão não bebe volta para a garrafa com um clique",
-      "3 em 1: Reservatório de água (300ml/500ml) + Copo de biscoitos + Porta-sacos na base",
-      "Anel de vedação em silicone 100% anti-fugas para levar na mochila ou mala",
-      "Plástico alimentar livre de BPA com filtro de carvão ativado"
-    ],
-    variants: {
-      label: "Cor",
-      options: ["Azul Oceano", "Cinza Urbano", "Rosa Pastel", "Verde Menta"]
-    },
-    images: [
-      "https://fluffypuppypetstore.com/cdn/shop/files/portable-dog-water-and-food-bottle.webp",
-      "https://fluffypuppypetstore.com/cdn/shop/files/dog-travel-water-and-food-bottle.webp",
-      "https://fluffypuppypetstore.com/cdn/shop/files/dog-travel-water-bottle-blue.webp",
-      "https://fluffypuppypetstore.com/cdn/shop/files/dog-water-and-food-bottle.webp"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / DSers",
-      searchQuery: "3 in 1 Portable Dog Water Bottle Food Container Poop Bag Dispenser Outdoor Walking",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005012821717272.html",
-      zendropQuery: "Portable 3 in 1 Dog Water Bottle",
-      adHook: "Se passeias o teu cão todos os dias, esta garrafa 3-em-1 vai salvar-te a vida (água, biscoitos e sacos num só!).",
-      weightGrams: 240
-    },
-    reviews: [
-      { author: "Miguel N. (Leiria)", rating: 5, date: "Há 3 dias", text: "Super prática para levar para a praia e caminhadas na serra. O sistema de voltar a água para dentro dá imenso jeito." }
-    ]
-  },
-  {
-    id: "camara-smart-wifi-lancador-biscoitos",
-    sku: "CF-TEC-006",
-    title: "Câmara Smart Wi-Fi 360º PetWatch™ com Lançador de Biscoitos",
-    subtitle: "Vê, fala e dá biscoitos ao teu melhor amigo a partir do telemóvel",
-    category: "brinquedos",
-    categoryLabel: "Tecnologia Pet",
-    petType: ["caes", "gatos"],
-    badge: "💎 Premium",
-    badgeType: "tech",
-    price: 69.90,
-    compareAtPrice: 109.90,
-    supplierCost: 18.50,
-    shippingTime: "7–11 dias úteis",
-    stock: 15,
-    rating: 4.9,
-    reviewsCount: 127,
-    shortDesc: "Sentes culpa quando sais para trabalhar? Com a PetWatch™ vês o teu cão ou gato em Full HD 1080p (mesmo no escuro), recebes alertas de latido/movimento, falas com ele e lanças biscoitos com um toque na App.",
-    highlights: [
-      "Lançador de biscoitos remoto controlado pela App (iOS e Android) sem mensalidades",
-      "Câmara Full HD 1080p com grande angular e Visão Noturna Infravermelhos",
-      "Áudio Bidirecional: ouve o que se passa em casa e acalma o teu animal com a tua voz",
-      "Deteção inteligente de movimento e alerta de latidos no telemóvel"
-    ],
-    variants: {
-      label: "Modelo",
-      options: ["PetWatch™ Full HD 1080p", "PetWatch™ Pro 2K + Cartão 64GB (+12€)"]
-    },
-    images: [
-      "https://closerpets.co.uk/cdn/shop/files/W.26371CloserPetsTreatCameraContent-AmazonImagesV2.jpg",
-      "https://closerpets.co.uk/cdn/shop/files/W.26371CloserPetsTreatCameraContent-AmazonImagesV2_600x600_crop_center.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / Zendrop",
-      searchQuery: "Smart Pet Camera Treat Dispenser 1080P HD WiFi Two Way Audio Night Vision Dog Cat",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005013098879157.html",
-      zendropQuery: "Smart WiFi Pet Camera Treat Tosser",
-      adHook: "O que é que o teu cão faz quando sais de casa? Com esta câmara falo com ele do trabalho e ainda lhe atiro um biscoito! 🐶🍪",
-      weightGrams: 920
-    },
-    reviews: [
-      { author: "Beatriz L. (Porto)", rating: 5, date: "Há 5 dias", text: "Vale cada cêntimo! Estava sempre preocupada quando deixava o meu patudo sozinho à tarde. A imagem é super nítida e ele adora apanhar os biscoitos no ar." }
-    ]
-  },
-  {
-    id: "peitoral-anti-puxao-refletor",
-    sku: "CF-PAS-007",
-    title: "Peitoral Ergonómico Anti-Puxão SafeWalk™ Pro",
-    subtitle: "Passeios tranquilos sem sufocar o pescoço do teu cão",
-    category: "passeio",
-    categoryLabel: "Passeio & Viagem",
-    petType: ["caes"],
-    badge: "🛡️ Mais Seguro",
-    badgeType: "hot",
-    price: 29.90,
-    compareAtPrice: 46.90,
-    supplierCost: 6.40,
-    shippingTime: "7–10 dias úteis",
-    stock: 52,
-    rating: 4.9,
-    reviewsCount: 376,
-    shortDesc: "O teu cão puxa a trela nos passeios? O design ergonómico com argola frontal anti-puxão distribui a força pelo peito sem magoar a traqueia, incluindo pega traseira acolchoada para controlo imediato.",
-    highlights: [
-      "Dupla argola em liga de zinco: frontal (treino anti-puxão) e dorsal (passeio descontraído)",
-      "Tecido Oxford respirável com almofadado interior anti-fricção",
-      "Costuras refletoras 3M de alta visibilidade para passeios noturnos em segurança",
-      "Pega superior robusta + 4 pontos de ajuste rápido para encaixe perfeito"
-    ],
-    variants: {
-      label: "Tamanho & Cor",
-      options: ["S (4-8kg) Laranja Cãofrade", "M (8-18kg) Laranja Cãofrade", "L (18-30kg) Preto Tático", "XL (30-45kg) Azul Marinho"]
-    },
-    images: [
-      "https://olivepaw.com/cdn/shop/files/ReflectiveNo-PullDogHarnesswithFrontClip_ControlHandleHero.jpg",
-      "https://olivepaw.com/cdn/shop/files/ReflectiveNo-PullDogHarnesswithFrontClip_ControlHandleOrange.jpg",
-      "https://olivepaw.com/cdn/shop/files/ReflectiveNo-PullDogHarnesswithFrontClip_ControlHandleBlack.jpg",
-      "https://olivepaw.com/cdn/shop/files/ReflectiveNo-PullDogHarnesswithFrontClip_ControlHandleBlue.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / DSers",
-      searchQuery: "No Pull Dog Harness Reflective Breathable Adjustable Vest Handle Front Clip",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005013393986323.html",
-      zendropQuery: "No Pull Reflective Dog Harness",
-      adHook: "O teu cão é que te passeia a ti? Experimenta prender a trela na argola frontal deste peitoral Anti-Puxão!",
-      weightGrams: 290
-    },
-    reviews: [
-      { author: "Gonçalo D. (Sintra)", rating: 5, date: "Há 2 dias", text: "A diferença foi imediata no primeiro passeio. Com o engate da frente o meu Labrador deixou de puxar e já não fica a tossir." }
-    ]
-  },
-  {
-    id: "tapete-olfativo-snuffle-mat",
-    sku: "CF-TRE-008",
-    title: "Tapete Olfativo Interativo 'Caça ao Tesouro' SnufflePro™",
-    subtitle: "15 minutos a farejar equivalem a 1 hora de corrida física!",
-    category: "brinquedos",
-    categoryLabel: "Treino & Mente",
-    petType: ["caes", "gatos"],
-    badge: "🧠 Estímulo Mental",
-    badgeType: "choice",
-    price: 24.90,
-    compareAtPrice: 38.90,
-    supplierCost: 5.10,
-    shippingTime: "7–10 dias úteis",
-    stock: 47,
-    rating: 4.8,
-    reviewsCount: 164,
-    shortDesc: "Esconde a ração ou biscoitos nas dezenas de esconderijos de feltro polar e deixa o instinto natural de farejar trabalhar. Abranda cães sôfregos a comer e cansa mentalmente animais hiperativos em dias de chuva.",
-    highlights: [
-      "Estimula o olfato natural, reduzindo comportamentos destrutivos (roer móveis/sapatos)",
-      "Funciona como comedouro lento para evitar engasgos e torção gástrica",
-      "Base antiderrapante com cordão para fechar e transportar facilmente",
-      "Feltro polar macio para o focinho e 100% lavável na máquina"
-    ],
-    variants: {
-      label: "Design",
-      options: ["Jardim Multicolor (60x45cm)", "Flor Girassol (50x50cm)"]
-    },
-    images: [
-      "https://petlixx.com/wp-content/uploads/2026/05/pet-smart2.webp",
-      "https://cc-west-usa.oss-us-west-1.aliyuncs.com/comment/additional/0001/image/2022-11-03/3ecac9b4-2987-43bb-b05a-d0cc51137ffc.jpg",
-      "https://cc-west-usa.oss-us-west-1.aliyuncs.com/comment/additional/0001/image/2021-12-24/1f60dda1-2e26-4b21-88d3-832b7b7db1ac.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / DSers",
-      searchQuery: "Dog Snuffle Mat Interactive Feeding Puzzle Toy Slow Feeder Washable Non Slip",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005013215732200.html",
-      zendropQuery: "Pet Snuffle Mat Slow Feeder",
-      adHook: "Sabias que 15 minutos a farejar cansam tanto o cão como 1 hora de corrida? O segredo para dias de chuva!",
-      weightGrams: 340
-    },
-    reviews: [
-      { author: "Ana Rita M. (Viseu)", rating: 5, date: "Há 4 dias", text: "O meu Beagle engolia a comida em 30 segundos. Agora demora 20 minutos a procurar cada grão e no fim dorme uma sesta profunda!" }
-    ]
-  },
-  {
-    id: "capa-banco-automovel-4em1",
-    sku: "CF-PAS-009",
-    title: "Capa Impermeável 4-em-1 Protetora de Banco Automóvel AutoShield™",
-    subtitle: "Protege os estofos de lama, areia, pelos e arranhões em qualquer viagem",
-    category: "passeio",
-    categoryLabel: "Passeio & Viagem",
-    petType: ["caes"],
-    badge: "🚗 Top Viagens",
-    badgeType: "hot",
-    price: 42.90,
-    compareAtPrice: 69.90,
-    supplierCost: 11.90,
-    shippingTime: "7–11 dias úteis",
-    stock: 33,
-    rating: 4.9,
-    reviewsCount: 254,
-    shortDesc: "Viaja para a praia ou campo sem estragar o carro! Converte-se em modo 'Rede/Hammock' (impede o cão de cair no vão dos bancos), inclui janela central em malha respirável e abas laterais com fecho.",
-    highlights: [
-      "Tecido Oxford 600D de 4 camadas 100% impermeável e resistente a unhas",
-      "Janela de rede central: permite passagem do ar condicionado e o cão vê os donos",
-      "Inclui Cinto de Segurança elástico universal para prender ao peitoral",
-      "Universal: adapta-se a qualquer carro utilitário, carrinha ou SUV"
-    ],
-    variants: {
-      label: "Cor / Acabamento",
-      options: ["Preto Clássico com Costura Laranja", "Preto Integral Impermeável"]
-    },
-    images: [
-      "https://apawlopets.com/cdn/shop/files/apawlo-pets-dog-car-seat-cover-hammock-waterproof-product-shot-au-1.png",
-      "https://apawlopets.com/cdn/shop/files/apawlo-pets-dog-car-seat-cover-4-in-1-hammock-cargo-liner-front-seat-au.jpg",
-      "https://apawlopets.com/cdn/shop/files/apawlo-pets-dog-car-seat-cover-100-waterproof-scratchproof-heavy-duty-au.jpg",
-      "https://apawlopets.com/cdn/shop/files/apawlo-pets-dog-car-seat-cover-dimensions-universal-fit-au.png"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / Zendrop",
-      searchQuery: "Dog Car Seat Cover Hammock Waterproof Mesh Window Nonslip Scratch Proof Back Seat",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005013400573699.html",
-      zendropQuery: "Waterproof Dog Car Seat Cover Hammock",
-      adHook: "Adoras levar o cão à praia mas odeias limpar areia e pelos dos bancos do carro? Esta capa 4-em-1 instala-se em 60 segundos!",
-      weightGrams: 1150
-    },
-    reviews: [
-      { author: "Ricardo T. (Almada)", rating: 5, date: "Há 3 dias", text: "Material super grosso e resistente. Depois de irmos à Costa da Caparica basta passar um pano húmido ou sacudir e os bancos do carro estão impecáveis." }
-    ]
-  },
-  {
-    id: "cama-janela-ventosas-gato",
-    sku: "CF-CON-010",
-    title: "Cama de Janela Panorâmica Dobrável SunCat™ (Até 20kg)",
-    subtitle: "O camarote VIP ao sol que todos os gatos de apartamento adoram",
-    category: "conforto",
-    categoryLabel: "Conforto & Sono",
-    petType: ["gatos"],
-    badge: "🐱 Favorito Gatos",
-    badgeType: "viral",
-    price: 32.90,
-    compareAtPrice: 49.90,
-    supplierCost: 7.80,
-    shippingTime: "7–10 dias úteis",
-    stock: 39,
-    rating: 4.9,
-    reviewsCount: 208,
-    shortDesc: "Os gatos adoram altura, sol e observar a rua. A cama SunCat™ fixa-se em segundos sem furos através de 4 ventosas industriais de vácuo, suportando até 20kg com estrutura metálica dobrável (permite fechar os estores!).",
-    highlights: [
-      "Estrutura em aço sem cordas penduradas (o gato salta livremente sem tropeçar)",
-      "Dobrável num segundo: podes fechar as cortinas ou estores sem desmontar a cama",
-      "4 Ventosas gigantes de sucção reforçada — suporta até 20kg (dá para 2 gatos!)",
-      "Capa reversível: Pelúcia quente para o Inverno e Malha respirável para o Verão"
-    ],
-    variants: {
-      label: "Cor",
-      options: ["Creme & Cinza Reversível", "Cinza Escuro Premium"]
-    },
-    images: [
-      "https://meowbles.com/cdn/shop/files/cordless-foldable-window-cat-perch-01-clean.png"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / DSers",
-      searchQuery: "Cordless Cat Window Perch Hammock Foldable Suction Cups Metal Frame Reversible",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005013088695079.html",
-      zendropQuery: "Foldable Cordless Cat Window Hammock",
-      adHook: "O teu gato passa o dia à janela? Dá-lhe um camarote VIP ao sol sem ocupar espaço na sala! 🐱☀️",
-      weightGrams: 690
-    },
-    reviews: [
-      { author: "Helena G. (Oeiras)", rating: 5, date: "Há 2 dias", text: "O facto de ser dobrável e não ter aqueles cabos de cima dá imenso jeito para fechar os estores à noite. As ventosas não mexem nem um milímetro!" }
-    ]
-  },
-  {
-    id: "rolo-tira-pelos-reutilizavel",
-    sku: "CF-HIG-011",
-    title: "Rolo Tira-Pelos Reutilizável FurZero™ Pro (Sofá, Tapetes e Roupa)",
-    subtitle: "Limpa pelos de sofás, camas e estofos em segundos — sem recargas de cola!",
-    category: "higiene",
-    categoryLabel: "Higiene & Spa",
-    petType: ["caes", "gatos"],
-    badge: "♻️ Eco & Económico",
-    badgeType: "hot",
-    price: 16.90,
-    compareAtPrice: 27.90,
-    supplierCost: 2.90,
-    shippingTime: "7–10 dias úteis",
-    stock: 95,
-    rating: 4.9,
-    reviewsCount: 519,
-    shortDesc: "Esquece os rolos de fita adesiva que acabam ao fim de 2 utilizações! Basta passar o FurZero™ para a frente e para trás no sofá, cama ou tapete: a carga eletrostática recolhe todos os pelos num depósito interno que esvazias com um clique.",
-    highlights: [
-      "100% Reutilizável: não precisa de pilhas, bateria nem recargas de papel autocolante",
-      "Depósito de abertura fácil com um botão para deitar o pelo diretamente no lixo",
-      "Seguro em todos os tecidos: sofás, edredões, bancos de carro, arranhadores e casacos",
-      "Poupa mais de 60€ por ano em rolos descartáveis"
-    ],
-    variants: {
-      label: "Pack Poupança",
-      options: ["1x Rolo FurZero™ Pro", "Pack Casa + Carro (2 Unidades - Poupa 5€)"]
-    },
-    images: [
-      "https://crispcraftpaw.com/cdn/shop/files/1615203197971.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / DSers",
-      searchQuery: "Reusable Pet Hair Remover Roller Sofa Carpet Furniture Self Cleaning Lint Roller",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005013227247510.html",
-      zendropQuery: "Reusable Pet Hair Remover Roller",
-      adHook: "Para de gastar dinheiro em rolos de fita-cola! Olha a quantidade de pelo que isto tirou do meu sofá em 10 segundos 🤯",
-      weightGrams: 185
-    },
-    reviews: [
-      { author: "Patrícia B. (Guimarães)", rating: 5, date: "Há 1 dia", text: "Parece magia! Passo no sofá onde os meus dois gatos dormem e fica tudo no depósito lá dentro. É obrigatório para quem tem animais." }
-    ]
-  },
-  {
-    id: "bola-interativa-inteligente-usb",
-    sku: "CF-TRE-012",
-    title: "Bola Inteligente Automática SmartRoll™ USB com Desvio de Obstáculos",
-    subtitle: "O brinquedo que ganha vida sozinho e entretém o teu patudo durante horas",
-    category: "brinquedos",
-    categoryLabel: "Treino & Mente",
-    petType: ["gatos", "caes"],
-    badge: "⚡ Diversão Automática",
-    badgeType: "viral",
-    price: 19.90,
-    compareAtPrice: 32.90,
-    supplierCost: 3.80,
-    shippingTime: "7–10 dias úteis",
-    stock: 72,
-    rating: 4.8,
-    reviewsCount: 241,
-    shortDesc: "Equipada com sensores de movimento biónicos, a SmartRoll™ rola, muda de direção quando bate num obstáculo e entra em modo de repouso automático após 5 minutos — reativando-se sempre que o gato ou cão lhe toca com a pata!",
-    highlights: [
-      "2 Modos de jogo: Modo Normal e Modo Inteligente (ativa ao toque da pata)",
-      "Revestimento em silicone macio silencioso (não faz barulho no chão flutuante ou mosaico)",
-      "Sensor anti-colisão que inverte a rota quando encontra paredes ou móveis",
-      "Recarregável por USB-C (1 hora de carga = horas de brincadeira)"
-    ],
-    variants: {
-      label: "Cor",
-      options: ["Laranja Energia", "Azul Menta", "Rosa Coral"]
-    },
-    images: [
-      "https://petyzoom.com/wp-content/uploads/2026/04/e656489d-734b-40a9-9d9d-1cd2f2921875.jpg",
-      "https://petyzoom.com/wp-content/uploads/2026/05/0a4afbfa-6cbc-46ff-8a47-caacc0d32163-1.jpg",
-      "https://petyzoom.com/wp-content/uploads/2026/05/1444e8c2-d226-4c43-8904-f2a227b33012-1024x1024.jpg",
-      "https://petyzoom.com/wp-content/uploads/2026/02/8818a4aa-9259-4702-bd29-3dd3e5c87658.jpg"
-    ],
-    supplierInfo: {
-      platform: "AliExpress Choice / DSers",
-      searchQuery: "Smart Interactive Cat Toy Ball USB Rechargeable Automatic Moving Obstacle Avoidance",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005008431477735.html",
-      zendropQuery: "Smart Automatic Rolling Pet Ball",
-      adHook: "O teu gato ou cão fica aborrecido quando estás a trabalhar? Esta bola inteligente foge sozinha quando ele lhe toca!",
-      weightGrams: 95
-    },
-    reviews: [
-      { author: "Diogo S. (Évora)", rating: 5, date: "Há 3 dias", text: "O meu gato fica obcecado com isto! Adoro o facto de ser revestida a borracha, por isso não faz barulho nenhum no chão da sala." }
-    ]
-  },
-  {
     id: "tapete-absorvente-comedouro-drymat",
-    sku: "CF-HIG-013",
+    sku: "CF-HIG-001",
     title: "Tapete Absorvente Impermeável para Comedouro & Bebedouro DryMat™",
     subtitle: "Secagem ultra-rápida e base de borracha antiderrapante — chão sempre seco e limpo",
     category: "higiene",
     categoryLabel: "Higiene & Spa",
     petType: ["caes", "gatos"],
-    badge: "🆕 Novo na Loja",
+    badge: "🔥 Escolha Cãofrade",
     badgeType: "hot",
     price: 18.90,
     compareAtPrice: 29.90,
@@ -562,14 +22,14 @@ window.CAOFRADE_PRODUCTS = [
     reviewsCount: 189,
     shortDesc: "Acaba de vez com as poças de água e restos de ração espalhados pelo chão da cozinha! O Tapete DryMat™ absorve instantaneamente os salpicos do bebedouro e protege o pavimento graças à sua base 100% impermeável e antiderrapante.",
     highlights: [
-      "Superfície de microfibra diatomita de absorção instantânea e secagem rápida (não acumula odores nem humidade)",
-      "Base 100% impermeável em borracha natural antiderrapante: as taças não escorregam e a água nunca passa para o chão",
-      "Super fácil de limpar: basta passar um pano húmido ou enxaguar debaixo da torneira (não agarra pelos como os tapetes de silicone)",
-      "Tamanho generoso para colocar 2 taças (comedouro + bebedouro ou fonte de água)"
+      "Superfície absorvente de secagem rápida (não acumula odores nem humidade nas patas)",
+      "Base 100% impermeável em borracha antiderrapante: as taças não escorregam e a água nunca passa para o chão",
+      "Super fácil de limpar: basta passar um pano húmido ou enxaguar debaixo da torneira",
+      "Ideal para colocar debaixo do comedouro e bebedouro de cães e gatos"
     ],
     variants: {
       label: "Tamanho / Modelo",
-      options: ["30x40 cm (Médio)", "40x60 cm (Grande)", "50x80 cm (XL)"]
+      options: ["30x40 cm", "40x50 cm", "45x60 cm"]
     },
     images: [
       "https://ae-pic-a1.aliexpress-media.com/kf/Sb09c0989a67d4b94b615931eb25090e2F.jpg",
@@ -580,8 +40,8 @@ window.CAOFRADE_PRODUCTS = [
       "https://ae-pic-a1.aliexpress-media.com/kf/S55b0d843d4f3452b857a514d2adb19f2y.jpg"
     ],
     supplierInfo: {
-      platform: "AliExpress Choice / DSers",
-      searchQuery: "Pet Feeding Mat Absorbent Non-slip Rubber Backed Quick Dry Dog Cat Bowl Mat",
+      platform: "AliExpress Choice",
+      searchQuery: "Tapete Absorvente para Alimentação de Animais de Estimação Base Impermeável de Borracha",
       aliexpressUrl: "https://pt.aliexpress.com/item/1005007549347025.html?spm=a2g0o.productlist.main.35.4f961380RnnUo5&algo_pvid=be05e846-1784-40a7-a547-0879a6529280&algo_exp_id=be05e846-1784-40a7-a547-0879a6529280-34&pdp_ext_f=%7B%22order%22%3A%226951%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.12%214.12%21%21%2130.18%2130.18%21%400b88ab6717925875077931011e0e94%2112000041253919397%21sea%21PT%21713152959%21X%211%210%21n_tag%3A-29919%3Bd%3Af938cec3%3Bm03_new_user%3A-29895&curPageLogUid=Rsynq0ALEQ1K&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007549347025%7C_p_origin_prod%3A",
       zendropQuery: "Absorbent Pet Feeding Mat",
       adHook: "O teu cão deixa a cozinha toda alagada sempre que bebe água? Vê como este tapete absorve a água em 2 segundos! 🐾💧",
@@ -590,6 +50,562 @@ window.CAOFRADE_PRODUCTS = [
     reviews: [
       { author: "Carla M. (Lisboa)", rating: 5, date: "Há 2 dias", text: "O meu cão babava o chão todo depois de beber água e estragava o pavimento flutuante. Este tapete absorve logo as gotas todas e não escorrega nada!" },
       { author: "Nuno P. (Braga)", rating: 5, date: "Há 4 dias", text: "Muito melhor que os de silicone porque não fica cheio de pelos colados e limpa-se num instante." }
+    ]
+  },
+  {
+    id: "escova-vapor-3em1",
+    sku: "CF-HIG-002",
+    title: "Escova Elétrica a Vapor 3-em-1 Anti-Pelo & Massagem Spa",
+    subtitle: "Remove o pelo solto e emaranhados com micro-vapor hidratante sem estática",
+    category: "higiene",
+    categoryLabel: "Higiene & Spa",
+    petType: ["caes", "gatos"],
+    badge: "🔥 Nº1 Mais Vendido",
+    badgeType: "hot",
+    price: 22.90,
+    compareAtPrice: 36.90,
+    supplierCost: 4.83,
+    shippingTime: "7–10 dias úteis",
+    stock: 48,
+    rating: 4.9,
+    reviewsCount: 342,
+    shortDesc: "A escova elétrica a vapor 3-em-1 que transforma a escovagem num momento de spa. O micro-vapor frio hidrata a pelagem, elimina a eletricidade estática e retira todo o pelo morto numa única passagem.",
+    highlights: [
+      "Tecnologia de micro-nebulização (vapor frio seguro) que evita pelos a voar pela casa",
+      "Cerdas macias arredondadas: massaja a pele e desembaraça sem arranhar",
+      "Bateria recarregável USB com pega rotativa ergonómica",
+      "Ideal para cães e gatos de pelo curto, médio ou longo"
+    ],
+    variants: {
+      label: "Cor",
+      options: ["Branco Pérola", "Castanho Creme", "Verde Menta"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S53dabc50fd014b08a1492baf0fd5e5baU.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sea48b240a2664038b5731b548be67bc4V.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S612903aadf844a52a91205571a8d122aC.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S60d5a79a5d0f470cab9bba141ebb521bI.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Escova elétrica para vaporização de cães 3 em 1 escova a vapor",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007791672610.html",
+      zendropQuery: "Pet Steam Brush 3 in 1",
+      adHook: "Ainda tens pelos no sofá e na roupa preta? Vê o que esta escova a vapor retira em 30 segundos! 😱🐾",
+      weightGrams: 160
+    },
+    reviews: [
+      { author: "Inês M. (Lisboa)", rating: 5, date: "Há 2 dias", text: "O meu gato persa fugia sempre da escova normal. Com esta de vapor fica a ronronar e sai uma camada inteira de pelo morto!" },
+      { author: "Tiago R. (Porto)", rating: 5, date: "Há 5 dias", text: "Comprei duas para aproveitar o desconto. Uso no meu Golden Retriever e na gata. Chegou em 8 dias pelos CTT Expresso." }
+    ]
+  },
+  {
+    id: "rolo-tira-pelos-reutilizavel",
+    sku: "CF-HIG-003",
+    title: "Rolo Removedor de Pelos Reutilizável 2-em-1 FurZero™ Pro",
+    subtitle: "Limpa pelos de sofás, tapetes, camas e roupa em segundos — sem recargas de cola!",
+    category: "higiene",
+    categoryLabel: "Higiene & Spa",
+    petType: ["caes", "gatos"],
+    badge: "♻️ Eco & Económico",
+    badgeType: "hot",
+    price: 17.90,
+    compareAtPrice: 28.90,
+    supplierCost: 6.06,
+    shippingTime: "7–10 dias úteis",
+    stock: 95,
+    rating: 4.9,
+    reviewsCount: 519,
+    shortDesc: "Esquece os rolos de fita adesiva descartáveis! Basta passar o FurZero™ para a frente e para trás no sofá, cama, tapete ou roupa: a escova eletrostática recolhe todos os pelos num compartimento interno que esvazias num clique.",
+    highlights: [
+      "100% Reutilizável: não precisa de pilhas, bateria nem recargas de papel autocolante",
+      "Depósito de auto-limpeza integrado para deitar o pelo diretamente no lixo",
+      "Seguro em todos os tecidos: sofás, edredões, bancos de carro, arranhadores e casacos",
+      "Poupa mais de 60€ por ano em rolos descartáveis"
+    ],
+    variants: {
+      label: "Pack Poupança",
+      options: ["1x Rolo FurZero™ Pro", "Pack Casa + Carro (2 Unidades)"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sf238da0c1f69408aa0cbf60eb21f46e9L.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S8f928741047143e393983a1ed4e15223Y.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Seefbb157cda34ffb8ad401ba84233aaeV.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S4f2ac45d054e4405aba015c9b8979238L.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "2-1 Escova Reutilizável para Remover Pelos de Animais de Estimação Rolo de Pelos",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005008689873043.html",
+      zendropQuery: "Reusable Pet Hair Remover Roller",
+      adHook: "Para de gastar dinheiro em rolos de fita-cola! Olha a quantidade de pelo que isto tirou do meu sofá em 10 segundos 🤯",
+      weightGrams: 185
+    },
+    reviews: [
+      { author: "Patrícia B. (Guimarães)", rating: 5, date: "Há 1 dia", text: "Parece magia! Passo no sofá onde os meus dois gatos dormem e fica tudo no depósito lá dentro. É obrigatório para quem tem animais." }
+    ]
+  },
+  {
+    id: "bola-interativa-inteligente-usb",
+    sku: "CF-TRE-004",
+    title: "Bola Interativa Rotativa Automática 360º SmartRoll™ USB",
+    subtitle: "Desvio inteligente de obstáculos e ativação ao toque da pata",
+    category: "brinquedos",
+    categoryLabel: "Treino & Mente",
+    petType: ["gatos", "caes"],
+    badge: "⚡ Diversão Automática",
+    badgeType: "viral",
+    price: 18.90,
+    compareAtPrice: 29.90,
+    supplierCost: 3.57,
+    shippingTime: "7–10 dias úteis",
+    stock: 72,
+    rating: 4.8,
+    reviewsCount: 241,
+    shortDesc: "Equipada com sensores de movimento biónicos e rotação 360º, a SmartRoll™ rola sozinha, desvia-se de obstáculos automaticamente e reativa-se sempre que o gato ou cão lhe toca com a pata!",
+    highlights: [
+      "Modos inteligentes de jogo com ativação ao toque da pata",
+      "Revestimento em silicone macio silencioso e resistente a mordidelas",
+      "Sensor inteligente de desvio de obstáculos 360º",
+      "Recarregável por USB Type-C (sem necessidade de pilhas)"
+    ],
+    variants: {
+      label: "Cor",
+      options: ["Azul Turquesa", "Rosa Coral", "Laranja"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sd94fb11b9ef141a18fc9e4952a266169K.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S3a81a523a9f14d039b009340d0961005D.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb9654295aa7b4177a3859ce77d3bb7e51.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S61d9820944d24e938eae4a5ee5ba4041p.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Brinquedo Interativo para Gatos com Bola Rotativa Automática USB",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005011880181871.html",
+      zendropQuery: "Smart Automatic Rolling Pet Ball",
+      adHook: "O teu gato ou cão fica aborrecido quando estás a trabalhar? Esta bola inteligente foge sozinha quando ele lhe toca!",
+      weightGrams: 95
+    },
+    reviews: [
+      { author: "Diogo S. (Évora)", rating: 5, date: "Há 3 dias", text: "O meu gato fica obcecado com isto! Adoro o facto de ser revestida a silicone, por isso não faz barulho nenhum no chão da sala." }
+    ]
+  },
+  {
+    id: "botoes-comunicacao-cao-falante",
+    sku: "CF-TRE-005",
+    title: "Kit Botões de Comunicação & Treino 'Cãofrade Falante' + Tapete",
+    subtitle: "Ensina o teu cão ou gato a pedir Passeio, Comida, Água e Mimo",
+    category: "brinquedos",
+    categoryLabel: "Treino & Mente",
+    petType: ["caes", "gatos"],
+    badge: "🎬 Viral no TikTok",
+    badgeType: "viral",
+    price: 29.90,
+    compareAtPrice: 49.90,
+    supplierCost: 8.74,
+    shippingTime: "7–10 dias úteis",
+    stock: 44,
+    rating: 4.8,
+    reviewsCount: 289,
+    shortDesc: "Treina o teu cão ou gato a comunicar contigo através de botões de som posicionados num tapete antiderrapante! Perfeito para associar cada cor e som a 'Passear', 'Comer', 'Água' ou 'Brincar'.",
+    highlights: [
+      "Mola interna suave adaptada a patas pequenas e grandes (basta um toque leve)",
+      "Cores de alto contraste visíveis pelo espetro ocular de cães e gatos",
+      "Tapete de posicionamento antiderrapante com encaixes modulares",
+      "Estimula a inteligência e reduz a frustração do animal"
+    ],
+    variants: {
+      label: "Configuração",
+      options: ["Kit Botões + Tapete de Treino", "Pack Botões Coloridos"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sae9993260f0144678e0648550c910a07N.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb844caa9b5aa4564b41d66cc4b1361b16.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sf19c8f5dc21a431cb0733d96604cf219A.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Se0cfeefc0ffb49fc99f5755f903315ceN.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Almofadas de botão para comunicação de animais de estimação tapete de treinamento",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005009689616325.html",
+      zendropQuery: "Recordable Pet Training Buzzers Mat",
+      adHook: "Ensinei o meu cão a falar com estes botões e agora ele não pára de pedir 'Biscoito' às 8 da manhã 😂🐶",
+      weightGrams: 520
+    },
+    reviews: [
+      { author: "Mariana C. (Cascais)", rating: 5, date: "Há 4 dias", text: "Em 5 dias a minha Border Collie já percebeu que o botão azul significa ir à rua! É incrível ver a inteligência deles." },
+      { author: "Rui F. (Faro)", rating: 5, date: "Há 2 semanas", text: "Qualidade do material muito resistente e o tapete mantém os botões todos organizados no sítio." }
+    ]
+  },
+  {
+    id: "peitoral-anti-puxao-refletor",
+    sku: "CF-PAS-006",
+    title: "Arnês Ajustável Anti-Puxão com Clipe Frontal Refletor SafeWalk™",
+    subtitle: "Passeios tranquilos sem sufocar o pescoço do teu cão + pega de controlo",
+    category: "passeio",
+    categoryLabel: "Passeio & Viagem",
+    petType: ["caes"],
+    badge: "🛡️ Mais Seguro",
+    badgeType: "hot",
+    price: 27.90,
+    compareAtPrice: 44.90,
+    supplierCost: 8.30,
+    shippingTime: "7–10 dias úteis",
+    stock: 52,
+    rating: 4.9,
+    reviewsCount: 376,
+    shortDesc: "O teu cão puxa a trela nos passeios? O design ergonómico com argola frontal anti-puxão distribui a força pelo peito sem magoar a traqueia, incluindo pega traseira acolchoada para controlo imediato.",
+    highlights: [
+      "Dupla argola metálica: clipe frontal (anti-puxão) e dorsal (passeio normal)",
+      "Malha respirável almofadada para máximo conforto em dias quentes",
+      "Faixas refletoras 360º para passeios noturnos em total segurança",
+      "Pega superior resistente + fivelas de libertação rápida"
+    ],
+    variants: {
+      label: "Tamanho",
+      options: ["S (Pequeno)", "M (Médio)", "L (Grande)", "XL (Extra Grande)"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S309991a40dd04640a1084c86e1a73d37F.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S2e94451074b44a158f16264cc8b80c01E.png",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sfaf6cfe3dbf04329ac9f2f3aaf6c6caby.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S0b1acbee614a43fa979509daf599eca5t.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Arnês Ajustável para Cães Sem Puxar com Clipe Frontal Refletivo e Alça Confortável",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007345354130.html",
+      zendropQuery: "No Pull Reflective Dog Harness",
+      adHook: "O teu cão é que te passeia a ti? Experimenta prender a trela na argola frontal deste peitoral Anti-Puxão!",
+      weightGrams: 290
+    },
+    reviews: [
+      { author: "Gonçalo D. (Sintra)", rating: 5, date: "Há 2 dias", text: "A diferença foi imediata no primeiro passeio. Com o engate da frente o meu Labrador deixou de puxar e já não fica a tossir." }
+    ]
+  },
+  {
+    id: "cama-ortopedica-anti-ansiedade",
+    sku: "CF-CON-007",
+    title: "Cama Redonda Anti-Ansiedade em Pelúcia Lavável NuvemCalma™",
+    subtitle: "Rebordo elevado 360º ultra-macio que abraça o teu patudo e reduz o stress",
+    category: "conforto",
+    categoryLabel: "Conforto & Sono",
+    petType: ["caes", "gatos"],
+    badge: "💤 Recomendado Vet",
+    badgeType: "choice",
+    price: 36.90,
+    compareAtPrice: 59.90,
+    supplierCost: 10.28,
+    shippingTime: "7–11 dias úteis",
+    stock: 29,
+    rating: 4.9,
+    reviewsCount: 412,
+    shortDesc: "Desenhada em formato de ninho redondo para imitar o calor e segurança do aconchego materno. A pelúcia macia e o rebordo almofadado apoiam o pescoço e acalmam cães e gatos ansiosos.",
+    highlights: [
+      "Reduz a ansiedade de separação e melhora a qualidade do sono profundo",
+      "Apoio macio 360º para cabeça e pescoço",
+      "Base antiderrapante impermeável + lavável na máquina",
+      "Disponível em vários diâmetros para gatos e cães pequenos/médios"
+    ],
+    variants: {
+      label: "Tamanho & Cor",
+      options: ["50cm Cinza", "60cm Cinza", "70cm Bege"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/Scc5330418fef46948b9705f9f955ca11E.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb19425798bf24d86815d69f5349235cas.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S4c9971b5ab4a4135ad4c88fd87d1cdf8D.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S132c2792874d4089b3beef240441f77ff.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Cama Macia para Gatos e Cães Almofada de Pelúcia Quente Formato de Rosquinha Lavável",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005012363030070.html",
+      zendropQuery: "Calming Donut Pet Bed",
+      adHook: "O teu cão dorme encolhido ou sofre de ansiedade? Esta cama NuvemCalma abraça-o em 360º.",
+      weightGrams: 750
+    },
+    reviews: [
+      { author: "Carla S. (Aveiro)", rating: 5, date: "Há 1 dia", text: "O meu Bulldog Francês nunca gostou de nenhuma cama até experimentar esta. Assim que a abri e sacudi, deitou-se logo!" },
+      { author: "João P. (Setúbal)", rating: 5, date: "Há 6 dias", text: "Super fofa e fácil de lavar na máquina. Ficou impecável na sala." }
+    ]
+  },
+  {
+    id: "tapete-olfativo-snuffle-mat",
+    sku: "CF-TRE-008",
+    title: "Tapete Olfativo Interativo 'Horta de Cenouras' SnufflePro™",
+    subtitle: "Esconde biscoitos debaixo das cenouras de pelúcia e estimula o olfato!",
+    category: "brinquedos",
+    categoryLabel: "Treino & Mente",
+    petType: ["caes", "gatos"],
+    badge: "🧠 Estímulo Mental",
+    badgeType: "choice",
+    price: 29.90,
+    compareAtPrice: 44.90,
+    supplierCost: 11.23,
+    shippingTime: "7–10 dias úteis",
+    stock: 47,
+    rating: 4.9,
+    reviewsCount: 164,
+    shortDesc: "Esconde ração ou biscoitos debaixo de cada cenoura de pelúcia e deixa o teu cão farejar e puxar uma a uma! 15 minutos de busca olfativa gastam tanta energia como 1 hora de passeio.",
+    highlights: [
+      "Cenouras de pelúcia removíveis com esconderijos individuais para snacks",
+      "Estimula o olfato natural e reduz o tédio e ansiedade em casa",
+      "Tecido macio com enchimento de algodão elástico seguro para os dentes",
+      "Capa lavável e base antiderrapante"
+    ],
+    variants: {
+      label: "Modelo",
+      options: ["Horta 12 Cenouras Completa"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S7dec68a190404df0a523d038dab4f9899.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Scfa65f88adcd498682700eea9b9099a3z.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S5ec45363e24542219a9b7c2334405e48x.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S57cbab55ea5949038a5649e1c6244584j.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Rabanete Pai-Filho Brinquedos De Interação Snuffle Mat Brinquedos De Cenoura De Pelúcia",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007419424518.html",
+      zendropQuery: "Carrot Plush Snuffle Mat Dog Toy",
+      adHook: "Escondi biscoitos debaixo destas cenouras e o meu cão ficou 30 minutos entretido a tirar uma por uma! 🥕🐶",
+      weightGrams: 420
+    },
+    reviews: [
+      { author: "Ana Rita M. (Viseu)", rating: 5, date: "Há 4 dias", text: "O meu Beagle adora tirar as cenouras todas para encontrar os biscoitos escondidos lá no fundo. Melhor brinquedo interativo!" }
+    ]
+  },
+  {
+    id: "garrafa-portatil-3em1-passeio",
+    sku: "CF-PAS-009",
+    title: "Garrafa Térmica Portátil 3-em-1 em Aço Inoxidável 1000ml HydraDog™",
+    subtitle: "Água fresca + 2 taças integradas na base para água e comida em viagem",
+    category: "passeio",
+    categoryLabel: "Passeio & Viagem",
+    petType: ["caes"],
+    badge: "🐕 Essencial Passeio",
+    badgeType: "choice",
+    price: 34.90,
+    compareAtPrice: 52.90,
+    supplierCost: 13.80,
+    shippingTime: "7–10 dias úteis",
+    stock: 64,
+    rating: 4.9,
+    reviewsCount: 195,
+    shortDesc: "Garrafa térmica 3-em-1 em aço inoxidável de 1000ml (32Oz) com parede dupla isolada! Mantém a água fresca durante 24 horas e inclui 2 taças destacáveis na base para servir água e ração em qualquer passeio ou viagem.",
+    highlights: [
+      "Aço Inoxidável de grau alimentar com isolamento térmico de parede dupla",
+      "Capacidade generosa de 1000ml (32Oz) + 2 taças enroscáveis na base (água + comida)",
+      "Tampa 100% estanque anti-fugas com pega superior de transporte",
+      "Ideal para caminhadas, praia, parques e viagens longas de carro"
+    ],
+    variants: {
+      label: "Cor",
+      options: ["Preto Matte", "Azul Oceano", "Verde Militar", "Branco"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S2a58024fbc214c41a454e84ae041ad9f4.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S22d888723ae24b25aa6739a3e3916f4d1.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1df922f10f4e47c1aa849d277093ade59.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S9c844ba6e7064c66a7e75bff4daad3d81.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "OKKPETS Garrafa de Água para Cães 3 em 1 de Aço Inoxidável 32Oz 1000ml",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005012821717272.html",
+      zendropQuery: "Stainless Steel 3 in 1 Dog Water Bottle",
+      adHook: "Água fresquinha todo o dia e duas taças integradas na própria garrafa! Essencial para os passeios de fim de semana.",
+      weightGrams: 480
+    },
+    reviews: [
+      { author: "Miguel N. (Leiria)", rating: 5, date: "Há 3 dias", text: "Qualidade incrível em inox! A água continua gelada mesmo depois de estar ao sol na praia e as duas taças em baixo são super práticas." }
+    ]
+  },
+  {
+    id: "cama-janela-ventosas-gato",
+    sku: "CF-CON-010",
+    title: "Cama de Janela Panorâmica com Ventosas Reforçadas SunCat™",
+    subtitle: "O camarote VIP ao sol que todos os gatos de apartamento adoram",
+    category: "conforto",
+    categoryLabel: "Conforto & Sono",
+    petType: ["gatos"],
+    badge: "🐱 Favorito Gatos",
+    badgeType: "viral",
+    price: 39.90,
+    compareAtPrice: 59.90,
+    supplierCost: 19.64,
+    shippingTime: "7–10 dias úteis",
+    stock: 39,
+    rating: 4.9,
+    reviewsCount: 208,
+    shortDesc: "Os gatos adoram altura, sol e observar a rua. A cama SunCat™ instala-se sem furos através de 4 ventosas industriais de alta sucção e estrutura resistente com tecido respirável lavável.",
+    highlights: [
+      "4 Ventosas gigantes de sucção reforçada para fixação segura em qualquer vidro",
+      "Estrutura estável de alta resistência (suporta até 15–20kg)",
+      "Tecido respirável resistente a arranhões e amovível para lavar",
+      "Montagem em 2 minutos sem ferramentas nem furos na parede"
+    ],
+    variants: {
+      label: "Modelo",
+      options: ["Tamanho Grande Panorâmico"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S9abaf31502cc44cd8c7b7e6e9de98a1dm.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S1bc06787a8c14f718ab8bcfc5f19ac6fM.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S7b065dbd91a848209b82c18bc4bbb4cdN.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S45a4c0af023d432f8ee623231d50ffc34.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Cama de Gato para Janela com Ventosa Rede de Descanso Resistente",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005012735026846.html",
+      zendropQuery: "Cat Window Perch Suction Cups",
+      adHook: "O teu gato passa o dia à janela? Dá-lhe um camarote VIP ao sol sem ocupar espaço na sala! 🐱☀️",
+      weightGrams: 650
+    },
+    reviews: [
+      { author: "Helena G. (Oeiras)", rating: 5, date: "Há 2 dias", text: "As ventosas são super fortes e o meu gato de 6kg salta lá para cima todos os dias para apanhar sol!" }
+    ]
+  },
+  {
+    id: "capa-banco-automovel-4em1",
+    sku: "CF-PAS-011",
+    title: "Capa Impermeável de Banco Traseiro com Janela de Rede AutoShield™",
+    subtitle: "Protege os estofos de lama, areia, pelos e arranhões em qualquer viagem",
+    category: "passeio",
+    categoryLabel: "Passeio & Viagem",
+    petType: ["caes"],
+    badge: "🚗 Top Viagens",
+    badgeType: "hot",
+    price: 46.90,
+    compareAtPrice: 74.90,
+    supplierCost: 20.49,
+    shippingTime: "7–11 dias úteis",
+    stock: 33,
+    rating: 4.9,
+    reviewsCount: 254,
+    shortDesc: "Viaja para a praia ou campo sem estragar o carro! Converte-se em modo 'Rede/Hammock' antiderrapante (impede o cão de cair no vão dos bancos), inclui janela central de ventilação em rede e bolsas organizadoras.",
+    highlights: [
+      "Tecido Oxford multicamada 100% impermeável, antiderrapante e resistente a unhas",
+      "Janela de rede central: permite passagem do ar condicionado e o cão vê os donos",
+      "Bolsas de arrumação integradas para guardar trela, garrafa e brinquedos",
+      "Tamanho universal para automóveis ligeiros, carrinhas e SUV"
+    ],
+    variants: {
+      label: "Cor / Acabamento",
+      options: ["Preto com Janela de Rede & Bolsos"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/A3074b1a76753499aabb7d0cfef9a604c7.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/A91d46eef174d454a811e339cb411a0b5G.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/A1254c4c8212d44249638eb0794926640W.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/A2b3b7d1739c54a74be16fae1d784faa3m.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Capa de Banco Traseiro para Carro com Rede para Cães Tapete de Viagem Antiderrapante",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005013400573699.html",
+      zendropQuery: "Waterproof Dog Car Seat Cover Hammock",
+      adHook: "Adoras levar o cão à praia mas odeias limpar areia e pelos dos bancos do carro? Esta capa instala-se em 60 segundos!",
+      weightGrams: 1150
+    },
+    reviews: [
+      { author: "Ricardo T. (Almada)", rating: 5, date: "Há 3 dias", text: "Material super grosso e resistente. Depois de irmos à Costa da Caparica basta passar um pano húmido ou sacudir e os bancos do carro estão impecáveis." }
+    ]
+  },
+  {
+    id: "camara-smart-wifi-lancador-biscoitos",
+    sku: "CF-TEC-012",
+    title: "Comedouro Automático Inteligente 4L Wi-Fi com Câmara Vídeo PetWatch™",
+    subtitle: "Alimenta, vê e fala com o teu cão ou gato à distância pelo telemóvel",
+    category: "brinquedos",
+    categoryLabel: "Tecnologia Pet",
+    petType: ["caes", "gatos"],
+    badge: "💎 Tecnologia Smart",
+    badgeType: "tech",
+    price: 69.90,
+    compareAtPrice: 109.90,
+    supplierCost: 31.97,
+    shippingTime: "7–11 dias úteis",
+    stock: 15,
+    rating: 4.9,
+    reviewsCount: 127,
+    shortDesc: "Programa as refeições do teu melhor amigo e acompanha-o em vídeo em tempo real pelo telemóvel! Com depósito hermético de 4 Litros, câmara integrada, áudio bidirecional e controlo por App Wi-Fi.",
+    highlights: [
+      "Depósito de 4 Litros com programação de horários e doses na App (iOS e Android)",
+      "Câmara de vídeo integrada para veres o teu animal a comer em tempo real",
+      "Microfone e altifalante para gravares a tua voz a chamar para a refeição",
+      "Dupla alimentação segura (cabo USB + pilhas de reserva em caso de falha de luz)"
+    ],
+    variants: {
+      label: "Versão",
+      options: ["4L Smart Wi-Fi + Câmara Vídeo"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/S3db54325ac4443feb4fe7992c8a39b84X.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S88c1c77b677f4214823b0696103d8032M.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S4a28b6a9d76c4fb897cb996d25af6997R.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S8c2905ad26e544eba6ae62b7e43a6412j.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "4l usb inteligente wifi app vídeo alimentador de animais de estimação automático",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005009850046203.html",
+      zendropQuery: "Smart WiFi Pet Feeder with Camera 4L",
+      adHook: "Sais de casa preocupado com a comida do teu patudo? Com este comedouro 4L Wi-Fi vês e alimentas pelo telemóvel! 🐶📱",
+      weightGrams: 1350
+    },
+    reviews: [
+      { author: "Beatriz L. (Porto)", rating: 5, date: "Há 5 dias", text: "Vale cada cêntimo! Consigo libertar a dose certa de ração pelo telemóvel e ver o meu gato a comer pela câmara." }
+    ]
+  },
+  {
+    id: "fonte-agua-sem-fios",
+    sku: "CF-SAU-013",
+    title: "Fonte Sem Fios em Aço Inoxidável 3,2L AquaPure™ com Sensor",
+    subtitle: "Água fresca filtrada sempre que o teu patudo se aproxima — zero cabos!",
+    category: "higiene",
+    categoryLabel: "Saúde & Higiene",
+    petType: ["gatos", "caes"],
+    badge: "⚡ Inox 3,2L Sem Fios",
+    badgeType: "tech",
+    price: 68.90,
+    compareAtPrice: 99.90,
+    supplierCost: 38.39,
+    shippingTime: "7–11 dias úteis",
+    stock: 21,
+    rating: 4.9,
+    reviewsCount: 218,
+    shortDesc: "Previne problemas renais e urinários estimulando a hidratação natural. Totalmente sem fios e construída em Aço Inoxidável de 3,2 Litros, com 3 modos inteligentes e sensor de movimento que ativa a água quando o animal se aproxima.",
+    highlights: [
+      "Sensor de Movimento Inteligente: ativa o fluxo quando o cão ou gato se aproxima",
+      "100% Sem Fios com bateria recarregável de longa duração",
+      "Construção integral em Aço Inoxidável de 3,2L higiénico e fácil de lavar",
+      "Sistema de filtragem multicamada + bomba ultra-silenciosa"
+    ],
+    variants: {
+      label: "Modelo",
+      options: ["Fonte Inox 3,2L Sem Fios + Sensor"]
+    },
+    images: [
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb95f566f4c744626964992141dbb723co.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/S38305c7b32a9401a9f36ad98906c56f6h.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sfb2a1561a8174fc7b6a7b534f5a3e0cbV.jpg",
+      "https://ae-pic-a1.aliexpress-media.com/kf/Sb1f9db4559ed49678bbd5fcc092852bfj.jpg"
+    ],
+    supplierInfo: {
+      platform: "AliExpress Choice",
+      searchQuery: "Bebedouro sem fio de aço inoxidável para gatos 3,2 L sensor de movimento",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005013413077850.html",
+      zendropQuery: "Wireless Sensor Stainless Cat Water Fountain",
+      adHook: "Sabias que 70% dos gatos sofrem de desidratação silenciosa porque odeiam água parada? Esta fonte inox sem fios mudou tudo cá em casa.",
+      weightGrams: 850
+    },
+    reviews: [
+      { author: "Sofia A. (Coimbra)", rating: 5, date: "Há 3 dias", text: "Silenciosa mesmo durante a noite e 100% em inox! O facto de não ter fios ligados à tomada dá-me imensa paz de espírito." },
+      { author: "Pedro V. (Braga)", rating: 5, date: "Há 1 semana", text: "Os meus dois gatos passaram a beber o dobro da água logo no primeiro dia. O sensor funciona lindamente." }
     ]
   }
 ];
