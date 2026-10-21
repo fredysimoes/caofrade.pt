@@ -498,53 +498,62 @@
     document.getElementById(id)?.classList.remove("open");
   }
 
-  const STRIPE_PUBLISHABLE_KEY = "pk_test_...";
+  const STRIPE_PUBLISHABLE_KEY = "pk_live_51USvQ1LztM9Iu5DlOYCoMLGdLZANy743I1Ehe6vC4YpoIcFyd1zfmNA7Sd3Vi5YkdfeJ6OKnYRfdCInHD34gVmNI00VDM9UqLo";
 
   async function initStripeEmbeddedCheckout(shipping) {
-    if (typeof Stripe === "undefined" || !STRIPE_PUBLISHABLE_KEY || STRIPE_PUBLISHABLE_KEY === "pk_test_...") {
+    if (typeof Stripe === "undefined" || !STRIPE_PUBLISHABLE_KEY) {
       return;
     }
 
-    const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+    try {
+      const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
 
-    const appearance = {
-      "theme": "flat",
-      "labels": "auto",
-      "inputs": "spaced",
-      "variables": {
-        "borderRadius": "4px",
-        "colorBackground": "#ffffff",
-        "colorDanger": "#df1b41",
-        "colorPrimary": "#0570de",
-        "colorSuccess": "#00c853",
-        "colorText": "#30313d",
-        "fontFamily": "Lato",
-        "fontSizeBase": "16px",
-        "spacingUnit": "4px"
-      }
-    };
-
-    const clientSecret = fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: state.cart, shippingCost: shipping })
-    })
-      .then((response) => response.json())
-      .then((json) => json.client_secret);
-
-    const checkout = stripe.initCheckoutFormSdk({ clientSecret, appearance });
-    const form = checkout.createForm({ layout: "expanded" });
-    form.mount("#checkout-form");
-
-    const loadActionsResult = await checkout.loadActions();
-    if (loadActionsResult.type === "success") {
-      form.on("confirm", async (event) => {
-        try {
-          await loadActionsResult.actions.confirm({ formConfirmEvent: event });
-        } catch (error) {
-          console.error("Payment confirmation error:", error);
+      const appearance = {
+        "theme": "flat",
+        "labels": "auto",
+        "inputs": "spaced",
+        "variables": {
+          "borderRadius": "4px",
+          "colorBackground": "#ffffff",
+          "colorDanger": "#df1b41",
+          "colorPrimary": "#0570de",
+          "colorSuccess": "#00c853",
+          "colorText": "#30313d",
+          "fontFamily": "Lato",
+          "fontSizeBase": "16px",
+          "spacingUnit": "4px"
         }
-      });
+      };
+
+      const clientSecret = fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: state.cart, shippingCost: shipping })
+      })
+        .then((response) => response.json())
+        .then((json) => json.client_secret);
+
+      const resolvedSecret = await clientSecret;
+      if (!resolvedSecret) {
+        return;
+      }
+
+      const checkout = stripe.initCheckoutFormSdk({ clientSecret, appearance });
+      const form = checkout.createForm({ layout: "expanded" });
+      form.mount("#checkout-form");
+
+      const loadActionsResult = await checkout.loadActions();
+      if (loadActionsResult.type === "success") {
+        form.on("confirm", async (event) => {
+          try {
+            await loadActionsResult.actions.confirm({ formConfirmEvent: event });
+          } catch (error) {
+            console.error("Payment confirmation error:", error);
+          }
+        });
+      }
+    } catch (err) {
+      console.error("Stripe Embedded Checkout init error:", err);
     }
   }
 
