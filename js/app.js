@@ -498,6 +498,56 @@
     document.getElementById(id)?.classList.remove("open");
   }
 
+  const STRIPE_PUBLISHABLE_KEY = "pk_test_...";
+
+  async function initStripeEmbeddedCheckout(shipping) {
+    if (typeof Stripe === "undefined" || !STRIPE_PUBLISHABLE_KEY || STRIPE_PUBLISHABLE_KEY === "pk_test_...") {
+      return;
+    }
+
+    const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+
+    const appearance = {
+      "theme": "stripe",
+      "labels": "auto",
+      "inputs": "spaced",
+      "variables": {
+        "borderRadius": "4px",
+        "colorBackground": "#ffffff",
+        "colorDanger": "#df1b41",
+        "colorPrimary": "#0570de",
+        "colorSuccess": "#00c853",
+        "colorText": "#30313d",
+        "fontFamily": "default",
+        "fontSizeBase": "16px",
+        "spacingUnit": "4px"
+      }
+    };
+
+    const clientSecret = fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: state.cart, shippingCost: shipping })
+    })
+      .then((response) => response.json())
+      .then((json) => json.client_secret);
+
+    const checkout = stripe.initCheckoutFormSdk({ clientSecret, appearance });
+    const form = checkout.createForm({ layout: "expanded" });
+    form.mount("#checkout-form");
+
+    const loadActionsResult = await checkout.loadActions();
+    if (loadActionsResult.type === "success") {
+      form.on("confirm", async (event) => {
+        try {
+          await loadActionsResult.actions.confirm({ formConfirmEvent: event });
+        } catch (error) {
+          console.error("Payment confirmation error:", error);
+        }
+      });
+    }
+  }
+
   // Checkout Modal
   function openCheckoutModal() {
     if (state.cart.length === 0) {
@@ -511,6 +561,7 @@
     document.getElementById("checkoutConfirmationBox").style.display = "none";
     document.getElementById("checkoutFormWrap").style.display = "block";
     document.getElementById("checkoutModal").classList.add("open");
+    initStripeEmbeddedCheckout(shipping);
   }
 
   function selectPaymentMethod(method) {

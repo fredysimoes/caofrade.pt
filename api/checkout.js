@@ -18,7 +18,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const stripe = new Stripe(stripeSecret);
+    const stripe = new Stripe(stripeSecret, { apiVersion: "2026-03-25.dahlia" });
     const { items = [], customerEmail, shippingCost = 0 } = req.body;
 
     const line_items = items.map((item) => ({
@@ -49,18 +49,21 @@ module.exports = async function handler(req, res) {
     const origin = req.headers.origin || "https://www.caofrade.pt";
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card", "mb_way", "multibanco"],
+      ui_mode: "form",
       mode: "payment",
-      customer_email: customerEmail || undefined,
-      line_items,
-      shipping_address_collection: {
-        allowed_countries: ["PT"]
+      billing_address_collection: "auto",
+      phone_number_collection: {
+        enabled: false
       },
-      success_url: `${origin}/?sucesso=1&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/?cancelado=1`
+      automatic_tax: {
+        enabled: false
+      },
+      submit_type: "auto",
+      integration_identifier: "custom_embedded_web_0001",
+      line_items
     });
 
-    return res.status(200).json({ url: session.url, id: session.id });
+    return res.status(200).json({ client_secret: session.client_secret });
   } catch (err) {
     return res.status(500).json({ error: err.message });
   }
