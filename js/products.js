@@ -42,7 +42,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Camisola de cachorro de natal rena floco de neve camisola de malha",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005004896948548.html?algo_pvid=e7cac906-c80a-4f39-a0af-f6711d401dc5&algo_exp_id=e7cac906-c80a-4f39-a0af-f6711d401dc5-5&pdp_ext_f=%7B%22order%22%3A%22471%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%213.46%213.46%21%21%213.79%213.79%21%402103962917925930555054015e0dda%2112000050228379386%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A232ae2a7%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005004896948548%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005004896948548.html",
       zendropQuery: "Christmas Dog Sweater Reindeer Snowflake Knitted Pullover",
       adHook: "Ninguém resiste a esta camisola de Rena na noite de Natal! Quentinha, elástica e super confortável.",
       weightGrams: 140
@@ -91,7 +91,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Coleira de gato separatista gravata borboleta e sino xadrez natal",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005003444569999.html?algo_pvid=75cc73c7-05c8-409f-9d96-a47681865efb&algo_exp_id=75cc73c7-05c8-409f-9d96-a47681865efb-1&pdp_ext_f=%7B%22order%22%3A%224887%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.35%212.35%21%21%2117.23%2117.23%21%400b0fe0e117925930567426897e0fe4%2112000025818793887%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3Acb78e82f%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005003444569999%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005003444569999.html",
       zendropQuery: "Plaid Christmas Cat Dog Collar Bow Tie Bell",
       adHook: "O presente de Natal mais fofo por menos de 10€! O teu gato ou cão vai ser a estrela da Consoada.",
       weightGrams: 35
@@ -140,7 +140,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Cobertor macio e fofo de alta qualidade flanela dormir estampa de pata",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005010031406132.html?algo_pvid=898f3e82-c8a0-414f-a346-b2a1f17fd508&algo_exp_id=898f3e82-c8a0-414f-a346-b2a1f17fd508-0&pdp_ext_f=%7B%22order%22%3A%228270%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.09%212.09%21%21%2115.31%2115.31%21%402103973d17925930594714347e0eeb%2112000050887420638%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3Ae1070e77%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005010031406132%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005010031406132.html",
       zendropQuery: "Flannel Fleece Pet Blanket Paw Print Winter Warm",
       adHook: "Tens um cão ou gato friorento que adora roubar a tua manta do sofá no inverno? Dá-lhe a manta térmica dele!",
       weightGrams: 180
@@ -189,7 +189,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Cão mascar brinquedo natal animal de estimação pelúcia ruído santa elk gingerbread",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005009799025492.html?algo_pvid=8f8253ba-ad42-45f0-ae08-7abdb95634db&algo_exp_id=8f8253ba-ad42-45f0-ae08-7abdb95634db-20&pdp_ext_f=%7B%22order%22%3A%22117%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.85%214.85%21%21%2135.47%2135.47%21%402103973d17925930580754311e0eeb%2112000050203132406%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A2242d9b2%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005009799025492%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005009799025492.html",
       zendropQuery: "Christmas Plush Squeaky Dog Toy Santa Elk Gingerbread",
       adHook: "Já tens a prenda de Natal para pôr no sapatinho do teu melhor amigo de 4 patas? Vê estes peluches de Natal com apito!",
       weightGrams: 110
@@ -238,7 +238,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Roupa de Fleece Quente para Cães Jaqueta com Anel D",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005007791566770.html?algo_pvid=5c002ff1-3966-466e-b592-9eb41230dccc&algo_exp_id=5c002ff1-3966-466e-b592-9eb41230dccc-4&pdp_ext_f=%7B%22order%22%3A%229049%22%2C%22eval%22%3A%221%22%2C%22orig_sl_item_id%22%3A%221005007791566770%22%2C%22orig_item_id%22%3A%221005012924891921%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%213.72%213.72%21%21%2127.21%2127.22%21%400b0fe0e117925930609227029e0fe4%2112000042215906791%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A871b902d%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007791566770%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007791566770.html",
       zendropQuery: "Winter Warm Fleece Dog Jacket with D-Ring",
       adHook: "O teu cão treme quando sai à rua de manhã no inverno? Este casaco polar de 13,90€ já traz argola para a trela!",
       weightGrams: 115
@@ -286,7 +286,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Brinquedo para Gato em Forma de Pássaro com Toque Inteligente e Sons Catnip",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005011550238607.html?algo_pvid=6ce1e95c-9a0a-4879-b758-fe5a096d209c&algo_exp_id=6ce1e95c-9a0a-4879-b758-fe5a096d209c-2&pdp_ext_f=%7B%22order%22%3A%221263%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%213.74%213.74%21%21%2127.36%2127.35%21%400b0fe0e117925930636697119e0fe4%2112000055891972914%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A76fb9c6c%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005011550238607%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005011550238607.html",
       zendropQuery: "Interactive Chirping Bird Cat Toy Catnip Simulated Sound",
       adHook: "O teu gato dorme o dia todo aborrecido em casa? Vê a reação dele quando toca neste pássaro que pia de verdade!",
       weightGrams: 65
@@ -334,7 +334,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Coleira de carga luminosa para cães 3 modos led usb",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005006430099146.html?algo_pvid=3f2c92ac-5029-423d-b3b4-1b5cfc342d31&algo_exp_id=3f2c92ac-5029-423d-b3b4-1b5cfc342d31-6&pdp_ext_f=%7B%22order%22%3A%224278%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.05%214.05%21%21%2129.67%2129.67%21%400b0fe0e117925930622567081e0fe4%2112000037140127521%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A453ba44d%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006430099146%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005006430099146.html",
       zendropQuery: "USB Rechargeable LED Dog Collar 3 Modes",
       adHook: "No inverno fica de noite às 17h30! Nunca mais percas o teu cão de vista no escuro nem corras riscos junto à estrada.",
       weightGrams: 85
@@ -382,7 +382,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Brinquedo Interativo para Cães e Gatos Tapete de Isolamento Olfativo Alimentação Lenta",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005012122994459.html?algo_pvid=8fd97cb9-edc1-4dc9-ae7d-ea11cc4cde6a&algo_exp_id=8fd97cb9-edc1-4dc9-ae7d-ea11cc4cde6a-14&pdp_ext_f=%7B%22order%22%3A%2295%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.29%214.38%21%21%2131.40%2132.01%21%40210396b417925930650585283e1057%2112000057556603678%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A4f87bf82%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005012122994459%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005012122994459.html",
       zendropQuery: "Snuffle Mat Dog Slow Feeder Foraging Pad",
       adHook: "Chove lá fora e o teu cão não para quieto em casa? Esconde 10 biscoitos neste tapete olfativo e vê a magia acontecer!",
       weightGrams: 240
@@ -430,7 +430,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "4 pçs/set anti deslizamento meias do cão com correias controle de tração",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005008066300014.html?algo_pvid=43ab5001-e365-4874-8e69-06572e82da55&algo_exp_id=43ab5001-e365-4874-8e69-06572e82da55-4&pdp_ext_f=%7B%22order%22%3A%222569%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.49%214.49%21%21%2132.90%2132.90%21%40210382de17925930668783163e1048%2112000043516439096%21sea%21PT%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A3f32a241%3Bm03_new_user%3A-29895&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008066300014%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005008066300014.html",
       zendropQuery: "4Pcs Anti-Slip Dog Socks with Straps Paw Protector",
       adHook: "O teu cão escorrega no chão flutuante ou tem as patinhas geladas no inverno? Estas meias com fita de ajuste não saem do sítio!",
       weightGrams: 75
@@ -478,7 +478,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice",
       searchQuery: "Tapete Absorvente para Alimentação de Animais de Estimação Base Impermeável de Borracha",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005007549347025.html?spm=a2g0o.productlist.main.35.4f961380RnnUo5&algo_pvid=be05e846-1784-40a7-a547-0879a6529280&algo_exp_id=be05e846-1784-40a7-a547-0879a6529280-34&pdp_ext_f=%7B%22order%22%3A%226951%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.12%214.12%21%21%2130.18%2130.18%21%400b88ab6717925875077931011e0e94%2112000041253919397%21sea%21PT%21713152959%21X%211%210%21n_tag%3A-29919%3Bd%3Af938cec3%3Bm03_new_user%3A-29895&curPageLogUid=Rsynq0ALEQ1K&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007549347025%7C_p_origin_prod%3A",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007549347025.html",
       zendropQuery: "Absorbent Pet Feeding Mat",
       adHook: "O teu cão deixa a cozinha toda alagada sempre que bebe água? Vê como este tapete absorve a água em 2 segundos! 🐾💧",
       weightGrams: 260

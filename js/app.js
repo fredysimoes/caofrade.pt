@@ -6,37 +6,44 @@
   const STANDARD_SHIPPING_COST = 3.90;
   const ADMIN_SECRET_PASS = "caofrade2026";
 
-  // Purge legacy demo catalog cache and load verified AliExpress catalog (v7)
-  localStorage.removeItem("caofrade_catalog_v2");
-  localStorage.removeItem("caofrade_catalog_v3");
-  localStorage.removeItem("caofrade_catalog_v4");
-  localStorage.removeItem("caofrade_catalog_v5");
-  localStorage.removeItem("caofrade_catalog_v6");
-  const defaultCatalog = Array.isArray(window.CAOFRADE_PRODUCTS) ? [...window.CAOFRADE_PRODUCTS] : [];
-  const savedCatalog = localStorage.getItem("caofrade_catalog_v7");
-  if (savedCatalog) {
-    try {
-      const parsed = JSON.parse(savedCatalog);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        const existingIds = new Set(parsed.map((p) => p.id));
-        defaultCatalog.forEach((defProd) => {
-          if (!existingIds.has(defProd.id)) {
-            parsed.push(defProd);
-          }
-        });
-        window.CAOFRADE_PRODUCTS = parsed;
+  // Purge ALL legacy or stored catalog cache so products.js is ALWAYS the single source of truth
+  try {
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const k = localStorage.key(i);
+      if (k && (k.startsWith("caofrade_catalog") || k === "caofrade_products")) {
+        localStorage.removeItem(k);
       }
-    } catch (err) {
-      console.error("Erro ao carregar catálogo personalizado:", err);
     }
+  } catch (e) {
+    console.warn("Could not clear localStorage catalog", e);
   }
 
-  // Load real orders only (automatically purge legacy demo order CF-84920)
+  // Always use the fresh, verified catalog from products.js
+  const defaultCatalog = Array.isArray(window.CAOFRADE_PRODUCTS) ? [...window.CAOFRADE_PRODUCTS] : [];
+  window.CAOFRADE_PRODUCTS = defaultCatalog;
+
+  // Load real orders only and ensure every item has its exact direct AliExpress link
   let savedOrders = [];
   try {
     const rawOrders = JSON.parse(localStorage.getItem("caofrade_orders") || "[]");
     if (Array.isArray(rawOrders)) {
-      savedOrders = rawOrders.filter((o) => o && o.id !== "CF-84920");
+      savedOrders = rawOrders
+        .filter((o) => o && o.id !== "CF-84920")
+        .map((o) => {
+          if (o && Array.isArray(o.items)) {
+            o.items = o.items.map((it) => {
+              const match = defaultCatalog.find(
+                (p) => p.id === it.id || p.sku === it.sku || p.title === it.title
+              );
+              if (match && match.supplierInfo?.aliexpressUrl) {
+                it.aliexpressUrl = match.supplierInfo.aliexpressUrl;
+                it.supplierCost = match.supplierCost;
+              }
+              return it;
+            });
+          }
+          return o;
+        });
       localStorage.setItem("caofrade_orders", JSON.stringify(savedOrders));
     }
   } catch (e) {
@@ -60,7 +67,6 @@
   }
 
   function saveCatalog() {
-    localStorage.setItem("caofrade_catalog_v7", JSON.stringify(window.CAOFRADE_PRODUCTS));
     renderCatalog();
   }
 
@@ -83,13 +89,22 @@
 
   // Helper to get AliExpress URL for any product id or title
   function getAliExpressUrlForItem(item) {
-    const prod = window.CAOFRADE_PRODUCTS.find(
+    if (item && item.aliexpressUrl && item.aliexpressUrl.startsWith("http")) {
+      return item.aliexpressUrl;
+    }
+    const prod = (window.CAOFRADE_PRODUCTS || []).find(
       (p) => p.id === item.id || p.sku === item.sku || p.title === item.title
     );
     if (prod && prod.supplierInfo && prod.supplierInfo.aliexpressUrl) {
       return prod.supplierInfo.aliexpressUrl;
     }
-    return `https://www.aliexpress.com/w/wholesale-${encodeURIComponent(item.title || "pet product")}.html`;
+    if (item && item.id) {
+      const byId = (window.CAOFRADE_PRODUCTS || []).find(
+        (p) => p.id.includes(item.id) || item.id.includes(p.id)
+      );
+      if (byId && byId.supplierInfo?.aliexpressUrl) return byId.supplierInfo.aliexpressUrl;
+    }
+    return "https://pt.aliexpress.com/";
   }
 
   // Render Product Catalog
@@ -355,7 +370,8 @@
         price: unitPrice,
         supplierCost: product.supplierCost,
         image: product.images[0],
-        qty: qty
+        qty: qty,
+        aliexpressUrl: product.supplierInfo?.aliexpressUrl || ""
       });
     }
 
