@@ -19,6 +19,18 @@
     }
   }
 
+  // Load real orders only (automatically purge legacy demo order CF-84920)
+  let savedOrders = [];
+  try {
+    const rawOrders = JSON.parse(localStorage.getItem("caofrade_orders") || "[]");
+    if (Array.isArray(rawOrders)) {
+      savedOrders = rawOrders.filter((o) => o && o.id !== "CF-84920");
+      localStorage.setItem("caofrade_orders", JSON.stringify(savedOrders));
+    }
+  } catch (e) {
+    savedOrders = [];
+  }
+
   let state = {
     category: "todos",
     petFilter: "todos",
@@ -28,33 +40,8 @@
     coupon: null,
     selectedPayment: "mbway",
     isAdminAuthenticated: sessionStorage.getItem("caofrade_admin_auth") === "1",
-    orders: JSON.parse(localStorage.getItem("caofrade_orders") || "[]")
+    orders: savedOrders
   };
-
-  if (state.orders.length === 0) {
-    state.orders = [
-      {
-        id: "CF-84920",
-        date: "20/10/2026 21:15",
-        customer: "Ana Sofia Martins",
-        email: "anasofia.demo@gmail.com",
-        phone: "+351 912 345 678",
-        address: "Av. da República 45, 3º Esq",
-        postalCode: "1050-188",
-        city: "Lisboa",
-        nif: "245891023",
-        paymentMethod: "MB WAY",
-        status: "Pago — Pronto p/ Envio",
-        trackingCode: "LP006482918472PT",
-        total: 56.80,
-        items: [
-          { id: "escova-vapor-3em1", sku: "CF-HIG-001", title: "Escova a Vapor 3-em-1 Anti-Pelo", variant: "Branco Pérola", qty: 1, price: 24.90, supplierCost: 4.20 },
-          { id: "cama-janela-ventosas-gato", sku: "CF-CON-010", title: "Cama de Janela Panorâmica SunCat™", variant: "Creme & Cinza Reversível", qty: 1, price: 32.90, supplierCost: 7.80 }
-        ]
-      }
-    ];
-    localStorage.setItem("caofrade_orders", JSON.stringify(state.orders));
-  }
 
   function formatEUR(value) {
     return Number(value).toFixed(2).replace(".", ",") + " €";
@@ -80,6 +67,17 @@
     setTimeout(() => {
       toast.remove();
     }, 3400);
+  }
+
+  // Helper to get AliExpress URL for any product id or title
+  function getAliExpressUrlForItem(item) {
+    const prod = window.CAOFRADE_PRODUCTS.find(
+      (p) => p.id === item.id || p.sku === item.sku || p.title === item.title
+    );
+    if (prod && prod.supplierInfo && prod.supplierInfo.aliexpressUrl) {
+      return prod.supplierInfo.aliexpressUrl;
+    }
+    return `https://www.aliexpress.com/w/wholesale-${encodeURIComponent(item.title || "pet product")}.html`;
   }
 
   // Render Product Catalog
@@ -559,7 +557,7 @@
           ? "Multibanco"
           : "Cartão / Apple Pay (Stripe)",
       status: "Pago — Pronto p/ Envio",
-      trackingCode: "A aguardar despacho (24h)",
+      trackingCode: "Em preparação (24h)",
       total,
       items: JSON.parse(JSON.stringify(state.cart))
     };
@@ -636,7 +634,7 @@
     const code = document.getElementById("trackInput").value.trim().toUpperCase();
     const resBox = document.getElementById("trackResultBox");
     const found = state.orders.find(
-      (o) => o.id.toUpperCase() === code || o.trackingCode.toUpperCase() === code
+      (o) => o.id.toUpperCase() === code || (o.trackingCode && o.trackingCode.toUpperCase() === code)
     );
 
     if (found) {
@@ -647,14 +645,14 @@
             <span class="verified-pill">${found.status}</span>
           </div>
           <p style="font-size:0.86rem; color:var(--text-body); margin-bottom:6px;">📍 <strong>Destino:</strong> ${found.address}, ${found.postalCode} ${found.city}</p>
-          <p style="font-size:0.86rem; color:var(--text-body); margin-bottom:6px;">📦 <strong>Código Logístico IOSS:</strong> ${found.trackingCode}</p>
+          <p style="font-size:0.86rem; color:var(--text-body); margin-bottom:6px;">📦 <strong>Estado Logístico:</strong> ${found.trackingCode}</p>
           <p style="font-size:0.86rem; color:var(--text-body);">🕒 <strong>Previsão de Entrega CTT Expresso:</strong> 7 a 10 dias úteis</p>
         </div>
       `;
     } else {
       resBox.innerHTML = `
         <div style="background:#FEF2F2; color:#DC2626; padding:14px; border-radius:12px; margin-top:16px; font-size:0.88rem;">
-          Não encontrámos nenhuma encomenda com o código <strong>${code}</strong>. Experimenta o código de demonstração <strong>CF-84920</strong>!
+          Não encontrámos nenhuma encomenda com o código <strong>${code}</strong>. Verifica o código enviado no e-mail de confirmação.
         </div>
       `;
     }
@@ -867,6 +865,13 @@
     showToast(`Produto "${removed.title}" removido da loja.`);
   }
 
+  function deleteOrder(orderId) {
+    state.orders = state.orders.filter((o) => o.id !== orderId);
+    localStorage.setItem("caofrade_orders", JSON.stringify(state.orders));
+    renderAdminPanel();
+    showToast(`Encomenda #${orderId} removida.`);
+  }
+
   function resetProductForm() {
     document.getElementById("addProductForm")?.reset();
     document.getElementById("prodEditId").value = "";
@@ -914,7 +919,7 @@
       products.reduce((acc, p) => acc + (p.price - p.supplierCost), 0) / products.length
     ).toFixed(2);
 
-    // Manage Products Table (Tab 1)
+    // Manage Products Table (Tab 1) — with prominent "🛒 Comprar no AliExpress ↗" button
     const manageBody = document.getElementById("adminManageProductsBody");
     if (manageBody) {
       manageBody.innerHTML = products
@@ -934,8 +939,8 @@
           <td>${formatEUR(p.supplierCost)}</td>
           <td><strong>${formatEUR(p.price)}</strong></td>
           <td>
+            <a href="${p.supplierInfo?.aliexpressUrl || '#'}" target="_blank" rel="noopener" class="supplier-link-btn" style="background:var(--primary); color:#fff;">🛒 Comprar no AliExpress ↗</a>
             <button class="supplier-link-btn" onclick="window.CaofradeApp.editProduct('${p.id}')">✏️ Editar</button>
-            <a href="${p.supplierInfo?.aliexpressUrl || '#'}" target="_blank" rel="noopener" class="supplier-link-btn" style="background:var(--secondary-light); color:var(--secondary);">Fornecedor ↗</a>
             <button class="supplier-link-btn" style="background:#FEF2F2; color:#DC2626;" onclick="window.CaofradeApp.deleteProduct('${p.id}')">🗑️</button>
           </td>
         </tr>
@@ -972,7 +977,7 @@
               "${p.supplierInfo?.adHook || p.subtitle}"
             </td>
             <td>
-              <a href="${p.supplierInfo?.aliexpressUrl || '#'}" target="_blank" rel="noopener" class="supplier-link-btn">Comprar no AliExpress ↗</a>
+              <a href="${p.supplierInfo?.aliexpressUrl || '#'}" target="_blank" rel="noopener" class="supplier-link-btn" style="background:var(--primary); color:#fff;">🛒 Comprar no AliExpress ↗</a>
               <a href="${zendropUrl}" target="_blank" rel="noopener" class="supplier-link-btn" style="background:var(--secondary-light); color:var(--secondary);">Zendrop ↗</a>
             </td>
           </tr>
@@ -981,32 +986,60 @@
         .join("");
     }
 
-    // Orders Table (Tab 3)
+    // Orders Table (Tab 3) — with direct "🛒 Comprar no AliExpress ↗" button per ordered product!
     const ordersBody = document.getElementById("adminOrdersTableBody");
     if (ordersBody) {
-      ordersBody.innerHTML = state.orders
-        .map((o) => {
-          const costTotal = o.items.reduce((s, i) => s + (i.supplierCost || 5) * i.qty, 0);
-          const netProfit = +(o.total - costTotal).toFixed(2);
-          return `
+      if (state.orders.length === 0) {
+        ordersBody.innerHTML = `
           <tr>
-            <td><strong>#${o.id}</strong><br/><small>${o.date}</small></td>
-            <td>
-              <strong>${o.customer}</strong><br/>
-              <small>${o.address}, ${o.postalCode} ${o.city}<br/>Tel: ${o.phone}</small>
-            </td>
-            <td>${o.items.map((i) => `${i.qty}x ${i.title} (${i.variant})`).join("<br/>")}</td>
-            <td><strong>${formatEUR(o.total)}</strong><br/><small>${o.paymentMethod}</small></td>
-            <td><strong style="color:var(--success);">+${formatEUR(netProfit)}</strong></td>
-            <td>
-              <button class="supplier-link-btn" onclick="window.CaofradeApp.copyCustomerAddress('${o.id}')">
-                📋 Copiar Morada p/ AliExpress
-              </button>
+            <td colspan="6" style="text-align:center; padding:32px 16px; color:var(--text-muted);">
+              Ainda não existem encomendas reais registadas neste dispositivo.<br/>
+              <small>Quando um cliente finalizar uma compra no checkout da loja, a encomenda aparecerá aqui com o botão direto para comprares no AliExpress.</small>
             </td>
           </tr>
         `;
-        })
-        .join("");
+      } else {
+        ordersBody.innerHTML = state.orders
+          .map((o) => {
+            const costTotal = o.items.reduce((s, i) => s + (i.supplierCost || 5) * i.qty, 0);
+            const netProfit = +(o.total - costTotal).toFixed(2);
+            return `
+            <tr>
+              <td><strong>#${o.id}</strong><br/><small>${o.date}</small></td>
+              <td>
+                <strong>${o.customer}</strong><br/>
+                <small>${o.address}, ${o.postalCode} ${o.city}<br/>Tel: ${o.phone}</small>
+              </td>
+              <td>
+                ${o.items
+                  .map((i) => {
+                    const aliUrl = getAliExpressUrlForItem(i);
+                    return `
+                      <div style="margin-bottom:8px; padding-bottom:6px; border-bottom:1px dashed var(--border);">
+                        <strong>${i.qty}x ${i.title}</strong> <small>(${i.variant})</small><br/>
+                        <a href="${aliUrl}" target="_blank" rel="noopener" class="supplier-link-btn" style="background:var(--primary); color:#fff; margin-top:4px;">
+                          🛒 Comprar no AliExpress ↗
+                        </a>
+                      </div>
+                    `;
+                  })
+                  .join("")}
+              </td>
+              <td><strong>${formatEUR(o.total)}</strong><br/><small>${o.paymentMethod}</small></td>
+              <td><strong style="color:var(--success);">+${formatEUR(netProfit)}</strong></td>
+              <td>
+                <button class="supplier-link-btn" style="margin-bottom:6px; display:block; width:100%; text-align:center;" onclick="window.CaofradeApp.copyCustomerAddress('${o.id}')">
+                  📋 1. Copiar Morada Cliente
+                </button>
+                <button class="supplier-link-btn" style="background:#FEF2F2; color:#DC2626; display:block; width:100%; text-align:center;" onclick="window.CaofradeApp.deleteOrder('${o.id}')">
+                  🗑️ Apagar Encomenda
+                </button>
+              </td>
+            </tr>
+          `;
+          })
+          .join("");
+      }
     }
 
     const totalProdEl = document.getElementById("adminStatTotalProducts");
@@ -1045,6 +1078,10 @@
   }
 
   function exportOrdersCSV() {
+    if (state.orders.length === 0) {
+      showToast("Ainda não há encomendas para exportar.");
+      return;
+    }
     const headers = [
       "Order ID",
       "Date",
@@ -1186,6 +1223,7 @@
     handleSaveProduct,
     editProduct,
     deleteProduct,
+    deleteOrder,
     resetProductForm,
     exportCatalogFile,
     copyCustomerAddress,

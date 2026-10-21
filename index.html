@@ -576,11 +576,11 @@
         <img src="assets/logo-caofrade.jpg" alt="Cãofrade" style="width:48px; height:48px; border-radius:50%; border:2px solid var(--friar-gold);" />
         <div>
           <h3 style="font-size:1.35rem; font-weight:800;">📦 Rastrear Encomenda Cãofrade</h3>
-          <p style="font-size:0.84rem; color:var(--text-body);">Introduz o número da tua encomenda (ex: <code>CF-84920</code>)</p>
+          <p style="font-size:0.84rem; color:var(--text-body);">Introduz o número da tua encomenda recebido por e-mail</p>
         </div>
       </div>
       <form onsubmit="window.CaofradeApp.lookupOrder(event)" style="display:flex; gap:10px;">
-        <input type="text" id="trackInput" required placeholder="Ex: CF-84920" style="flex:1; padding:11px 14px; border-radius:10px; border:1px solid var(--border); font-weight:700;" />
+        <input type="text" id="trackInput" required placeholder="Ex: CF-10420" style="flex:1; padding:11px 14px; border-radius:10px; border:1px solid var(--border); font-weight:700;" />
         <button type="submit" class="btn-primary" style="padding:11px 20px;">Procurar</button>
       </form>
       <div id="trackResultBox"></div>
@@ -644,7 +644,7 @@
       <div class="category-pills" style="margin-bottom:20px; border-bottom:1px solid var(--border); padding-bottom:12px;">
         <button class="filter-pill active" id="adminTabBtn-add" onclick="window.CaofradeApp.switchAdminTab('add')">➕ Adicionar / Editar Produtos</button>
         <button class="filter-pill" id="adminTabBtn-dsers" onclick="window.CaofradeApp.switchAdminTab('dsers')">🎓 Como Usar DSers & AliExpress</button>
-        <button class="filter-pill" id="adminTabBtn-orders" onclick="window.CaofradeApp.switchAdminTab('orders')">📦 Encomendas & Envios (<span id="adminTabOrderCount">1</span>)</button>
+        <button class="filter-pill" id="adminTabBtn-orders" onclick="window.CaofradeApp.switchAdminTab('orders')">📦 Encomendas & Envios (<span id="adminTabOrderCount">0</span>)</button>
         <button class="filter-pill" id="adminTabBtn-catalog" onclick="window.CaofradeApp.switchAdminTab('catalog')">🔗 Fornecedores & Margens</button>
         <button class="filter-pill" id="adminTabBtn-comms" onclick="window.CaofradeApp.switchAdminTab('comms')">📣 Kit Comunicações</button>
       </div>
@@ -839,7 +839,7 @@
           </div>
           <div class="admin-stat-card">
             <small>Encomendas Registadas</small>
-            <strong id="adminStatTotalOrders">1</strong>
+            <strong id="adminStatTotalOrders">0</strong>
           </div>
         </div>
 
