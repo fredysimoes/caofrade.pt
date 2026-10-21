@@ -6,14 +6,28 @@
   const STANDARD_SHIPPING_COST = 3.90;
   const ADMIN_SECRET_PASS = "caofrade2026";
 
-  // Load saved custom catalog if modified in Backoffice, and merge any new products from products.js
+  // Load saved custom catalog if modified in Backoffice, and sync new products + direct AliExpress item URLs
   const defaultCatalog = Array.isArray(window.CAOFRADE_PRODUCTS) ? [...window.CAOFRADE_PRODUCTS] : [];
+  const defaultMap = new Map(defaultCatalog.map((p) => [p.id, p]));
   const savedCatalog = localStorage.getItem("caofrade_catalog_v2");
   if (savedCatalog) {
     try {
       const parsed = JSON.parse(savedCatalog);
       if (Array.isArray(parsed) && parsed.length > 0) {
         const existingIds = new Set(parsed.map((p) => p.id));
+        parsed.forEach((p) => {
+          const defProd = defaultMap.get(p.id);
+          if (defProd && defProd.supplierInfo?.aliexpressUrl) {
+            if (!p.supplierInfo) p.supplierInfo = {};
+            if (
+              !p.supplierInfo.aliexpressUrl ||
+              p.supplierInfo.aliexpressUrl.includes("/w/wholesale-") ||
+              p.id === "tapete-absorvente-comedouro-drymat"
+            ) {
+              p.supplierInfo.aliexpressUrl = defProd.supplierInfo.aliexpressUrl;
+            }
+          }
+        });
         defaultCatalog.forEach((defProd) => {
           if (!existingIds.has(defProd.id)) {
             parsed.push(defProd);

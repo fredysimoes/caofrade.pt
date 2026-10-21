@@ -39,7 +39,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / DSers",
       searchQuery: "3 in 1 Cat Steam Brush Silicone Massage Self Cleaning Pet Grooming USB",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-3-in-1-cat-steam-brush.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007791672610.html",
       zendropQuery: "Pet Steam Brush 3 in 1",
       adHook: "Ainda tens pelos no sofá e na roupa preta? Vê o que esta escova a vapor retira em 30 segundos! 😱🐾",
       weightGrams: 160
@@ -83,7 +83,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / Zendrop",
       searchQuery: "Wireless Cat Water Fountain Stainless Steel Motion Sensor Battery Operated 3L",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-wireless-cat-water-fountain-motion-sensor.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005013413077850.html",
       zendropQuery: "Wireless Sensor Cat Water Fountain",
       adHook: "Sabias que 70% dos gatos sofrem de desidratação silenciosa porque odeiam água parada? Esta fonte sem fios mudou tudo cá em casa.",
       weightGrams: 780
@@ -129,7 +129,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / DSers",
       searchQuery: "Dog Talking Buttons Set 6 Pack Recordable Pet Communication Mat Training Buzzers",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-dog-talking-buttons-mat-set.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005012909967500.html",
       zendropQuery: "Recordable Pet Training Buzzers Mat",
       adHook: "Ensinei o meu cão a falar com estes botões e agora ele não pára de pedir 'Biscoito' às 8 da manhã 😂🐶",
       weightGrams: 520
@@ -174,7 +174,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / Zendrop",
       searchQuery: "Calming Dog Bed Plush Donut Anti Anxiety Washable Round Cushion Vacuum Packed",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-calming-donut-dog-bed-washable.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005012363030070.html",
       zendropQuery: "Calming Donut Pet Bed",
       adHook: "O teu cão dorme encolhido ou sofre de ansiedade? Esta cama NuvemCalma abraça-o em 360º.",
       weightGrams: 850
@@ -221,7 +221,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / DSers",
       searchQuery: "3 in 1 Portable Dog Water Bottle Food Container Poop Bag Dispenser Outdoor Walking",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-3-in-1-portable-dog-water-bottle.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005012821717272.html",
       zendropQuery: "Portable 3 in 1 Dog Water Bottle",
       adHook: "Se passeias o teu cão todos os dias, esta garrafa 3-em-1 vai salvar-te a vida (água, biscoitos e sacos num só!).",
       weightGrams: 240
@@ -265,7 +265,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / Zendrop",
       searchQuery: "Smart Pet Camera Treat Dispenser 1080P HD WiFi Two Way Audio Night Vision Dog Cat",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-smart-pet-camera-treat-dispenser.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005013098879157.html",
       zendropQuery: "Smart WiFi Pet Camera Treat Tosser",
       adHook: "O que é que o teu cão faz quando sais de casa? Com esta câmara falo com ele do trabalho e ainda lhe atiro um biscoito! 🐶🍪",
       weightGrams: 920
@@ -311,7 +311,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / DSers",
       searchQuery: "No Pull Dog Harness Reflective Breathable Adjustable Vest Handle Front Clip",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-no-pull-dog-harness-reflective-handle.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005013393986323.html",
       zendropQuery: "No Pull Reflective Dog Harness",
       adHook: "O teu cão é que te passeia a ti? Experimenta prender a trela na argola frontal deste peitoral Anti-Puxão!",
       weightGrams: 290
@@ -356,7 +356,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / DSers",
       searchQuery: "Dog Snuffle Mat Interactive Feeding Puzzle Toy Slow Feeder Washable Non Slip",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-dog-snuffle-mat-interactive.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005013215732200.html",
       zendropQuery: "Pet Snuffle Mat Slow Feeder",
       adHook: "Sabias que 15 minutos a farejar cansam tanto o cão como 1 hora de corrida? O segredo para dias de chuva!",
       weightGrams: 340
@@ -402,7 +402,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / Zendrop",
       searchQuery: "Dog Car Seat Cover Hammock Waterproof Mesh Window Nonslip Scratch Proof Back Seat",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-dog-car-seat-cover-mesh-window.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005013400573699.html",
       zendropQuery: "Waterproof Dog Car Seat Cover Hammock",
       adHook: "Adoras levar o cão à praia mas odeias limpar areia e pelos dos bancos do carro? Esta capa 4-em-1 instala-se em 60 segundos!",
       weightGrams: 1150
@@ -445,7 +445,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / DSers",
       searchQuery: "Cordless Cat Window Perch Hammock Foldable Suction Cups Metal Frame Reversible",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-cordless-foldable-cat-window-perch.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005013088695079.html",
       zendropQuery: "Foldable Cordless Cat Window Hammock",
       adHook: "O teu gato passa o dia à janela? Dá-lhe um camarote VIP ao sol sem ocupar espaço na sala! 🐱☀️",
       weightGrams: 690
@@ -488,7 +488,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / DSers",
       searchQuery: "Reusable Pet Hair Remover Roller Sofa Carpet Furniture Self Cleaning Lint Roller",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-reusable-pet-hair-remover-roller.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005013227247510.html",
       zendropQuery: "Reusable Pet Hair Remover Roller",
       adHook: "Para de gastar dinheiro em rolos de fita-cola! Olha a quantidade de pelo que isto tirou do meu sofá em 10 segundos 🤯",
       weightGrams: 185
@@ -534,7 +534,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / DSers",
       searchQuery: "Smart Interactive Cat Toy Ball USB Rechargeable Automatic Moving Obstacle Avoidance",
-      aliexpressUrl: "https://www.aliexpress.com/w/wholesale-smart-interactive-cat-ball-usb.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005008431477735.html",
       zendropQuery: "Smart Automatic Rolling Pet Ball",
       adHook: "O teu gato ou cão fica aborrecido quando estás a trabalhar? Esta bola inteligente foge sozinha quando ele lhe toca!",
       weightGrams: 95
@@ -582,7 +582,7 @@ window.CAOFRADE_PRODUCTS = [
     supplierInfo: {
       platform: "AliExpress Choice / DSers",
       searchQuery: "Pet Feeding Mat Absorbent Non-slip Rubber Backed Quick Dry Dog Cat Bowl Mat",
-      aliexpressUrl: "https://pt.aliexpress.com/item/1005007549347025.html",
+      aliexpressUrl: "https://pt.aliexpress.com/item/1005007549347025.html?spm=a2g0o.productlist.main.35.4f961380RnnUo5&algo_pvid=be05e846-1784-40a7-a547-0879a6529280&algo_exp_id=be05e846-1784-40a7-a547-0879a6529280-34&pdp_ext_f=%7B%22order%22%3A%226951%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.12%214.12%21%21%2130.18%2130.18%21%400b88ab6717925875077931011e0e94%2112000041253919397%21sea%21PT%21713152959%21X%211%210%21n_tag%3A-29919%3Bd%3Af938cec3%3Bm03_new_user%3A-29895&curPageLogUid=Rsynq0ALEQ1K&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007549347025%7C_p_origin_prod%3A",
       zendropQuery: "Absorbent Pet Feeding Mat",
       adHook: "O teu cão deixa a cozinha toda alagada sempre que bebe água? Vê como este tapete absorve a água em 2 segundos! 🐾💧",
       weightGrams: 260
