@@ -1,0 +1,73 @@
+name: 🐾 Instagram Auto-Publisher — Cãofrade.pt
+
+on:
+  schedule:
+    # Corre todos os dias às 18:30 UTC (Hora de maior engajamento em Portugal)
+    - cron: '30 18 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Modo de teste seguro (não publica no Instagram se for true)'
+        required: true
+        default: 'false'
+        type: boolean
+      product_id:
+        description: 'ID de produto específico (deixar vazio para seleção automática inteligente)'
+        required: false
+        type: string
+      post_type:
+        description: 'Tipo de publicação'
+        required: true
+        default: 'single'
+        type: choice
+        options:
+          - single
+          - carousel
+
+jobs:
+  publish_instagram:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Clonar Repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 🚀 Executar Publicação no Instagram
+        env:
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          BASE_IMAGE_URL: "https://www.caofrade.pt"
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: |
+          CMD="python3 scripts/instagram_agent.py"
+          
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            CMD="$CMD --preview"
+          elif [ -n "${{ github.event.inputs.product_id }}" ]; then
+            CMD="$CMD --product ${{ github.event.inputs.product_id }} --publish"
+          else
+            CMD="$CMD --publish-next"
+          fi
+
+          if [ -n "${{ github.event.inputs.post_type }}" ]; then
+            CMD="$CMD --type ${{ github.event.inputs.post_type }}"
+          fi
+
+          echo "A executar: $CMD"
+          $CMD
+
+      - name: 💾 Guardar Histórico de Publicações
+        run: |
+          git config --global user.name "Caofrade Bot"
+          git config --global user.email "bot@caofrade.pt"
+          if [ -f data/instagram_history.json ]; then
+            git add data/instagram_history.json
+            git commit -m "chore(instagram): registar post publicado no histórico [skip ci]" || echo "Sem alterações para gravar"
+            git push origin main || echo "Push ignorado"
+          fi
